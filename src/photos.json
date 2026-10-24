@@ -1,0 +1,623 @@
+{
+ "clothing": [
+  {
+   "src": "/photos/clothing/clothing-001-480.webp",
+   "srcset": "/photos/clothing/clothing-001-480.webp 480w, /photos/clothing/clothing-001-960.webp 960w, /photos/clothing/clothing-001-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#8a8280"
+  },
+  {
+   "src": "/photos/clothing/clothing-002-480.webp",
+   "srcset": "/photos/clothing/clothing-002-480.webp 480w, /photos/clothing/clothing-002-960.webp 960w, /photos/clothing/clothing-002-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#847a74"
+  },
+  {
+   "src": "/photos/clothing/clothing-003-480.webp",
+   "srcset": "/photos/clothing/clothing-003-480.webp 480w, /photos/clothing/clothing-003-960.webp 960w, /photos/clothing/clothing-003-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#837772"
+  },
+  {
+   "src": "/photos/clothing/clothing-004-480.webp",
+   "srcset": "/photos/clothing/clothing-004-480.webp 480w, /photos/clothing/clothing-004-960.webp 960w, /photos/clothing/clothing-004-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#94887e"
+  },
+  {
+   "src": "/photos/clothing/clothing-005-480.webp",
+   "srcset": "/photos/clothing/clothing-005-480.webp 480w, /photos/clothing/clothing-005-960.webp 960w, /photos/clothing/clothing-005-1440.webp 1440w",
+   "w": 480,
+   "h": 641,
+   "o": "p",
+   "c": "#938e89"
+  },
+  {
+   "src": "/photos/clothing/clothing-006-480.webp",
+   "srcset": "/photos/clothing/clothing-006-480.webp 480w, /photos/clothing/clothing-006-960.webp 960w, /photos/clothing/clothing-006-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#978776"
+  },
+  {
+   "src": "/photos/clothing/clothing-007-480.webp",
+   "srcset": "/photos/clothing/clothing-007-480.webp 480w, /photos/clothing/clothing-007-960.webp 960w, /photos/clothing/clothing-007-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#998776"
+  },
+  {
+   "src": "/photos/clothing/clothing-008-480.webp",
+   "srcset": "/photos/clothing/clothing-008-480.webp 480w, /photos/clothing/clothing-008-960.webp 960w, /photos/clothing/clothing-008-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#9c8b7b"
+  },
+  {
+   "src": "/photos/clothing/clothing-009-480.webp",
+   "srcset": "/photos/clothing/clothing-009-480.webp 480w, /photos/clothing/clothing-009-960.webp 960w, /photos/clothing/clothing-009-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#92837b"
+  },
+  {
+   "src": "/photos/clothing/clothing-010-480.webp",
+   "srcset": "/photos/clothing/clothing-010-480.webp 480w, /photos/clothing/clothing-010-960.webp 960w, /photos/clothing/clothing-010-1440.webp 1440w",
+   "w": 480,
+   "h": 641,
+   "o": "p",
+   "c": "#af7364"
+  },
+  {
+   "src": "/photos/clothing/clothing-011-480.webp",
+   "srcset": "/photos/clothing/clothing-011-480.webp 480w, /photos/clothing/clothing-011-960.webp 960w, /photos/clothing/clothing-011-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#8d837b"
+  },
+  {
+   "src": "/photos/clothing/clothing-012-480.webp",
+   "srcset": "/photos/clothing/clothing-012-480.webp 480w, /photos/clothing/clothing-012-960.webp 960w, /photos/clothing/clothing-012-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#9c8e85"
+  },
+  {
+   "src": "/photos/clothing/clothing-013-480.webp",
+   "srcset": "/photos/clothing/clothing-013-480.webp 480w, /photos/clothing/clothing-013-960.webp 960w, /photos/clothing/clothing-013-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a08e85"
+  },
+  {
+   "src": "/photos/clothing/clothing-014-480.webp",
+   "srcset": "/photos/clothing/clothing-014-480.webp 480w, /photos/clothing/clothing-014-960.webp 960w, /photos/clothing/clothing-014-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#98918d"
+  },
+  {
+   "src": "/photos/clothing/clothing-015-480.webp",
+   "srcset": "/photos/clothing/clothing-015-480.webp 480w, /photos/clothing/clothing-015-960.webp 960w, /photos/clothing/clothing-015-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a39e94"
+  }
+ ],
+ "footwear": [
+  {
+   "src": "/photos/footwear/footwear-001-480.webp",
+   "srcset": "/photos/footwear/footwear-001-480.webp 480w, /photos/footwear/footwear-001-960.webp 960w, /photos/footwear/footwear-001-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#91857b"
+  },
+  {
+   "src": "/photos/footwear/footwear-002-480.webp",
+   "srcset": "/photos/footwear/footwear-002-480.webp 480w, /photos/footwear/footwear-002-960.webp 960w, /photos/footwear/footwear-002-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a18971"
+  },
+  {
+   "src": "/photos/footwear/footwear-003-480.webp",
+   "srcset": "/photos/footwear/footwear-003-480.webp 480w, /photos/footwear/footwear-003-960.webp 960w, /photos/footwear/footwear-003-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#988c77"
+  },
+  {
+   "src": "/photos/footwear/footwear-004-480.webp",
+   "srcset": "/photos/footwear/footwear-004-480.webp 480w, /photos/footwear/footwear-004-960.webp 960w, /photos/footwear/footwear-004-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a28979"
+  },
+  {
+   "src": "/photos/footwear/footwear-005-480.webp",
+   "srcset": "/photos/footwear/footwear-005-480.webp 480w, /photos/footwear/footwear-005-960.webp 960w, /photos/footwear/footwear-005-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#9d8f7d"
+  },
+  {
+   "src": "/photos/footwear/footwear-006-480.webp",
+   "srcset": "/photos/footwear/footwear-006-480.webp 480w, /photos/footwear/footwear-006-960.webp 960w, /photos/footwear/footwear-006-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#9e9182"
+  },
+  {
+   "src": "/photos/footwear/footwear-007-480.webp",
+   "srcset": "/photos/footwear/footwear-007-480.webp 480w, /photos/footwear/footwear-007-960.webp 960w, /photos/footwear/footwear-007-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a38c79"
+  },
+  {
+   "src": "/photos/footwear/footwear-008-480.webp",
+   "srcset": "/photos/footwear/footwear-008-480.webp 480w, /photos/footwear/footwear-008-960.webp 960w, /photos/footwear/footwear-008-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a6947b"
+  },
+  {
+   "src": "/photos/footwear/footwear-009-480.webp",
+   "srcset": "/photos/footwear/footwear-009-480.webp 480w, /photos/footwear/footwear-009-960.webp 960w, /photos/footwear/footwear-009-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a3917f"
+  },
+  {
+   "src": "/photos/footwear/footwear-010-480.webp",
+   "srcset": "/photos/footwear/footwear-010-480.webp 480w, /photos/footwear/footwear-010-960.webp 960w, /photos/footwear/footwear-010-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a09488"
+  },
+  {
+   "src": "/photos/footwear/footwear-011-480.webp",
+   "srcset": "/photos/footwear/footwear-011-480.webp 480w, /photos/footwear/footwear-011-960.webp 960w, /photos/footwear/footwear-011-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a79078"
+  },
+  {
+   "src": "/photos/footwear/footwear-012-480.webp",
+   "srcset": "/photos/footwear/footwear-012-480.webp 480w, /photos/footwear/footwear-012-960.webp 960w, /photos/footwear/footwear-012-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a79286"
+  },
+  {
+   "src": "/photos/footwear/footwear-013-480.webp",
+   "srcset": "/photos/footwear/footwear-013-480.webp 480w, /photos/footwear/footwear-013-960.webp 960w, /photos/footwear/footwear-013-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#ae9e80"
+  },
+  {
+   "src": "/photos/footwear/footwear-014-480.webp",
+   "srcset": "/photos/footwear/footwear-014-480.webp 480w, /photos/footwear/footwear-014-960.webp 960w, /photos/footwear/footwear-014-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#b29671"
+  },
+  {
+   "src": "/photos/footwear/footwear-015-480.webp",
+   "srcset": "/photos/footwear/footwear-015-480.webp 480w, /photos/footwear/footwear-015-960.webp 960w, /photos/footwear/footwear-015-1440.webp 1440w",
+   "w": 480,
+   "h": 361,
+   "o": "l",
+   "c": "#ac9275"
+  },
+  {
+   "src": "/photos/footwear/footwear-016-480.webp",
+   "srcset": "/photos/footwear/footwear-016-480.webp 480w, /photos/footwear/footwear-016-960.webp 960w, /photos/footwear/footwear-016-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a39483"
+  },
+  {
+   "src": "/photos/footwear/footwear-017-480.webp",
+   "srcset": "/photos/footwear/footwear-017-480.webp 480w, /photos/footwear/footwear-017-960.webp 960w, /photos/footwear/footwear-017-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#ada395"
+  },
+  {
+   "src": "/photos/footwear/footwear-018-480.webp",
+   "srcset": "/photos/footwear/footwear-018-480.webp 480w, /photos/footwear/footwear-018-960.webp 960w, /photos/footwear/footwear-018-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#b6a791"
+  },
+  {
+   "src": "/photos/footwear/footwear-019-480.webp",
+   "srcset": "/photos/footwear/footwear-019-480.webp 480w, /photos/footwear/footwear-019-960.webp 960w, /photos/footwear/footwear-019-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#b3a997"
+  },
+  {
+   "src": "/photos/footwear/footwear-020-480.webp",
+   "srcset": "/photos/footwear/footwear-020-480.webp 480w, /photos/footwear/footwear-020-960.webp 960w, /photos/footwear/footwear-020-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#b1a79a"
+  }
+ ],
+ "accessories": [
+  {
+   "src": "/photos/accessories/accessories-001-480.webp",
+   "srcset": "/photos/accessories/accessories-001-480.webp 480w, /photos/accessories/accessories-001-960.webp 960w, /photos/accessories/accessories-001-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#897f7e"
+  },
+  {
+   "src": "/photos/accessories/accessories-002-480.webp",
+   "srcset": "/photos/accessories/accessories-002-480.webp 480w, /photos/accessories/accessories-002-960.webp 960w, /photos/accessories/accessories-002-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#867d71"
+  },
+  {
+   "src": "/photos/accessories/accessories-003-480.webp",
+   "srcset": "/photos/accessories/accessories-003-480.webp 480w, /photos/accessories/accessories-003-960.webp 960w, /photos/accessories/accessories-003-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a59a88"
+  },
+  {
+   "src": "/photos/accessories/accessories-004-480.webp",
+   "srcset": "/photos/accessories/accessories-004-480.webp 480w, /photos/accessories/accessories-004-960.webp 960w, /photos/accessories/accessories-004-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a19982"
+  },
+  {
+   "src": "/photos/accessories/accessories-005-480.webp",
+   "srcset": "/photos/accessories/accessories-005-480.webp 480w, /photos/accessories/accessories-005-960.webp 960w, /photos/accessories/accessories-005-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#9e8e8f"
+  },
+  {
+   "src": "/photos/accessories/accessories-006-480.webp",
+   "srcset": "/photos/accessories/accessories-006-480.webp 480w, /photos/accessories/accessories-006-960.webp 960w, /photos/accessories/accessories-006-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a39c90"
+  },
+  {
+   "src": "/photos/accessories/accessories-007-480.webp",
+   "srcset": "/photos/accessories/accessories-007-480.webp 480w, /photos/accessories/accessories-007-960.webp 960w, /photos/accessories/accessories-007-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a1968a"
+  },
+  {
+   "src": "/photos/accessories/accessories-008-480.webp",
+   "srcset": "/photos/accessories/accessories-008-480.webp 480w, /photos/accessories/accessories-008-960.webp 960w, /photos/accessories/accessories-008-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#b0aaa2"
+  },
+  {
+   "src": "/photos/accessories/accessories-009-480.webp",
+   "srcset": "/photos/accessories/accessories-009-480.webp 480w, /photos/accessories/accessories-009-960.webp 960w, /photos/accessories/accessories-009-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#b4ab9e"
+  },
+  {
+   "src": "/photos/accessories/accessories-010-480.webp",
+   "srcset": "/photos/accessories/accessories-010-480.webp 480w, /photos/accessories/accessories-010-960.webp 960w, /photos/accessories/accessories-010-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#bab6ac"
+  }
+ ],
+ "perfumes": [
+  {
+   "src": "/photos/perfumes/perfumes-001-480.webp",
+   "srcset": "/photos/perfumes/perfumes-001-480.webp 480w, /photos/perfumes/perfumes-001-960.webp 960w, /photos/perfumes/perfumes-001-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#9b7f5d"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-002-480.webp",
+   "srcset": "/photos/perfumes/perfumes-002-480.webp 480w, /photos/perfumes/perfumes-002-960.webp 960w, /photos/perfumes/perfumes-002-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#99876b"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-003-480.webp",
+   "srcset": "/photos/perfumes/perfumes-003-480.webp 480w, /photos/perfumes/perfumes-003-960.webp 960w, /photos/perfumes/perfumes-003-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#9a8a7a"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-004-480.webp",
+   "srcset": "/photos/perfumes/perfumes-004-480.webp 480w, /photos/perfumes/perfumes-004-960.webp 960w, /photos/perfumes/perfumes-004-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#9c8978"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-005-480.webp",
+   "srcset": "/photos/perfumes/perfumes-005-480.webp 480w, /photos/perfumes/perfumes-005-960.webp 960w, /photos/perfumes/perfumes-005-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#998578"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-006-480.webp",
+   "srcset": "/photos/perfumes/perfumes-006-480.webp 480w, /photos/perfumes/perfumes-006-960.webp 960w, /photos/perfumes/perfumes-006-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#978c78"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-007-480.webp",
+   "srcset": "/photos/perfumes/perfumes-007-480.webp 480w, /photos/perfumes/perfumes-007-960.webp 960w, /photos/perfumes/perfumes-007-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#978a78"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-008-480.webp",
+   "srcset": "/photos/perfumes/perfumes-008-480.webp 480w, /photos/perfumes/perfumes-008-960.webp 960w, /photos/perfumes/perfumes-008-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a2917b"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-009-480.webp",
+   "srcset": "/photos/perfumes/perfumes-009-480.webp 480w, /photos/perfumes/perfumes-009-960.webp 960w, /photos/perfumes/perfumes-009-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#98846e"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-010-480.webp",
+   "srcset": "/photos/perfumes/perfumes-010-480.webp 480w, /photos/perfumes/perfumes-010-960.webp 960w, /photos/perfumes/perfumes-010-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#9e8562"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-011-480.webp",
+   "srcset": "/photos/perfumes/perfumes-011-480.webp 480w, /photos/perfumes/perfumes-011-960.webp 960w, /photos/perfumes/perfumes-011-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a79476"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-012-480.webp",
+   "srcset": "/photos/perfumes/perfumes-012-480.webp 480w, /photos/perfumes/perfumes-012-960.webp 960w, /photos/perfumes/perfumes-012-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a18f70"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-013-480.webp",
+   "srcset": "/photos/perfumes/perfumes-013-480.webp 480w, /photos/perfumes/perfumes-013-960.webp 960w, /photos/perfumes/perfumes-013-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#9f8e78"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-014-480.webp",
+   "srcset": "/photos/perfumes/perfumes-014-480.webp 480w, /photos/perfumes/perfumes-014-960.webp 960w, /photos/perfumes/perfumes-014-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a89278"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-015-480.webp",
+   "srcset": "/photos/perfumes/perfumes-015-480.webp 480w, /photos/perfumes/perfumes-015-960.webp 960w, /photos/perfumes/perfumes-015-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#665e55"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-016-480.webp",
+   "srcset": "/photos/perfumes/perfumes-016-480.webp 480w, /photos/perfumes/perfumes-016-960.webp 960w, /photos/perfumes/perfumes-016-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#a39283"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-017-480.webp",
+   "srcset": "/photos/perfumes/perfumes-017-480.webp 480w, /photos/perfumes/perfumes-017-960.webp 960w, /photos/perfumes/perfumes-017-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#6b606c"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-018-480.webp",
+   "srcset": "/photos/perfumes/perfumes-018-480.webp 480w, /photos/perfumes/perfumes-018-960.webp 960w, /photos/perfumes/perfumes-018-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#ab927d"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-019-480.webp",
+   "srcset": "/photos/perfumes/perfumes-019-480.webp 480w, /photos/perfumes/perfumes-019-960.webp 960w, /photos/perfumes/perfumes-019-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#a99171"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-020-480.webp",
+   "srcset": "/photos/perfumes/perfumes-020-480.webp 480w, /photos/perfumes/perfumes-020-960.webp 960w, /photos/perfumes/perfumes-020-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#ae9f7c"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-021-480.webp",
+   "srcset": "/photos/perfumes/perfumes-021-480.webp 480w, /photos/perfumes/perfumes-021-960.webp 960w, /photos/perfumes/perfumes-021-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#ba9f7a"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-022-480.webp",
+   "srcset": "/photos/perfumes/perfumes-022-480.webp 480w, /photos/perfumes/perfumes-022-960.webp 960w, /photos/perfumes/perfumes-022-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#b99f7d"
+  }
+ ],
+ "shop": [
+  {
+   "src": "/photos/shop/shop-001-480.webp",
+   "srcset": "/photos/shop/shop-001-480.webp 480w, /photos/shop/shop-001-960.webp 960w, /photos/shop/shop-001-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#978275"
+  },
+  {
+   "src": "/photos/shop/shop-002-480.webp",
+   "srcset": "/photos/shop/shop-002-480.webp 480w, /photos/shop/shop-002-960.webp 960w, /photos/shop/shop-002-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#8a7e74"
+  },
+  {
+   "src": "/photos/shop/shop-003-480.webp",
+   "srcset": "/photos/shop/shop-003-480.webp 480w, /photos/shop/shop-003-960.webp 960w, /photos/shop/shop-003-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#8e7f73"
+  },
+  {
+   "src": "/photos/shop/shop-004-480.webp",
+   "srcset": "/photos/shop/shop-004-480.webp 480w, /photos/shop/shop-004-960.webp 960w, /photos/shop/shop-004-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#948983"
+  },
+  {
+   "src": "/photos/shop/shop-005-480.webp",
+   "srcset": "/photos/shop/shop-005-480.webp 480w, /photos/shop/shop-005-960.webp 960w, /photos/shop/shop-005-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#9c8c85"
+  },
+  {
+   "src": "/photos/shop/shop-006-480.webp",
+   "srcset": "/photos/shop/shop-006-480.webp 480w, /photos/shop/shop-006-960.webp 960w, /photos/shop/shop-006-1440.webp 1440w",
+   "w": 480,
+   "h": 360,
+   "o": "l",
+   "c": "#988e89"
+  }
+ ],
+ "extra": [],
+ "hero": [
+  {
+   "src": "/photos/clothing/clothing-004-480.webp",
+   "srcset": "/photos/clothing/clothing-004-480.webp 480w, /photos/clothing/clothing-004-960.webp 960w, /photos/clothing/clothing-004-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#94887e"
+  },
+  {
+   "src": "/photos/clothing/clothing-005-480.webp",
+   "srcset": "/photos/clothing/clothing-005-480.webp 480w, /photos/clothing/clothing-005-960.webp 960w, /photos/clothing/clothing-005-1440.webp 1440w",
+   "w": 480,
+   "h": 641,
+   "o": "p",
+   "c": "#938e89"
+  },
+  {
+   "src": "/photos/perfumes/perfumes-001-480.webp",
+   "srcset": "/photos/perfumes/perfumes-001-480.webp 480w, /photos/perfumes/perfumes-001-960.webp 960w, /photos/perfumes/perfumes-001-1440.webp 1440w",
+   "w": 480,
+   "h": 640,
+   "o": "p",
+   "c": "#9b7f5d"
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+id	score	orientation	original file
+clothing-001	7.47	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\IMG_6663.JPG.jpeg
+clothing-002	7.43	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6738.JPG.jpeg
+clothing-003	7.37	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6737.JPG.jpeg
+clothing-004	7.14	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\IMG_6662.JPG.jpeg
+clothing-005	6.97	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\IMG_6664.JPG.jpeg
+clothing-006	6.96	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6745.JPG.jpeg
+clothing-007	6.89	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6735.JPG.jpeg
+clothing-008	6.88	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6739.JPG.jpeg
+clothing-009	6.88	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6740.JPG.jpeg
+clothing-010	6.87	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\IMG_6665.JPG.jpeg
+clothing-011	6.59	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\IMG_6666.JPG.jpeg
+clothing-012	6.40	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6741.JPG.jpeg
+clothing-013	6.39	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6742.JPG.jpeg
+clothing-014	6.19	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6744.JPG.jpeg
+clothing-015	5.85	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\Clothing\caps\IMG_6743.JPG.jpeg
+footwear-001	7.19	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6722.JPG.jpeg
+footwear-002	7.01	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6730.JPG.jpeg
+footwear-003	6.82	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6719.JPG.jpeg
+footwear-004	6.71	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6724.JPG.jpeg
+footwear-005	6.62	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6718.JPG.jpeg
+footwear-006	6.59	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6723.JPG.jpeg
+footwear-007	6.56	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6725.JPG.jpeg
+footwear-008	6.53	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6711.JPG.jpeg
+footwear-009	6.53	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6732.JPG.jpeg
+footwear-010	6.49	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6731.JPG.jpeg
+footwear-011	6.42	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6713.JPG.jpeg
+footwear-012	6.35	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6734.JPG.jpeg
+footwear-013	6.16	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6712.JPG.jpeg
+footwear-014	6.16	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6727.JPG.jpeg
+footwear-015	6.09	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6721.JPG.jpeg
+footwear-016	6.01	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6720.JPG.jpeg
+footwear-017	5.85	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6717.JPG.jpeg
+footwear-018	5.70	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6715.JPG.jpeg
+footwear-019	5.69	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6714.JPG.jpeg
+footwear-020	5.65	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\footwear\IMG_6716.JPG.jpeg
+accessories-001	7.39	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6702.JPG.jpeg
+accessories-002	6.94	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6705.JPG.jpeg
+accessories-003	6.38	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6699.JPG.jpeg
+accessories-004	6.33	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6698.JPG.jpeg
+accessories-005	6.07	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6703.JPG.jpeg
+accessories-006	5.97	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6710.JPG.jpeg
+accessories-007	5.93	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6697.JPG.jpeg
+accessories-008	5.51	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6708.JPG.jpeg
+accessories-009	5.32	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6707.JPG.jpeg
+accessories-010	4.98	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\accessories\IMG_6709.JPG.jpeg
+perfumes-001	6.95	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6693.JPG.jpeg
+perfumes-002	6.74	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6688.JPG.jpeg
+perfumes-003	6.69	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6687.JPG.jpeg
+perfumes-004	6.69	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6696.JPG.jpeg
+perfumes-005	6.67	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6671.JPG.jpeg
+perfumes-006	6.65	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6690.JPG.jpeg
+perfumes-007	6.64	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6692.JPG.jpeg
+perfumes-008	6.51	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6686.JPG.jpeg
+perfumes-009	6.43	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6670.JPG.jpeg
+perfumes-010	6.35	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6681.JPG.jpeg
+perfumes-011	6.28	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6680.JPG.jpeg
+perfumes-012	6.22	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6682.JPG.jpeg
+perfumes-013	6.02	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6685.JPG.jpeg
+perfumes-014	5.97	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6678.JPG.jpeg
+perfumes-015	5.84	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6669.JPG.jpeg
+perfumes-016	5.78	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6683.JPG.jpeg
+perfumes-017	5.70	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6679.JPG.jpeg
+perfumes-018	5.66	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6694.JPG.jpeg
+perfumes-019	5.59	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6672.JPG.jpeg
+perfumes-020	5.51	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6674.JPG.jpeg
+perfumes-021	5.07	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6676.JPG.jpeg
+perfumes-022	5.03	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\perfumes\IMG_6677.JPG.jpeg
+shop-001	7.20	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\full store entrance view\IMG_6659.JPG.jpeg
+shop-002	7.09	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\full store entrance view\IMG_6655.JPG.jpeg
+shop-003	7.05	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\full store entrance view\IMG_6656.JPG.jpeg
+shop-004	7.04	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\full store entrance view\IMG_6661.JPG.jpeg
+shop-005	6.79	p	D:\WEBDEV\GEN Z mens boutique\IMAGES\full store entrance view\IMG_6660.JPG.jpeg
+shop-006	6.62	l	D:\WEBDEV\GEN Z mens boutique\IMAGES\full store entrance view\IMG_6657.JPG.jpeg
