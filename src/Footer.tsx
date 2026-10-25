@@ -5,7 +5,6 @@ import { fmt, HOURS } from './hours.js'
 import { Link } from './router'
 import { buildWaLink } from './wa.js'
 import { Photo, photosFor } from './Photo'
-import { Mark } from './Icons'
 import Seal from './Seal'
 import Wiggle from './Wiggle'
 import { gsap, toTop, useFit, useMotion } from './motion'
@@ -44,7 +43,7 @@ export default function Footer() {
       </nav>
       <div className="fseal"><Seal id="seal-foot" /><p>Authentic, branded and genuine: the shop's promise.</p></div>
       <div className="fw" role="img" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
-      <div className="fbot"><span className="fmk"><Mark /></span><p>© GEN-Z men's boutique · Kondhwa, Pune</p><button type="button" onClick={() => toTop(false)}>BACK TO TOP ↑</button></div>
+      <div className="fbot"><span className="fmk"><img src="/logo-sm.webp" width="38" height="32" alt="" loading="lazy" /></span><p>© GEN-Z men's boutique · Kondhwa, Pune</p><button type="button" onClick={() => toTop(false)}>BACK TO TOP ↑</button></div>
     </footer>
   )
 }

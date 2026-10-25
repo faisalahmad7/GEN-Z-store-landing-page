@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { CATS, type Cat } from './data'
 import { Link, usePath } from './router'
-import { Mark } from './Icons'
 import { picks } from './Photo'
 import { buildWaLink } from './wa.js'
 import { openState, fmt, HOURS } from './hours.js'
@@ -27,9 +26,9 @@ export function Header() {
   }, [])
   return (
     <>
-      <div className="prog" ref={bar} style={{ '--pc': room?.ac ?? '#c6ff3d' } as CSSProperties} aria-hidden="true" />
+      <div className="prog" ref={bar} style={{ '--pc': room?.ac ?? '#d9a62a' } as CSSProperties} aria-hidden="true" />
       <header className="top">
-        <Link to="/" className="logo" aria-label="GEN-Z home"><Mark /><b>GEN-Z</b></Link>
+        <Link to="/" className="logo" aria-label="GEN-Z home"><img src="/logo-sm.webp" width="34" height="28" alt="" /><b>GEN-Z</b></Link>
         <div className="topr">
           <a className="topcta" href={buildWaLink()} target="_blank" rel="noopener noreferrer">WHATSAPP ↗</a>
           <button type="button" className="burger" aria-expanded={open} aria-controls="menu" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}><i /><i /></button>
