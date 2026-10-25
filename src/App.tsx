@@ -25,11 +25,11 @@ export default function App() {
         ) : <Hub />}
       </main>
       <nav className="dock" aria-label="Main">
-        <Link to="/" className={path === '/' ? 'on' : ''}><span className="mk"><Mark /></span><b>HOME</b></Link>
+        <Link to="/" className={path === '/' ? 'on' : ''} aria-current={path === '/' ? 'page' : undefined}><span className="mk"><Mark /></span><b>HOME</b></Link>
         {CATS.map((c) => {
           const I = ICONS[c.id]
           return (
-            <Link key={c.id} to={'/' + c.id} onMouseEnter={prefetch} className={path === '/' + c.id ? 'on' : ''}>
+            <Link key={c.id} to={'/' + c.id} onMouseEnter={prefetch} className={path === '/' + c.id ? 'on' : ''} aria-current={path === '/' + c.id ? 'page' : undefined}>
               <span className="ic"><I /></span><b>{c.word}</b>
             </Link>
           )

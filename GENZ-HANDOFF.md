@@ -3,9 +3,40 @@
 Paste this whole file into a new Claude chat (or attach it) and say:
 "Read GENZ-HANDOFF.md fully, then continue the GEN-Z build from the STOP POINT section. Follow the Ponytail coding rules in section 3. Do not restart or re-research."
 
-Last updated: 2026-10-24 (v4.2: headings can't wrap, click-to-open photo viewer, ALL photos used, hero collage, light animation back; typechecked with tsc = 0 errors; earlier v4.1: lag fixes, new boutique palette, hero photo slot, no forced horizontal scroll, no-crop WebP pipeline with orientation/colour analysis; source only, never built by Claude)
+Last updated: 2026-10-26 (v6 audit batch, see the v6 UPDATE block below); previous: 2026-10-24 (v4.2: headings can't wrap, click-to-open photo viewer, ALL photos used, hero collage, light animation back; typechecked with tsc = 0 errors; earlier v4.1: lag fixes, new boutique palette, hero photo slot, no forced horizontal scroll, no-crop WebP pipeline with orientation/colour analysis; source only, never built by Claude)
 
 ---
+
+## v6 UPDATE (2026-10-26): audit + small correctness/a11y batch (UNCOMMITTED, delivered as a patch)
+
+Environment of this session: Claude cloud sandbox, Free plan. `npm ci` FAILED: the egress proxy returns 403 for registry.npmjs.org (policy block, not a project fault), so `node_modules`, `npm run build`, real `tsc` and any browser render were NOT possible. The live site (gen-z-store-landing-page.vercel.app) is also blocked at the proxy; WebFetch only showed the same `<title>` and meta description as `index.html`, nothing about the JS bundle. Compared: repo HEAD 121efad (shallow clone, one commit) vs production: NOT compared beyond title/description.
+
+Audit summary (read from source, current HEAD):
+- Routing: custom History-API router (`src/router.tsx`, `usePath`, `go`, `Link`); `/` = `pages/Hub.tsx`, `/clothing|/footwear|/accessories|/perfumes` = lazy `pages/Category.tsx` driven by `CATS` in `src/data.ts`. `vercel.json` rewrites everything to `/index.html`.
+- Shared: `Footer.tsx` (visit block, used on every page), `Photo.tsx` (img + manifest helpers), `Lightbox.tsx`, `Wiggle.tsx`, `Seal.tsx`, `Icons.tsx`, dock nav in `App.tsx`. Single stylesheet `src/site.css`.
+- Motion: GSAP only (`src/motion.ts`: `useMotion` = gsap.matchMedia + revert on unmount, reduced motion returns before any tween; `useFit` shrinks headings to one line). Draggable hero tags only with `(hover:hover) and (pointer:fine)`. `@gsap/react` and `motion` are NOT dependencies. `main.tsx` does not use StrictMode (effects do clean up). Headings are `visibility:hidden` until `html.fonts-ok`, set after fonts load OR a 2.5 s cap (also on rejection), so they cannot stay hidden.
+- Media (script-verified this session): 73 photos x 3 WebP widths = 219 files in `public/photos`, 0 missing vs `src/photos.json`, 0 orphans, every entry has real w/h, orientation flags consistent with w/h, 27 MB on disk. `hero` array in photos.json (3 entries, repeats of clothing-004/005, perfumes-001) is not used by current code. NOT visually inspected this session (no image viewing).
+- Pinned picks (`PICKS`, `SIGN_PHOTO`) all resolve (`src/picks.test.js` passes).
+- `scripts/make-images.mjs` DELETES `public/photos` before regenerating and reads `D:\WEBDEV\GEN Z mens boutique\IMAGES`; `photos-in/` holds only a README. Do not run it without the originals, or the photos are gone (they are in git, so recoverable).
+
+Changes (files: `src/router.tsx`, `src/path.js` new, `src/path.test.js` new, `src/App.tsx`, `src/Footer.tsx`, `src/Photo.tsx`, `index.html`, `package.json`):
+1. `Link` no longer swallows ctrl/cmd/shift/alt-click or middle-click (open-in-new-tab was broken); it now forwards any `<a>` prop.
+2. `/clothing/`, `/Clothing` etc. rendered the HOME page (exact string match). New `normPath` (strip trailing slashes, lowercase) used by `usePath` and `go`. Covered by `src/path.test.js`; `npm test` now runs it.
+3. Dock links get `aria-current="page"` (only a CSS class before).
+4. Hub had two `<nav aria-label="Rooms">` (hero tags and footer): footer is now "Footer rooms".
+5. Footer wordmark `div` had `aria-label` with no role: added `role="img"`.
+6. Removed dead `data-cursor` attribute in `Photo.tsx` (Cursor was removed in v5).
+7. `index.html`: Open Graph + twitter:card tags reusing the existing title/description. No `og:image` or canonical, because the final domain is unknown.
+Tests run: `node --test src/wa.test.js src/picks.test.js src/path.test.js` = 5 pass, 0 fail (an earlier run of the original two files: 3 pass). Syntax-only esbuild transpile of the 5 changed source files = OK. NOT run: `npm run build`, `tsc`, lint (none configured), any browser, reduced-motion test, Lighthouse.
+Side effects to check on first real build: `Link` prop typing (now `ComponentProps<'a'>`), `.js` import from TSX (same pattern as `wa.js`).
+
+OUTSTANDING
+- Unverified: `npm run build`/`tsc` on these edits; browser behaviour of every route, hero tag drag (click-vs-drag on the `<a>` tags), reduced motion, real iPhone, Lighthouse; production vs HEAD comparison.
+- Candidate (not changed, no measurement): category hero `.collage figure` and `.mega` letters animate from `opacity:0`, which may delay LCP on room pages; measure first. Strip photos all share the same alt text. JSON-LD LocalBusiness not added.
+- Owner decisions (unchanged): WhatsApp number is WhatsApp-enabled; "authentic/genuine" wording; closing time; 4.8 / 44 rating (re-check); final domain for canonical/og:image.
+- NEXT 3 ACTIONS: (1) on the owner machine run `npm ci && npm run build && npm test`, fix anything from the typed `Link`; (2) open `/`, `/clothing/` and ctrl-click a dock link to confirm items 1-3 in a real browser, then run Lighthouse on the deployed URL; (3) decide domain, then add canonical + `og:image` (+ optional LocalBusiness JSON-LD from `SHOP` in `src/data.ts`).
+
+CONTINUE FROM HERE (next Claude): read this file and README.md; run `git status` and inspect the real code; re-run `npm ci`, `npm run build`, `npm test` yourself instead of trusting the results above; do not redo the items listed as done; keep the photo picks, palette, tags and copy; update this same file. If `npm` is blocked by a proxy (403), say so and work from source only. Do not commit or push without the owner's approval. Section 12's file list and STOP POINT below are older (v4.3); README.md and this block are current.
 
 ## v5 UPDATE (2026-10-24): phone-first redesign implemented and built
 

@@ -7,7 +7,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "images": "node scripts/make-images.mjs",
-    "test": "node --test src/wa.test.js src/picks.test.js",
+    "test": "node --test src/wa.test.js src/picks.test.js src/path.test.js",
     "images:simple": "node scripts/copy-images.mjs",
     "shots": "node scripts/shots.mjs"
   },

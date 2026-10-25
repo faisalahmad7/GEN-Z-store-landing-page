@@ -35,11 +35,11 @@ export default function Footer() {
           <a className="btn alt" href={SHOP.insta} target="_blank" rel="noopener noreferrer">@genz.formens ↗</a>
         </div>
       </div>
-      <nav className="fnav" aria-label="Rooms">
+      <nav className="fnav" aria-label="Footer rooms">
         {CATS.map((c) => <Link key={c.id} to={'/' + c.id}>{c.word}</Link>)}
       </nav>
       <div className="fseal"><Seal id="seal-foot" /><p>Authentic, branded and genuine: the shop's promise.</p></div>
-      <div className="fw" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
+      <div className="fw" role="img" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
       <div className="fbot"><span className="fmk"><Mark /></span><p>© GEN-Z men's boutique · Kondhwa, Pune</p><button type="button" onClick={() => toTop(false)}>BACK TO TOP ↑</button></div>
     </footer>
   )

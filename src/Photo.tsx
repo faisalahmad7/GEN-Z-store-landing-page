@@ -31,7 +31,7 @@ export const portraits = (l: PhotoEntry[], n: number) => [...l.filter((p) => p.o
 // gallery = the set this photo belongs to; passing it makes the photo clickable (opens the viewer at this photo).
 export function Photo({ p, alt, eager, sizes = '(min-width: 800px) 33vw, 50vw', gallery }: { p: PhotoEntry; alt: string; eager?: boolean; sizes?: string; gallery?: PhotoEntry[] }) {
   const open = () => openLightbox(gallery!, Math.max(0, gallery!.indexOf(p)))
-  const zoom = gallery ? { onClick: open, onKeyDown: (e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open() } }, role: 'button', tabIndex: 0, 'data-cursor': 'VIEW', className: 'zoomable' } : {}
+  const zoom = gallery ? { onClick: open, onKeyDown: (e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open() } }, role: 'button', tabIndex: 0, className: 'zoomable' } : {}
   return (
     <img src={p.src} srcSet={p.srcset || undefined} sizes={p.srcset ? sizes : undefined} width={p.w} height={p.h} alt={alt} style={p.c ? { backgroundColor: p.c } : undefined}
       loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'auto'} decoding="async" {...zoom} />
