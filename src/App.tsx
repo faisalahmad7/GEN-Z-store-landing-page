@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useRef } from 'react'
 import { CATS } from './data'
+import { buildWaLink } from './wa.js'
 import { Link, usePath } from './router'
 import { ICONS, Mark } from './Icons'
 import Lightbox from './Lightbox'
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#main" onClick={(e) => { e.preventDefault(); main.current?.focus() }}>Skip to content</a>
+      <header className="top"><Link to="/" className="logo" aria-label="GEN-Z home"><Mark /><b>GEN-Z</b></Link><a className="topcta" href={buildWaLink()} target="_blank" rel="noopener noreferrer">WHATSAPP ↗</a></header>
       <main id="main" className="page" key={path} ref={main} tabIndex={-1}>
         {cat ? (
           <Suspense fallback={<div className="loading">GEN-Z</div>}><Category cat={cat} /></Suspense>

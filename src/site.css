@@ -2,7 +2,7 @@
    World: a tactile street boutique. Hang-tags, hard offset shadows, real shop photos, one loud display face (Anton) with a mono UI face and an editorial serif.
    Motion: GSAP only plays short once-only intros (see src/motion.ts); every rule below renders the finished state without it. */
 :root{
-  --ink:#111;--paper:#ece5d8;--night:#0e0e0f;--brass:#d4a94f;--rust:#c8431f;
+  --ink:#0a0a0f;--paper:#f4efe6;--night:#0a0a0f;--brass:#c6ff3d;--rust:#ff4d2e;--cobalt:#2b4bff;--pink:#ff9ad5;
   --display:'Anton',Impact,'Arial Black',sans-serif;--mono:'Space Mono',ui-monospace,Menlo,monospace;--serif:'Playfair Display',Georgia,serif;
   --dock:64px;--focus:var(--brass);
 }
@@ -25,7 +25,8 @@ button{font:inherit;color:inherit}
 .lw{display:inline-block}.li{display:inline-block}
 .wob{animation:wob .5s ease-out}
 @keyframes wob{30%{scale:1.22 .8}60%{scale:.92 1.1}}
-.big{font:400 clamp(2.4rem,12.5vw,5.5rem)/.92 var(--display);overflow-wrap:break-word}
+.big{font:400 clamp(2.6rem,14vw,6.5rem)/.9 var(--display);overflow-wrap:break-word;text-shadow:.035em .035em 0 var(--rust)}
+.trust .big,.lvt .big{text-shadow:.035em .035em 0 #000}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border:2px solid #111;background:var(--paper);color:#111;font:700 .9rem var(--mono);letter-spacing:.04em;text-decoration:none;box-shadow:4px 4px 0 var(--rust);cursor:pointer;text-align:center}
 .btn.alt{background:#111;color:var(--paper);border-color:var(--paper)}
 .btn:active{translate:2px 2px;box-shadow:2px 2px 0 var(--rust)}
@@ -45,7 +46,7 @@ button{font:inherit;color:inherit}
 .hbg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .hero.hub::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,8,9,.35) 0%,rgba(8,8,9,.05) 28%,rgba(8,8,9,.55) 58%,rgba(8,8,9,.94) 86%)}
 .htags{display:flex;justify-content:space-between;gap:6px;padding-top:0;margin-bottom:auto}
-.ht{position:relative;display:block;width:clamp(60px,18vw,92px);padding-top:calc(var(--sl)*1px);color:#111;text-decoration:none;transform-origin:50% 0;rotate:calc((var(--i) - 1.5)*3deg)}
+.ht{position:relative;display:block;width:clamp(66px,20vw,98px);padding-top:calc(var(--sl)*1px);color:#111;text-decoration:none;transform-origin:50% 0;rotate:calc((var(--i) - 1.5)*3deg)}
 .ht i{position:absolute;left:50%;top:0;width:2px;height:calc(var(--sl)*1px + 16px);background:var(--paper);translate:-50% 0}
 .ht b{position:relative;display:grid;justify-items:center;gap:4px;padding:20px 4px 12px;background:var(--tc);border:2.5px solid #111;border-radius:6px 6px 8px 8px;box-shadow:3px 3px 0 #111}
 .ht b::before{content:"";position:absolute;top:6px;left:50%;width:9px;height:9px;border-radius:50%;background:#111;translate:-50% 0}
@@ -54,11 +55,11 @@ button{font:inherit;color:inherit}
 .ht .wd{writing-mode:vertical-rl;font:400 clamp(.95rem,4.2vw,1.2rem)/1 var(--display);letter-spacing:.06em}
 .hub .mega{width:100%;font:400 clamp(5rem,44vw,18rem)/.84 var(--display);white-space:nowrap;color:var(--paper);text-shadow:.04em .04em 0 #000}
 .hub .mega .lw:nth-child(2){color:var(--rust)}.hub .mega .lw:nth-child(3){color:var(--brass)}.hub .mega .lw:nth-child(4){color:var(--rust)}
-.hub .sub{font:italic 400 1.15rem/1.4 var(--serif);max-width:30ch}
+.hub .sub{font:italic 700 1.25rem/1.35 var(--serif);max-width:30ch;text-shadow:0 2px 12px rgba(0,0,0,.7)}
 .hub .meta{display:flex;flex-wrap:wrap;align-items:center;gap:0 14px;font:700 .72rem/1.5 var(--mono);letter-spacing:.04em;color:var(--paper)}
 .hub .meta button{background:none;border:0;min-height:44px;padding:0 4px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:inherit}
 
-.marquee{overflow:hidden;background:var(--brass);color:#111;border-block:2px solid #111;white-space:nowrap;font:1.5rem/1 var(--display);padding:12px 0;letter-spacing:.03em}
+.marquee{position:relative;z-index:3;overflow:hidden;background:var(--brass);color:#111;border-block:3px solid #111;white-space:nowrap;font:clamp(1.6rem,6vw,2.6rem)/1 var(--display);padding:14px 0;letter-spacing:.04em;margin:-18px -12px -18px;rotate:-1.6deg;box-shadow:0 10px 0 rgba(0,0,0,.35)}
 .marquee>div{display:inline-block;animation:mq 30s linear infinite}
 @keyframes mq{to{translate:-33.333% 0}}
 
@@ -75,7 +76,7 @@ button{font:inherit;color:inherit}
 .rm{font:700 .72rem var(--mono);letter-spacing:.08em}.rm b{font:400 1.4rem var(--display);letter-spacing:0}
 .rw{width:100%;font:400 clamp(3rem,22vw,10rem)/.9 var(--f);white-space:nowrap;color:var(--ink);text-shadow:.04em .04em 0 var(--ac)}
 .rl{font:italic 400 1.1rem/1.35 var(--serif);max-width:26ch}
-.rp{position:relative;width:min(72vw,calc((100svh - 340px)*.75));min-width:150px;max-width:100%;border:3px solid var(--ink);background:var(--ac);box-shadow:8px 8px 0 var(--ac)}
+.rp{position:relative;width:min(84vw,calc((100svh - 340px)*.75));min-width:150px;max-width:100%;border:3px solid var(--ink);background:var(--ac);box-shadow:8px 8px 0 var(--ac)}
 .rp img{width:100%;height:auto}
 .rp.nop{aspect-ratio:3/4;display:grid;place-items:center}.rp.nop svg{width:45%}
 .room:nth-child(even) .rp{align-self:flex-end;margin-right:10px}
@@ -96,11 +97,11 @@ button{font:inherit;color:inherit}
 .r-perfumes .rp img{aspect-ratio:3/4;object-fit:cover}
 
 /* ---------- level up: the shop's real wall sign ---------- */
-.lvl{position:relative;isolation:isolate;min-height:90svh;display:grid;align-items:end;overflow:hidden;background:#000;border-top:3px solid #111}
+.lvl{position:relative;isolation:isolate;min-height:90svh;display:grid;align-items:end;grid-template-columns:minmax(0,1fr);overflow:hidden;background:#000;border-top:3px solid #111}
 .lvbg{position:absolute;inset:0;z-index:-2}
 .lvbg img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .lvl::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,0) 70%)}
-.lvt{display:grid;justify-items:start;gap:8px;padding:24px 16px calc(var(--dock) + env(safe-area-inset-bottom) + 28px)}
+.lvt{display:grid;justify-items:start;gap:8px;grid-template-columns:minmax(0,1fr);padding:24px 16px calc(var(--dock) + env(safe-area-inset-bottom) + 28px)}
 .lvt small{font:700 .72rem var(--mono);letter-spacing:.1em;color:var(--brass)}
 .lvl-l{width:100%;font:400 clamp(3rem,20vw,9rem)/.9 var(--display);white-space:nowrap;text-shadow:.04em .04em 0 #000}
 .lvl-l.hot{color:var(--brass)}
@@ -136,7 +137,7 @@ button{font:inherit;color:inherit}
 .rc small{display:block;margin-top:10px;font:700 .72rem var(--mono);letter-spacing:.06em}
 
 /* ---------- footer / visit ---------- */
-.foot{background:#080809;color:var(--paper);padding:64px 16px calc(var(--dock) + env(safe-area-inset-bottom) + 28px);display:grid;gap:28px;overflow:hidden;border-top:3px solid var(--brass)}
+.foot{background:#080809;color:var(--paper);padding:64px 16px calc(var(--dock) + env(safe-area-inset-bottom) + 28px);display:grid;gap:28px;grid-template-columns:minmax(0,1fr);overflow:hidden;border-top:3px solid var(--brass)}
 .fcta{display:grid;gap:18px;justify-items:start}
 .shopfig{width:min(72vw,320px);border:3px solid var(--paper);rotate:-1.5deg;box-shadow:8px 8px 0 var(--rust)}
 .shopfig img{width:100%;height:auto}
@@ -158,7 +159,7 @@ button{font:inherit;color:inherit}
 .dock a{position:relative;display:grid;justify-items:center;align-content:center;gap:3px;min-height:var(--dock);padding:6px 0;color:var(--paper);text-decoration:none;--mark-bg:var(--night)}
 .dock a.on{background:var(--brass);color:#111;--mark-bg:var(--brass);--focus:#111}
 .dock svg{width:22px;height:22px;display:block}
-.dock b{font:700 .5rem/1 var(--mono);letter-spacing:0}
+.dock b{font:700 .56rem/1 var(--mono);letter-spacing:0}
 .dock a:focus-visible{outline-offset:-4px}
 
 /* ---------- lightbox ---------- */
@@ -219,15 +220,15 @@ button{font:inherit;color:inherit}
 .masonry{columns:2;column-gap:12px}
 .masonry figure{break-inside:avoid;margin:0 0 12px;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ac);background:var(--ac)}
 .masonry img{width:100%;height:auto}
-.next{background:var(--nbg);color:var(--nink);padding:64px 16px 56px;display:grid;gap:8px;border-top:3px solid var(--ink);--focus:var(--nink)}
+.next{background:var(--nbg);color:var(--nink);padding:64px 16px 56px;display:grid;gap:8px;grid-template-columns:minmax(0,1fr);border-top:3px solid var(--ink);--focus:var(--nink)}
 .next small{font:700 .75rem var(--mono);letter-spacing:.1em}
 .nw{display:block;width:100%;font:400 clamp(3rem,20vw,12rem)/.9 var(--nf);white-space:nowrap;color:var(--nink);text-shadow:.04em .04em 0 var(--nac);text-decoration:none}
 .t-perfumes .nw,.next .nw{min-height:44px}
 
 /* ---------- tablet and desktop ---------- */
 @media (min-width:800px){
-  .hero.hub{padding:0 48px 64px;gap:18px}
-  .ht{width:100px}
+  .hero.hub{padding:0 48px 110px;gap:18px}
+  .ht{width:128px}.ht .wd{font-size:1.5rem}.ht .ico svg{width:30px;height:30px}.ht small{font-size:.8rem}
   .hub .mega{font-size:min(20vw,22rem)}
   .hub .sub{font-size:1.4rem;max-width:34ch}
   .row .btn{flex:0 0 auto}
@@ -250,12 +251,21 @@ button{font:inherit;color:inherit}
   .mega.word{font-size:min(11vw,11rem)}
   .masonry{columns:3;column-gap:18px}.masonry figure{margin-bottom:18px}
   .lb img{max-height:88svh}
+  /* desktop: the phone dock becomes a compact floating pill, not a bar stretched across the screen */
+  .dock{left:50%;right:auto;bottom:calc(14px + env(safe-area-inset-bottom));width:min(560px,calc(100% - 32px));translate:-50% 0;border:3px solid var(--brass);border-radius:999px;overflow:hidden;padding-bottom:0;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+  .dock b{font-size:.7rem}
+  /* desktop room pages: text block sits in the vertical middle beside the photo stack */
+  .hero.cat{grid-template-rows:1fr repeat(6,auto) 1fr;row-gap:0}
+  .hero.cat>*:not(.collage):not(.contour){margin-block:7px}
+  .hero.cat>.tag{grid-row:2}.hero.cat>.mega{grid-row:3}.hero.cat>.rail{grid-row:4}.hero.cat>.sub{grid-row:5}.hero.cat>.tray{grid-row:6}.hero.cat>.row{grid-row:7}
+  .hero.cat>.collage{grid-row:1/9}
 }
 @media (hover:hover) and (pointer:fine){
   .btn{transition:translate .15s,box-shadow .15s}.btn:hover{translate:0 -2px;box-shadow:4px 6px 0 var(--rust)}
   .srow figure,.masonry figure{transition:rotate .25s ease,scale .25s ease}
   .masonry figure:hover{rotate:-1deg;scale:1.02}.srow figure:hover{rotate:1deg;scale:1.03}
   .dock a:not(.on):hover{background:#1c1c1e}
+  .room .rp{transition:rotate .3s ease,translate .3s ease}.room .rp:hover{rotate:0deg;translate:0 -6px}
 }
 @media (prefers-reduced-motion:reduce){
   .marquee>div,.page,.lb{animation:none}
@@ -266,3 +276,98 @@ button{font:inherit;color:inherit}
 @media (max-height:640px) and (max-width:799px){.hub .sub{display:none}}
 /* headings stay invisible until the display fonts are in (see main.tsx), so the font swap never shifts the layout */
 html:not(.fonts-ok) :is(.mega,.rw,.nw,.fw,.lvl-l,.mani-b,.big,.tc b,.gscore b){visibility:hidden}
+
+/* ================= v7 REDESIGN: electric street-drop identity =================
+   Palette: ink #0a0a0f, bone #f4efe6, acid lime (--brass), hot coral (--rust), cobalt, pink. Rooms are set in src/data.ts.
+   Shape language: fat borders, pill buttons, rounded photo "stickers", hard shadows. */
+:root{--r:18px;--bd:3px solid #0a0a0f}
+body{background:#0a0a0f}
+/* header */
+.top{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:max(env(safe-area-inset-top),10px) 14px 10px;pointer-events:none}
+.top>*{pointer-events:auto}
+.logo{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 10px;background:#0a0a0f;color:var(--paper);border:3px solid var(--brass);border-radius:999px;text-decoration:none;--mark-bg:#0a0a0f;box-shadow:3px 3px 0 var(--rust)}
+.logo b{font:400 1.35rem/1 var(--display);letter-spacing:.04em}.logo svg{width:26px;height:26px;display:block}
+.topcta{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--brass);color:#0a0a0f;border:3px solid #0a0a0f;border-radius:999px;font:700 .78rem var(--mono);letter-spacing:.06em;text-decoration:none;box-shadow:3px 3px 0 #0a0a0f}
+.topcta:active{translate:2px 2px;box-shadow:1px 1px 0 #0a0a0f}
+.hero.hub{padding-top:70px}.hero.cat{padding-top:max(calc(env(safe-area-inset-top) + 72px),84px)}.room{padding-top:max(calc(env(safe-area-inset-top) + 72px),84px)}
+/* buttons: pills */
+.btn{border-radius:999px;border:3px solid #0a0a0f;min-height:52px;padding:0 26px;font-size:.88rem;box-shadow:4px 4px 0 var(--rust);background:var(--brass);color:#0a0a0f}
+.btn.alt{background:#0a0a0f;color:var(--paper);border-color:var(--paper);box-shadow:4px 4px 0 var(--brass)}
+.themed .btn{border-radius:999px;background:var(--ink);color:var(--bg);box-shadow:4px 4px 0 var(--ac)}
+.tag{border-radius:999px;padding:9px 16px;background:var(--brass);color:#0a0a0f;border:3px solid #0a0a0f;box-shadow:3px 3px 0 #0a0a0f}
+.cat .tag{background:var(--ink);color:var(--bg);border-color:var(--ink);box-shadow:3px 3px 0 var(--ac)}
+/* hang-tags */
+.ht b{border-radius:14px;border-width:3px;box-shadow:4px 4px 0 #0a0a0f}
+.hub .mega{text-shadow:.045em .045em 0 var(--cobalt)}
+.hub .mega .lw:nth-child(2){color:var(--brass)}.hub .mega .lw:nth-child(3){color:var(--paper)}.hub .mega .lw:nth-child(4){color:var(--rust)}
+.hub .mega .lw:nth-child(5){color:var(--pink)}
+.hero.hub::after{background:linear-gradient(180deg,rgba(10,10,15,.55) 0%,rgba(10,10,15,.1) 26%,rgba(10,10,15,.6) 58%,rgba(10,10,15,.96) 88%)}
+.marquee{background:var(--rust);color:#0a0a0f;border-color:#0a0a0f}
+.marquee span:nth-child(3n+2){color:var(--paper)}
+/* manifesto: cobalt slab */
+.mani{background:var(--cobalt);color:var(--paper);border-bottom:3px solid #0a0a0f;--focus:var(--brass);padding-block:96px 88px}
+.mani small{color:var(--brass)}.mani-b .hot{color:var(--brass)}.mani .ul{background:var(--brass)}
+.mani p{font-size:1.35rem}
+/* rooms: giant outlined numerals, rounded photo stickers */
+.room{border-top:3px solid #0a0a0f;border-radius:28px 28px 0 0;margin-top:-22px}
+.rm b{display:block;font:400 clamp(5rem,26vw,9rem)/.8 var(--display);color:transparent;-webkit-text-stroke:3px var(--ink);letter-spacing:0}
+.rw{text-shadow:.04em .04em 0 var(--ac)}
+.rp{border-radius:var(--r);border-width:4px;box-shadow:10px 10px 0 var(--ac);overflow:hidden}
+.r-clothing .rp,.r-accessories .rp{overflow:visible}
+.r-clothing .rp{background:#fff;border-radius:var(--r)}
+.r-footwear .rp{border-radius:var(--r);overflow:hidden}
+.room .rb{box-shadow:5px 5px 0 var(--ac)}
+.r-footwear .rw,.r-perfumes .rw{text-shadow:.04em .04em 0 #0a0a0f}
+.r-accessories .rw{text-shadow:.05em .05em 0 var(--paper)}
+/* level-up sign */
+.lvl-l.hot{color:var(--brass);text-shadow:.04em .04em 0 var(--cobalt)}
+/* trust: three bordered cards */
+.trust{background:#0a0a0f;border-top:3px solid var(--brass);padding-block:88px 72px}
+.tcs{gap:16px}
+.tc{border:3px solid var(--paper);border-radius:var(--r);padding:22px;background:rgba(244,239,230,.04);box-shadow:6px 6px 0 var(--cobalt)}
+.tc:nth-child(2){box-shadow:6px 6px 0 var(--rust)}.tc:nth-child(3){box-shadow:6px 6px 0 var(--brass)}
+.tc b{color:var(--brass);-webkit-text-stroke:0}
+/* photo rail */
+.strip{background:var(--paper);border-top:3px solid #0a0a0f}
+.srow figure{border-radius:var(--r);overflow:hidden;border-width:4px;box-shadow:6px 6px 0 var(--cobalt)}
+.srow figure:nth-child(even){translate:0 14px;box-shadow:6px 6px 0 var(--rust)}
+/* reviews: lime slab with cards */
+.proof{background:var(--brass);color:#0a0a0f}
+.rc{background:var(--paper);border:3px solid #0a0a0f;border-radius:var(--r);padding:22px;box-shadow:6px 6px 0 #0a0a0f;margin-bottom:18px}
+.rc.q0{background:#0a0a0f;color:var(--brass)}
+.rcs{gap:0}
+/* footer */
+.foot{background:#0a0a0f;border-top:3px solid var(--brass);border-radius:28px 28px 0 0;margin-top:-22px;position:relative}
+.fw{color:transparent;-webkit-text-stroke:2px var(--brass)}.fw .lw:nth-child(2n){color:var(--brass);-webkit-text-stroke:0}
+.shopfig{border-radius:var(--r);overflow:hidden;border-color:var(--brass);box-shadow:8px 8px 0 var(--cobalt)}
+.foot .btn{background:var(--brass);color:#0a0a0f;border-color:#0a0a0f}.foot .btn.alt{background:var(--paper)}
+/* dock */
+.dock{background:#0a0a0f;border-top:3px solid var(--brass)}.dock a.on{background:var(--brass)}
+/* category pages: rounded stickers, per-room signatures */
+.collage figure{border-radius:var(--r);overflow:hidden;border-width:4px;box-shadow:8px 8px 0 var(--ac)}
+.h-clothing .collage figure{overflow:visible}
+.h-perfumes .collage figure{border-radius:999px 999px var(--r) var(--r)}
+.h-footwear .collage::before{background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(198,255,61,.22) 14px 24px)}
+.masonry figure,.feature{border-radius:var(--r);overflow:hidden;border-width:4px}
+.feature{margin-inline:0;border:4px solid var(--ink)}
+.masonry figure:nth-child(3n+1){box-shadow:6px 6px 0 var(--ac)}.masonry figure:nth-child(3n+2){box-shadow:-6px 6px 0 var(--ac)}
+.chips button{border-radius:999px;border-width:3px}
+.sticker{border-radius:999px}
+.next{border-radius:28px 28px 0 0;margin-top:-22px;position:relative;border-top:3px solid #0a0a0f}
+.t-clothing .mega.word{text-shadow:.045em .045em 0 var(--ac)}
+@media (min-width:800px){
+  .top{padding-inline:32px}
+  .logo b{font-size:1.6rem}.topcta{font-size:.86rem;padding:0 22px}
+  .rm b{font-size:11rem}
+  .room{margin-top:-30px}
+}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover,.topcta:hover{translate:0 -3px;box-shadow:5px 8px 0 var(--rust)}
+  .tc,.rc{transition:translate .2s ease,box-shadow .2s ease}.tc:hover,.rc:hover{translate:-3px -3px}
+  .ht{transition:rotate .25s ease}.ht:hover{rotate:0deg}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero .tag,.hero .sub,.hero .row,.hero .meta{animation:rise .6s cubic-bezier(.22,1,.36,1) both}
+  .hero .sub{animation-delay:.15s}.hero .row{animation-delay:.25s}.hero .meta{animation-delay:.35s}
+  @keyframes rise{from{opacity:0;translate:0 22px}}
+}
