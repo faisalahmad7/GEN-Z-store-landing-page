@@ -19,7 +19,7 @@ Audit summary (read from source, current HEAD):
 - Pinned picks (`PICKS`, `SIGN_PHOTO`) all resolve (`src/picks.test.js` passes).
 - `scripts/make-images.mjs` DELETES `public/photos` before regenerating and reads `D:\WEBDEV\GEN Z mens boutique\IMAGES`; `photos-in/` holds only a README. Do not run it without the originals, or the photos are gone (they are in git, so recoverable).
 
-Changes (files: `src/router.tsx`, `src/path.js` new, `src/path.test.js` new, `src/App.tsx`, `src/Footer.tsx`, `src/Photo.tsx`, `index.html`, `package.json`):
+Changes (files: `src/router.tsx`, `src/path.js` new, `src/path.test.js` new, `src/App.tsx`, `src/Footer.tsx`, `src/Photo.tsx`, `index.html`, `package.json`, plus v6b: `src/site.css`, `scripts/shots.mjs`):
 1. `Link` no longer swallows ctrl/cmd/shift/alt-click or middle-click (open-in-new-tab was broken); it now forwards any `<a>` prop.
 2. `/clothing/`, `/Clothing` etc. rendered the HOME page (exact string match). New `normPath` (strip trailing slashes, lowercase) used by `usePath` and `go`. Covered by `src/path.test.js`; `npm test` now runs it.
 3. Dock links get `aria-current="page"` (only a CSS class before).
@@ -29,6 +29,12 @@ Changes (files: `src/router.tsx`, `src/path.js` new, `src/path.test.js` new, `sr
 7. `index.html`: Open Graph + twitter:card tags reusing the existing title/description. No `og:image` or canonical, because the final domain is unknown.
 Tests run: `node --test src/wa.test.js src/picks.test.js src/path.test.js` = 5 pass, 0 fail (an earlier run of the original two files: 3 pass). Syntax-only esbuild transpile of the 5 changed source files = OK. NOT run: `npm run build`, `tsc`, lint (none configured), any browser, reduced-motion test, Lighthouse.
 Side effects to check on first real build: `Link` prop typing (now `ComponentProps<'a'>`), `.js` import from TSX (same pattern as `wa.js`).
+
+v6b (same day, after the owner supplied genz.mhtml and Chromium turned out to be available in the sandbox): rendered the real `src/` in Chromium via an esbuild bundle with gsap STUBBED (no tweens, so every section shows its settled final state) and system fallback fonts (Anton/Playfair/Space Mono NOT available, so type metrics differ from production). The saved genz.mhtml itself only embeds 2 of 25 photos and no fonts, so it was not used for visuals.
+- BUG FOUND + FIXED (`src/site.css`): `.foot`, `.next`, `.lvl`, `.lvt` are `display:grid` with no column template, so the implicit column grew to the widest `white-space:nowrap` child (GEN-Z wordmark, NEXT ROOM link, "TO LEVEL UP." line). Result in the render: footer DIRECTIONS/@genz.formens buttons, the PERFUMES link, BACK TO TOP and the last letters of "UP." were cut off at the right edge. `useFit` could not help because it measures the already-inflated container. Fix: `grid-template-columns:minmax(0,1fr)` on those four rules. Real impact: any phone where the display fonts miss the 2.5 s cap in `main.tsx` (fallback face is wider); with Anton loaded it may already have fit.
+- WHY EARLIER CHECKS MISSED IT: `.page{overflow-x:clip}` means `document.scrollWidth` always equals the screen width, so the old "no horizontal overflow" check could never fail. `scripts/shots.mjs` now also fails on any element whose box passes the screen edge.
+- Verified (preview harness, NOT production, NOT real fonts): 5 routes x widths 360/390/430/768/1024/1440 = 30 combinations, zero elements past the screen edge after the fix (before: footer + level-up + next-room clipped on the home page and every room page at 360-430). Looked at screenshots of home (full page) and /footwear at 390 px.
+- Still NOT verified: real fonts, GSAP animations (stubbed), hero tag drag, real photos on retina, `npm run build`, iPhone.
 
 OUTSTANDING
 - Unverified: `npm run build`/`tsc` on these edits; browser behaviour of every route, hero tag drag (click-vs-drag on the `<a>` tags), reduced motion, real iPhone, Lighthouse; production vs HEAD comparison.

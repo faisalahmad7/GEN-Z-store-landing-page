@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { PhotoEntry } from './Photo'
+import { buildWaLink } from './wa.js'
 
 // Click any photo to open it large. Esc closes, arrow keys / buttons / swipe move through the set.
 // Focus moves into the dialog, Tab stays inside it, and focus returns to the photo that opened it.
@@ -28,7 +29,7 @@ export default function Lightbox() {
       else if (e.key === 'ArrowRight') setS({ ...s, i: (s.i + 1) % n })
       else if (e.key === 'ArrowLeft') setS({ ...s, i: (s.i - 1 + n) % n })
       else if (e.key === 'Tab') { // keep focus inside the dialog
-        const f = box.current!.querySelectorAll<HTMLElement>('button')
+        const f = box.current!.querySelectorAll<HTMLElement>('button,a')
         const a = document.activeElement
         if (e.shiftKey && a === f[0]) { e.preventDefault(); f[f.length - 1].focus() }
         else if (!e.shiftKey && a === f[f.length - 1]) { e.preventDefault(); f[0].focus() }
@@ -46,6 +47,7 @@ export default function Lightbox() {
       onTouchStart={(e) => { x0.current = e.touches[0].clientX }}
       onTouchEnd={(e) => { const d = e.changedTouches[0].clientX - x0.current; if (n > 1 && Math.abs(d) > 50) go(d < 0 ? 1 : -1) }}>
       <img key={big(p)} src={big(p)} alt={`GEN-Z photo ${s.i + 1} of ${n}, enlarged`} style={p.c ? { backgroundColor: p.c } : undefined} onClick={(e) => e.stopPropagation()} />
+      <a className="lb-ask" href={buildWaLink([`this photo (${p.src.split('/').pop()!.replace(/-\d+\.webp$/, '')})`])} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>ASK ABOUT THIS ↗</a>
       <button type="button" className="lb-x" aria-label="Close photo viewer" autoFocus onClick={() => setS(null)}>✕</button>
       {n > 1 && <>
         <button type="button" className="lb-n lb-l" aria-label="Previous photo" onClick={(e) => { e.stopPropagation(); go(-1) }}>‹</button>

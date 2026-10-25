@@ -7,7 +7,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "images": "node scripts/make-images.mjs",
-    "test": "node --test src/wa.test.js src/picks.test.js src/path.test.js",
+    "test": "node --test src/wa.test.js src/picks.test.js src/path.test.js src/hours.test.js",
     "images:simple": "node scripts/copy-images.mjs",
     "shots": "node scripts/shots.mjs"
   },
@@ -17,7 +17,8 @@
     "react-dom": "^19.0.0",
     "@fontsource/anton": "^5.0.0",
     "@fontsource/permanent-marker": "^5.0.0",
-    "@fontsource/playfair-display": "^5.0.0",
+    "@fontsource/bricolage-grotesque": "^5.0.0",
+    "@fontsource/instrument-serif": "^5.0.0",
     "gsap": "^3.13.0"
   },
   "devDependencies": {

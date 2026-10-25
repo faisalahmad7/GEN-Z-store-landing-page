@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { CATS, FACTS, REVIEWS, SHOP, SIGN_PHOTO } from '../data'
 import { Link } from '../router'
 import { buildWaLink } from '../wa.js'
+import { Lab, OpenNow, Shelf } from '../Extras'
 import { ICONS } from '../Icons'
 import { Photo, byId, mixed, photosFor, picks } from '../Photo'
 import { openLightbox } from '../Lightbox'
@@ -124,7 +125,7 @@ export default function Hub() {
           <a className="btn" href={SHOP.maps} target="_blank" rel="noopener noreferrer">DIRECTIONS ↗</a>
           <a className="btn alt" href={buildWaLink()} target="_blank" rel="noopener noreferrer">WHATSAPP</a>
         </div>
-        <p className="meta"><span>{FACTS.rating}★ on Google ({FACTS.reviews} reviews)</span><span>{FACTS.opens}</span>{shop.length > 0 && <button type="button" onClick={() => openLightbox(shop, 0)}>look inside ▣</button>}</p>
+        <p className="meta"><span>{FACTS.rating}★ on Google ({FACTS.reviews} reviews)</span><OpenNow />{shop.length > 0 && <button type="button" onClick={() => openLightbox(shop, 0)}>look inside ▣</button>}</p>
       </section>
 
       <div className="marquee" aria-hidden="true"><div>{[...WORDS, ...WORDS, ...WORDS].map((x, i) => <span key={i}>{x} ✶ </span>)}</div></div>
@@ -154,6 +155,8 @@ export default function Hub() {
 
       <LevelUp />
 
+      <Shelf />
+
       <section className="trust" aria-label="Why GEN-Z">
         <Seal id="seal-trust" className="tseal" />
         <h2 className="big">WHY GEN-Z.</h2>
@@ -162,9 +165,11 @@ export default function Hub() {
         </ol>
       </section>
 
+      <Lab />
+
       <section className="strip" aria-label="Photos from the shop">
         <h2 className="big">THE FLOOR, UP CLOSE.</h2>
-        <p className="swipe"><span aria-hidden="true">←→</span> swipe the rail · tap a photo to open</p>
+        <p className="swipe">tap any photo to open it big</p>
         <div className="srow" role="list">
           {pool.map((p) => <figure key={p.src} role="listitem"><Photo p={p} alt="Inside GEN-Z, Kondhwa" sizes="(min-width:800px) 26vw, 62vw" gallery={pool} /></figure>)}
         </div>

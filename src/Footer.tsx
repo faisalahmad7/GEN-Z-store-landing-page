@@ -1,5 +1,7 @@
 import { useRef } from 'react'
-import { CATS, FACTS, SHOP } from './data'
+import { CATS, SHOP } from './data'
+import { OpenNow } from './Extras'
+import { fmt, HOURS } from './hours.js'
 import { Link } from './router'
 import { buildWaLink } from './wa.js'
 import { Photo, photosFor } from './Photo'
@@ -26,7 +28,9 @@ export default function Footer() {
         {door && <figure className="shopfig"><Photo p={door} alt="Inside the GEN-Z men's boutique, Kondhwa" sizes="(min-width:800px) 40vw, 80vw" gallery={shop} /></figure>}
         <h2 className="big">COME IN.<br />SAY HELLO.</h2>
         <address>
-          Shop No 17, HM Royal Society,<br />opposite the main gate,<br />Kondhwa, Pune 411048<small>{FACTS.opens}</small>
+          Shop No 17, HM Royal Society,<br />opposite the main gate,<br />Kondhwa, Pune 411048<small>Kondhwa Road, near Talab Masjid.</small>
+          <dl className="hrs"><dt>MON–FRI</dt><dd>{fmt(HOURS.week[0])} – {fmt(HOURS.week[1])}</dd><dt>SAT–SUN</dt><dd>{fmt(HOURS.end[0])} – {fmt(HOURS.end[1])}</dd></dl>
+          <OpenNow />
         </address>
         <div className="row">
           <a className="btn" href={SHOP.tel}>CALL {SHOP.phone}</a>

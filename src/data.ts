@@ -4,7 +4,7 @@ export const CATS: { id: Cat; word: string; bg: string; ink: string; ac: string;
   { id: 'clothing', word: 'CLOTHING', bg: '#c6ff3d', ink: '#0a0a0f', ac: '#ff4d2e', font: "'Anton',Impact,sans-serif", line: 'Fits cut to make an entrance.', hero: 'The Rack' },
   { id: 'footwear', word: 'FOOTWEAR', bg: '#2b4bff', ink: '#f4efe6', ac: '#c6ff3d', font: "'Anton',Impact,sans-serif", line: 'Sneakers and loafers that earn the second glance.', hero: 'Sole Lab' },
   { id: 'accessories', word: 'ACCESSORIES', bg: '#ff6a3d', ink: '#0a0a0f', ac: '#f4efe6', font: "'Permanent Marker','Comic Sans MS',cursive", line: 'The small details that do the talking.', hero: 'The Drawer' },
-  { id: 'perfumes', word: 'PERFUMES', bg: '#1a0b2e', ink: '#f6e6ff', ac: '#ff9ad5', font: "'Playfair Display',Georgia,serif", line: 'A scent that walks in before you do.', hero: 'The Scent Bar' },
+  { id: 'perfumes', word: 'PERFUMES', bg: '#1a0b2e', ink: '#f6e6ff', ac: '#ff9ad5', font: "'Instrument Serif',Georgia,serif", line: 'A scent that walks in before you do.', hero: 'The Scent Bar' },
 ]
 export const SHOP = {
   address: 'Shop No 17, HM Royal Society, opp. main gate, Kondhwa, Pune 411048',

@@ -30,11 +30,17 @@ for (const [name, width, height] of SIZES) {
         return l.length > 1 && new Set(l.map((x) => x.offsetTop)).size > 1
       }).map((e) => e.textContent.trim())
       const broken = [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src)
-      return { wrapped, broken, overflowX: document.documentElement.scrollWidth - innerWidth }
+      // .page has overflow-x:clip, so scrollWidth can never show content that is cut off at the screen edge: measure elements instead.
+      const clipped = [...document.querySelectorAll('main *, footer *')].filter((e) => {
+        if (e.closest('.marquee,.srow,svg,.lb,.tray,.hbg,picture,figure,.seal')) return false
+        const b = e.getBoundingClientRect()
+        return b.width > 0 && b.height > 0 && (b.right > innerWidth + 1 || b.left < -1)
+      }).slice(0, 5).map((e) => `${e.tagName.toLowerCase()}.${String(e.className).split(' ')[0]} "${(e.textContent || '').trim().slice(0, 20)}"`)
+      return { wrapped, broken, clipped, overflowX: document.documentElement.scrollWidth - innerWidth }
     })
     await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(300)
     await page.screenshot({ path: `shots/${name}${path === '/' ? '-home' : path.replace('/', '-')}.png`, fullPage: true })
-    const problems = [r.wrapped.length && `heading wrapped: ${r.wrapped}`, r.broken.length && `broken images: ${r.broken.length}`, r.overflowX > 1 && `sideways scroll by ${r.overflowX}px`, errors.length && `console errors: ${errors.join(' | ')}`].filter(Boolean)
+    const problems = [r.wrapped.length && `heading wrapped: ${r.wrapped}`, r.broken.length && `broken images: ${r.broken.length}`, r.overflowX > 1 && `sideways scroll by ${r.overflowX}px`, r.clipped.length && `cut off at the screen edge: ${r.clipped.join(', ')}`, errors.length && `console errors: ${errors.join(' | ')}`].filter(Boolean)
     console.log(`${problems.length ? 'FAIL' : 'ok  '} ${name} ${path}${problems.length ? '  ->  ' + problems.join('; ') : ''}`)
     bad += problems.length
     await page.close()
