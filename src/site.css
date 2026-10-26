@@ -1106,3 +1106,259 @@ small,.swipe,.rm,.meta,.tag,.topcta,.btn,.dock b,.fbot,.foot address small,
   .hero .tag,.hero .sub,.hero .row,.hero .meta{animation:none}
   .btn,.srow figure,.masonry figure,.tc,.rc{transition:none}
 }
+
+
+/* V16 · targeted production polish: visible wordmark, image-fit rails, clean shelves, trust and mobile safety. */
+.hub .mega .lw:nth-child(5) .li{
+  color:#ff6a43;
+  -webkit-text-stroke:1px rgba(8,8,9,.22);
+  text-shadow:4px 4px 0 #080809, 0 0 1px #080809;
+}
+.hub .mega .lw{position:relative;z-index:1}
+.hub .mega .lw:nth-child(5){z-index:2}
+
+/* Hanging category labels must stay on one line as they scale on hover. */
+.ht,.ht b{overflow:visible}
+.ht .wd{
+  white-space:nowrap;
+  word-break:keep-all;
+  overflow-wrap:normal;
+  max-width:none;
+  flex-shrink:0;
+  line-height:1;
+}
+.ht:hover .wd,.ht:focus-visible .wd{white-space:nowrap;word-break:keep-all;overflow-wrap:normal}
+.ht b{transform-origin:top center}
+
+/* Full image frames: never crop product/shop photos just to fill a card. */
+.srow figure{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 clamp(220px,29vw,360px);
+  min-width:0;
+  overflow:hidden;
+  background:#e9e2d7;
+}
+.srow figure img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  background:#e9e2d7;
+}
+
+/* Shelf cards use a real grid and a predictable internal layout, not overlapping layers. */
+.shelf{display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.shelf .big{max-width:100%;line-height:.92;overflow-wrap:normal;text-wrap:balance}
+.shelf-s{font:500 clamp(.98rem,1.35vw,1.12rem)/1.65 var(--head);max-width:65ch}
+.shelf-g{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:stretch;
+  gap:clamp(12px,1.6vw,22px);
+  width:100%;
+  min-width:0;
+}
+.shelf-c{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  min-width:0;
+  min-height:100%;
+  overflow-wrap:anywhere;
+  box-shadow:4px 4px 0 var(--mb);
+}
+.shelf-c>small{
+  display:block;
+  min-height:2.7em;
+  margin-bottom:10px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--ma);
+  color:var(--ink);
+  font:700 .7rem/1.45 var(--mono);
+  letter-spacing:.035em;
+  overflow-wrap:normal;
+}
+.shelf-c ul{display:block;flex:1;min-width:0}
+.shelf-c li{
+  font:500 clamp(.88rem,1vw,.98rem)/1.45 var(--head);
+  overflow-wrap:break-word;
+  hyphens:auto;
+}
+.shelf-c .btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:46px;
+  margin-top:20px;
+  padding:12px 14px;
+  font:700 .68rem/1.3 var(--mono);
+  letter-spacing:.01em;
+  white-space:normal;
+  text-align:center;
+}
+.shelf-l{font-size:.68rem;overflow-wrap:anywhere}
+
+/* Give the shop tour copy a strong, deliberate colour hierarchy. */
+.reel-t{align-self:center;min-width:0}
+.reel-t>small{display:inline-block;margin-bottom:12px;color:#53564e;font:700 .72rem/1.4 var(--mono);letter-spacing:.12em}
+.reel-t .big{line-height:.94;overflow-wrap:normal;text-wrap:balance}
+.reel-t .gold{color:var(--cobalt);text-shadow:3px 3px 0 rgba(43,75,255,.12)}
+.reel-t p{font:500 clamp(1rem,1.4vw,1.15rem)/1.65 var(--head);color:#292a25}
+.reel-t .reel-n{margin-top:8px;color:#55584f;font:600 .72rem/1.5 var(--mono)}
+
+/* Reviews: legible rating, editorial quote cards, aligned source labels. */
+.proof{display:flex;flex-direction:column;min-width:0}
+.proof .big{max-width:100%;line-height:.94;text-wrap:balance}
+.gscore{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px 12px;
+  font:600 clamp(1rem,1.5vw,1.2rem)/1.5 var(--head);
+  max-width:100%;
+}
+.gscore b{font:800 clamp(2.8rem,5.4vw,4.5rem)/.9 var(--display);color:var(--ink);letter-spacing:-.06em}
+.gscore small{
+  display:block;
+  flex-basis:100%;
+  max-width:65ch;
+  margin-top:4px;
+  color:#34352f;
+  font:500 .82rem/1.6 var(--head);
+}
+.rcs{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:stretch;
+  gap:clamp(14px,2vw,24px);
+  width:100%;
+  min-width:0;
+}
+.rc{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:22px;
+  min-width:0;
+  min-height:100%;
+  padding:clamp(22px,2.6vw,34px);
+  overflow-wrap:anywhere;
+  box-shadow:5px 5px 0 var(--ink);
+}
+.rc blockquote{
+  flex:1;
+  font:600 clamp(1.05rem,1.45vw,1.28rem)/1.6 var(--head);
+  letter-spacing:-.015em;
+  text-wrap:pretty;
+}
+.rc small{
+  display:block;
+  width:100%;
+  padding-top:14px;
+  border-top:1px solid currentColor;
+  font:700 .68rem/1.4 var(--mono);
+  letter-spacing:.04em;
+  opacity:.8;
+}
+.rc.q0 blockquote{font-weight:650}
+.rc.q0 small{border-color:rgba(244,240,232,.35)}
+
+/* Branded first-load screen. It exits quickly and respects reduced-motion preferences. */
+.site-loader{
+  position:fixed;
+  z-index:9999;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  padding:24px;
+  background:#080809;
+  color:#f4efe6;
+  opacity:1;
+  animation:loader-enter .22s ease-out both;
+}
+.loader-lockup{display:flex;align-items:center;justify-content:center;gap:12px}
+.loader-lockup img{width:44px;height:36px;object-fit:contain}
+.loader-lockup>span{
+  font:800 clamp(2.5rem,9vw,4.5rem)/.9 var(--display);
+  letter-spacing:-.075em;
+}
+.loader-z{color:var(--brass);text-shadow:3px 3px 0 var(--rust)}
+.loader-track{
+  width:min(220px,58vw);
+  height:4px;
+  overflow:hidden;
+  border-radius:999px;
+  background:rgba(244,239,230,.2);
+}
+.loader-track span{
+  display:block;
+  width:42%;
+  height:100%;
+  border-radius:inherit;
+  background:var(--brass);
+  animation:loader-progress .95s cubic-bezier(.65,0,.35,1) forwards;
+}
+.site-loader>p{font:700 .62rem/1.5 var(--mono);letter-spacing:.14em;text-align:center;color:#c9c4ba}
+@keyframes loader-progress{from{transform:translateX(-110%)}to{transform:translateX(260%)}}
+@keyframes loader-enter{from{opacity:0}to{opacity:1}}
+
+/* Device-safe spacing and layouts, including narrow iPhones and landscape phones. */
+@media (min-width:800px) and (max-width:1100px){
+  .shelf-g{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .shelf-c .btn{font-size:.7rem}
+}
+@media (max-width:799px){
+  .shelf-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .shelf-c{padding:18px}
+  .shelf-c>small{font-size:.62rem}
+  .shelf-c li{font-size:.9rem}
+  .rcs{grid-template-columns:minmax(0,1fr)}
+  .rc{min-height:0}
+  .rc blockquote{font-size:clamp(1.08rem,3.8vw,1.3rem)}
+  .reel{grid-template-columns:minmax(0,1fr);gap:24px}
+  .reel-t .big{font-size:clamp(2.8rem,10vw,5.2rem)}
+  .srow figure{flex-basis:clamp(200px,70vw,300px);height:clamp(230px,65vw,360px)}
+  .hub .mega{font-size:clamp(4rem,19vw,8.2rem);letter-spacing:-.075em}
+}
+@media (max-width:480px){
+  .shelf-g{grid-template-columns:minmax(0,1fr)}
+  .shelf-c{padding:20px}
+  .shelf-c>small{min-height:0;font-size:.68rem}
+  .shelf-c .btn{width:100%;min-height:48px}
+  .proof{gap:18px}
+  .proof .big{font-size:clamp(2.35rem,10vw,3.6rem)}
+  .gscore b{font-size:3.1rem}
+  .gscore small{font-size:.82rem}
+  .rc{padding:22px}
+  .hub .mega{font-size:clamp(3.65rem,18.5vw,5.2rem);letter-spacing:-.07em}
+  .htags{gap:clamp(3px,1vw,6px)}
+  .ht{width:clamp(48px,21vw,72px)}
+  .ht .wd{font-size:.72rem}
+  .ht b{min-height:96px}
+  .reel-f{width:100%;max-width:420px}
+  .site-loader{gap:18px}
+}
+@media (max-width:360px){
+  .hub .mega{font-size:clamp(3.15rem,17.5vw,4rem)}
+  .ht{width:calc((100vw - 52px)/4)}
+  .ht .wd{font-size:.66rem}
+  .ht b{padding-inline:3px}
+  .shelf-c{padding:17px}
+  .top{padding-inline:12px}
+}
+@media (orientation:landscape) and (max-height:500px){
+  .site-loader{gap:12px}
+  .loader-lockup>span{font-size:2.5rem}
+  .hero.hub{min-height:680px}
+}
+@media (prefers-reduced-motion:reduce){
+  .site-loader,.loader-track span{animation:none}
+}
