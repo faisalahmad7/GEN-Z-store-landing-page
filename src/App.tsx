@@ -16,7 +16,7 @@ export default function App() {
   const cat = CATS.find((c) => path === '/' + c.id)
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const id = window.setTimeout(() => setShowLoader(false), reduced ? 250 : 1050)
+    const id = window.setTimeout(() => setShowLoader(false), reduced ? 250 : 1350)
     return () => window.clearTimeout(id)
   }, [])
   useEffect(() => {
@@ -27,12 +27,35 @@ export default function App() {
     <>
       {showLoader && (
         <div className="site-loader" role="status" aria-label="Loading GEN-Z store">
-          <div className="loader-lockup">
-            <img src="/logo-sm.webp" width="44" height="36" alt="" />
-            <span>GEN<span className="loader-z">-Z</span></span>
+          <div className="loader-topline" aria-hidden="true">
+            <span>GEN-Z <i>/</i> MEN'S BOUTIQUE</span>
+            <span>KONDHWA · PUNE</span>
           </div>
-          <div className="loader-track" aria-hidden="true"><span /></div>
-          <p>YOUR NEXT FIT STARTS HERE.</p>
+          <div className="loader-main">
+            <div className="loader-stage" aria-hidden="true">
+              <span className="loader-orbit loader-orbit-a" />
+              <span className="loader-orbit loader-orbit-b" />
+              <span className="loader-orbit-dot" />
+              <div className="loader-logo-frame">
+                <img src="/logo.webp" width="566" height="474" alt="" decoding="async" fetchPriority="high" />
+              </div>
+              <span className="loader-star">✳</span>
+            </div>
+            <div className="loader-copy">
+              <p className="loader-kicker">YOUR NEXT FIT STARTS HERE</p>
+              <div className="loader-progress-meta">
+                <span>PREPARING YOUR EXPERIENCE</span>
+                <span className="loader-live">LOADING</span>
+              </div>
+              <div className="loader-track" role="progressbar" aria-label="Loading GEN-Z store" aria-valuemin={0} aria-valuemax={100}>
+                <span />
+              </div>
+            </div>
+          </div>
+          <div className="loader-bottomline" aria-hidden="true">
+            <span>REAL BRANDS. REAL FITS.</span>
+            <span>CLOTHING · FOOTWEAR · ACCESSORIES · FRAGRANCE</span>
+          </div>
         </div>
       )}
       <a className="skip" href="#main" onClick={(e) => { e.preventDefault(); main.current?.focus() }}>Skip to content</a>
