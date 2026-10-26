@@ -1149,8 +1149,8 @@ small,.swipe,.rm,.meta,.tag,.topcta,.btn,.dock b,.fbot,.foot address small,
   letter-spacing:-.075em;
   font-size:clamp(3rem,7.1vw,8rem);
 }
-.room:hover .r-accessories .rw,
-.room:focus-within .r-accessories .rw{letter-spacing:-.075em}
+.room.r-accessories:hover .rw,
+.room.r-accessories:focus-within .rw{letter-spacing:-.075em}
 
 /* FLOOR, UP CLOSE: a true masonry/photo-wall layout. Cards follow each photo's own
    aspect ratio; the whole image remains visible, inside a double-line editorial frame. */
