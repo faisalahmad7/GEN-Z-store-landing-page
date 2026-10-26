@@ -647,3 +647,98 @@ body{font-size:1.15rem}
 
 @keyframes heroin{from{opacity:0;translate:0 22px}}
 @media (prefers-reduced-motion:no-preference){.hero .tag,.hero .sub,.hero .row,.hero .meta{animation-name:heroin}}
+
+
+/* ================= v13: premium streetwear polish ================= */
+/* A tighter, more intentional rhythm: let the existing brand colours do the work. */
+:root{
+  --surface: #111113;
+  --line: rgba(244,239,230,.16);
+  --ease-out: cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
+body{background:#080809}
+::selection{background:var(--brass);color:var(--ink)}
+a,button{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+.top{
+  background:rgba(8,8,9,.84);
+  border-bottom:1px solid rgba(244,239,230,.09);
+  -webkit-backdrop-filter:blur(18px) saturate(1.25);
+  backdrop-filter:blur(18px) saturate(1.25);
+}
+.logo{transition:opacity .2s ease,translate .2s var(--ease-out)}
+.logo:hover{opacity:.82}
+.topcta{border:1px solid rgba(198,255,61,.48);transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s var(--ease-out)}
+.topcta:hover{transform:translateY(-2px);border-color:var(--brass)}
+.menu{overscroll-behavior:contain}
+.mi{transition:background .24s ease,color .24s ease,padding-left .32s var(--ease-out)}
+.mi:hover{padding-left:clamp(1.25rem,4vw,3.5rem)}
+.btn,.chipb,.dock a,.fnav a{transition:transform .24s var(--ease-out),background-color .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease}
+.btn:focus-visible,.chipb:focus-visible,.dock a:focus-visible,.topcta:focus-visible{outline:3px solid var(--brass);outline-offset:4px}
+.btn:active,.chipb:active,.topcta:active{transform:translateY(1px) scale(.985)}
+.hero.hub{isolation:isolate}
+.hero.hub::before{pointer-events:none}
+.hub .mega{letter-spacing:-.055em;text-wrap:balance}
+.hub .sub{max-width:38rem;text-wrap:pretty}
+.hub .row{gap:.7rem}
+.hub .row .btn{min-height:48px}
+.ht{transition:filter .25s ease,box-shadow .3s var(--ease-out)}
+.ht:hover{filter:brightness(1.045)}
+.mani,.shelf,.lab,.trust,.proof{position:relative}
+.mani,.shelf,.lab,.trust,.proof,.room,.lvl{scroll-margin-top:5rem}
+.mani-b,.shelf .big,.lab .big,.trust .big,.proof .big{text-wrap:balance}
+.room{isolation:isolate}
+.room .rp{overflow:hidden;background:#171719}
+.room .rp img{transition:transform .8s var(--ease-out),filter .5s ease}
+@media (hover:hover) and (pointer:fine){
+  .room:hover .rp img{transform:scale(1.025)}
+  .srow figure:hover img,.masonry figure:hover img,.collage figure:hover img,.shopfig:hover img{transform:scale(1.035)}
+  .shelf-c:hover{transform:translateY(-4px)}
+  .tc:hover,.rc:hover{border-color:rgba(198,255,61,.38)}
+}
+.shelf-g{align-items:stretch}
+.shelf-c{display:flex;flex-direction:column;align-items:flex-start;transition:transform .28s var(--ease-out),border-color .25s ease,background .25s ease}
+.shelf-c ul{flex:1;width:100%}
+.shelf-c .btn{margin-top:1.1rem}
+.shelf-c li{overflow-wrap:anywhere}
+.srow{scrollbar-width:thin;scrollbar-color:var(--brass) rgba(244,239,230,.1)}
+.srow::-webkit-scrollbar{height:6px}
+.srow::-webkit-scrollbar-track{background:rgba(244,239,230,.08)}
+.srow::-webkit-scrollbar-thumb{background:var(--brass);border-radius:20px}
+.tc,.rc,.lab-card{transition:border-color .25s ease,background-color .25s ease,transform .28s var(--ease-out)}
+.dock{
+  background:rgba(8,8,9,.92);
+  border-top:1px solid rgba(244,239,230,.12);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.dock a{min-width:0}
+.dock a b{overflow:hidden;text-overflow:ellipsis}
+.prog{transform-origin:left center;will-change:transform}
+.lb{overscroll-behavior:contain}
+:where(.hero,.room,.mani,.lvl,.trust,.strip,.proof,.shelf,.lab) img{background:#171719}
+@media (min-width:700px){
+  .hub .sub{max-width:34rem}
+  .hub .row{gap:.9rem}
+  .shelf-g{gap:1rem}
+}
+@media (min-width:1000px){
+  .top{padding-inline:clamp(1.5rem,4vw,4rem)}
+  .hub .sub{max-width:36rem}
+  .shelf-g{gap:1.2rem}
+  .shelf-c{padding:clamp(1.25rem,2vw,2rem)}
+  .foot{padding-bottom:2rem}
+}
+@media (max-width:380px){
+  :root{--dock:60px}
+  .dock a b{font-size:.57rem}
+  .hub .row{flex-wrap:wrap}
+  .hub .row .btn{flex:1 1 9rem}
+  .topcta{font-size:.65rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
