@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from './router'
+import type { Cat } from './data'
 
 // The shop's own walk-through video. The frame uses the video's exact ratio (478:850), so nothing is stretched or cropped on any screen.
 // It plays muted while it is on screen, pauses when it leaves, and never auto-plays for people who asked for reduced motion.
@@ -31,10 +33,10 @@ export function Reel() {
   return (
     <section className="reel" aria-label="Video tour of the shop">
       <div className="reel-t">
-        <small>PEEK INSIDE · 8 SECONDS</small>
+        <small>PEEK INSIDE</small>
         <h2 className="big">STEP <span className="gold">INSIDE.</span></h2>
-        <p>Filmed at the shop in Kondhwa: the front door with our neon line, the shirt wall, the mannequin, the slipper and loafer shelves.</p>
-        <p className="reel-n">Plays on mute. Tap the video to pause it.</p>
+        <p>Four rooms, one door. Press play and walk straight in.</p>
+        <p className="reel-n">Tap 🔇 for the full effect.</p>
       </div>
       <div className="reel-f" ref={box}>
         <video
@@ -62,7 +64,8 @@ export function Reel() {
   )
 }
 
-// The logo, shown big on black where its gold belongs. A light sweep crosses it once when it scrolls into view and again on hover.
+// The logo, big, on black where its gold belongs. It tilts toward the pointer, and the three things hiding inside it link to their rooms.
+const BITS = [{ w: 'SUIT', to: '/clothing', r: 'THE RACK' }, { w: 'SHOE', to: '/footwear', r: 'SOLE LAB' }, { w: 'WATCH', to: '/accessories', r: 'THE DRAWER' }]
 export function BrandMark() {
   const box = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -74,14 +77,29 @@ export function BrandMark() {
   }, [])
   return (
     <section className="brand" aria-label="The GEN Z logo">
-      <div className="brand-l" ref={box}>
+      <div className="brand-l" ref={box} data-tilt>
         <img src="/logo.webp" width={566} height={474} alt="GEN Z logo: a gold Z holding a tuxedo jacket, a dress shoe and a wristwatch" loading="lazy" decoding="async" />
       </div>
       <div className="brand-t">
         <small>THE MARK</small>
-        <h2 className="big gold">SUIT. SHOE. WATCH. ONE Z.</h2>
-        <p>Our logo folds the whole idea into a single gold Z: a tuxedo jacket, a dress shoe and a wristwatch. Dress the whole look, head to toe, from one shop.</p>
+        <h2 className="big gold">WEAR THE Z.</h2>
+        <p>Three things hide inside our logo. Tap one and we'll walk you to its room.</p>
+        <div className="bits">{BITS.map((x, i) => <Link key={x.w} to={x.to} className="chipm bit" style={{ '--i': i } as React.CSSProperties}><b>{x.w}</b><small>{x.r} →</small></Link>)}</div>
       </div>
     </section>
+  )
+}
+
+// Each room on the home page gets its own ambient decoration: drifting outline words, a trail that draws on scroll, a spinning badge, rising bubbles.
+const FXT: Record<Cat, string> = { clothing: 'FITS ✶ LAYERS ✶ BASICS ✶ ', footwear: 'STEP UP ✶ LOAFERS ✶ SLIDES ✶ ', accessories: 'ACCESSORIES ✶ DETAILS ✶ GEN-Z ✶ KONDHWA ✶ ', perfumes: 'FRESH ✶ WOODY ✶ SWEET ✶ SPICY ✶ ' }
+export function RoomFx({ id }: { id: Cat }) {
+  const t = Array(5).fill(FXT[id]).join('')
+  return (
+    <div className={'fxw fx-' + id} aria-hidden="true">
+      {(id === 'clothing' || id === 'footwear') && <><div className="fx-m"><div>{t}{t}</div></div><div className="fx-m r"><div>{t}{t}</div></div></>}
+      {id === 'footwear' && <svg className="fx-trail" viewBox="0 0 400 800" preserveAspectRatio="none"><path pathLength="1" d="M-10 80C120 140 280 40 410 160S120 340 410 430 100 620 410 720" /></svg>}
+      {id === 'accessories' && <svg className="fx-badge" viewBox="0 0 120 120"><defs><path id="ring" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0" /></defs><text><textPath href="#ring">{'ACCESSORIES ✶ DETAILS ✶ GEN-Z ✶ '}</textPath></text><circle cx="60" cy="60" r="7" /></svg>}
+      {id === 'perfumes' && <div className="fx-bub">{Array.from({ length: 9 }, (_, i) => <i key={i} style={{ '--i': i } as React.CSSProperties}/>)}</div>}
+    </div>
   )
 }

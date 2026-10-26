@@ -1,4 +1,5 @@
 import { useEffect, useState, type ComponentProps } from 'react'
+import { flushSync } from 'react-dom'
 import { toTop } from './motion'
 import { normPath } from './path.js'
 
@@ -12,12 +13,13 @@ export function usePath() {
   return p
 }
 
-// No View Transitions on purpose: a snapshot layer fights pinned (position: fixed) scroll sections. The page fades in via CSS instead.
+// Soft crossfade between pages (View Transitions, where the browser has them). Header, dock and progress bar are named so they stay still.
 export function go(to: string) {
   if (normPath(to) === normPath(location.pathname)) return
-  history.pushState({ nav: 1 }, '', to)
-  dispatchEvent(new PopStateEvent('popstate'))
-  toTop()
+  const run = () => { history.pushState({ nav: 1 }, '', to); flushSync(() => dispatchEvent(new PopStateEvent('popstate'))); toTop() }
+  const d = document as Document & { startViewTransition?: (cb: () => void) => unknown }
+  if (d.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) d.startViewTransition(run)
+  else run()
 }
 
 // Any <a> prop (className, style, aria-*, onMouseEnter...) passes straight through.

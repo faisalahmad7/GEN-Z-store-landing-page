@@ -3,7 +3,7 @@ import { CATS, FACTS, REVIEWS, SHOP, SIGN_PHOTO } from '../data'
 import { Link } from '../router'
 import { buildWaLink } from '../wa.js'
 import { Lab, OpenNow, Shelf } from '../Extras'
-import { BrandMark, Reel } from '../Brand'
+import { BrandMark, Reel, RoomFx } from '../Brand'
 import { ICONS } from '../Icons'
 import { Photo, byId, mixed, photosFor, picks } from '../Photo'
 import { openLightbox } from '../Lightbox'
@@ -66,7 +66,7 @@ export default function Hub() {
 
     // Hero: ONE timeline. Letters rise, the four tags drop on their strings and settle, then the actions arrive.
     gsap.timeline({ defaults: { ease: 'expo.out' } })
-      .from(q('.hub .mega .lw'), { yPercent: 70, opacity: 0, rotation: () => gsap.utils.random(-14, 14), duration: 0.9, stagger: 0.06 }, 0)
+      .from(q('.hub .mega .lw'), { yPercent: 70, opacity: 0, rotation: () => gsap.utils.random(-4, 4), duration: 0.9, stagger: 0.06 }, 0)
       .from(q('.ht'), { y: -300, duration: 1.4, stagger: 0.1 }, 0.1)
       .from(q('.hub .tag, .hub .sub, .hub .row, .hub .meta'), { y: 22, opacity: 0, duration: 0.6, stagger: 0.08, ease: 'power3.out' }, 0.5)
 
@@ -137,7 +137,7 @@ export default function Hub() {
         <p>Branded pieces, picked with an eye and sold with a smile. Walk in and try things on, or message us first.</p>
       </section>
 
-      <Reel />
+      <div className="gild"><BrandMark /><Reel /></div>
 
       <section className="rooms" aria-label="The four rooms">
         {CATS.map((c, i) => {
@@ -146,10 +146,11 @@ export default function Hub() {
           const I = ICONS[c.id]
           return (
             <article key={c.id} className={'room r-' + c.id} style={vars({ '--bg': c.bg, '--ink': c.ink, '--ac': c.ac, '--f': c.font, '--k': i })}>
+              <RoomFx id={c.id} />
               <small className="rm"><b>0{i + 1}</b> / 04 · {c.hero.toUpperCase()}</small>
               <h2 className="rw" aria-label={c.word}><Wiggle text={c.word} /></h2>
               <p className="rl">{c.line}</p>
-              <figure className={'rp' + (ph ? '' : ' nop')}>{ph ? <Photo p={ph} alt={c.word.toLowerCase() + ' at GEN-Z'} sizes="(min-width:800px) 40vw, 80vw" gallery={list} /> : <I />}</figure>
+              <figure className={'rp' + (ph ? '' : ' nop')} data-tilt>{ph ? <Photo p={ph} alt={c.word.toLowerCase() + ' at GEN-Z'} sizes="(min-width:800px) 40vw, 80vw" gallery={list} /> : <I />}</figure>
               <Link to={'/' + c.id} className="btn rb">ENTER {c.word} →</Link>
             </article>
           )
@@ -157,8 +158,6 @@ export default function Hub() {
       </section>
 
       <LevelUp />
-
-      <BrandMark />
 
       <Shelf />
 
