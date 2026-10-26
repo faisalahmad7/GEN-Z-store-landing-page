@@ -1,10 +1,10 @@
 export type Cat = 'clothing' | 'footwear' | 'accessories' | 'perfumes'
-// Each category is its own theme: colours + display font (--f) so the four pages feel like four rooms.
+// One shared display family across every room keeps the identity consistent; each room gets its own colour pairing.
 export const CATS: { id: Cat; word: string; bg: string; ink: string; ac: string; font: string; line: string; hero: string }[] = [
-  { id: 'clothing', word: 'CLOTHING', bg: '#143d33', ink: '#f6ecd6', ac: '#e3b341', font: "'Anton',Impact,sans-serif", line: 'Fits cut to make an entrance.', hero: 'The Rack' },
-  { id: 'footwear', word: 'FOOTWEAR', bg: '#18284d', ink: '#f6ecd6', ac: '#ff8f5a', font: "'Anton',Impact,sans-serif", line: 'Sneakers and loafers that earn the second glance.', hero: 'Sole Lab' },
-  { id: 'accessories', word: 'ACCESSORIES', bg: '#b8572f', ink: '#fff3dd', ac: '#f2d27a', font: "'Permanent Marker','Comic Sans MS',cursive", line: 'The small details that do the talking.', hero: 'The Drawer' },
-  { id: 'perfumes', word: 'PERFUMES', bg: '#2b1236', ink: '#f8e8f4', ac: '#f0b6d4', font: "'Instrument Serif',Georgia,serif", line: 'A scent that walks in before you do.', hero: 'The Scent Bar' },
+  { id: 'clothing', word: 'CLOTHING', bg: '#173d35', ink: '#f4f0e8', ac: '#d7ff48', font: "'Bricolage Grotesque',system-ui,sans-serif", line: 'Fits cut to make an entrance.', hero: 'The Rack' },
+  { id: 'footwear', word: 'FOOTWEAR', bg: '#1b2a52', ink: '#f4f0e8', ac: '#ff6a43', font: "'Bricolage Grotesque',system-ui,sans-serif", line: 'Sneakers and loafers that earn the second glance.', hero: 'Sole Lab' },
+  { id: 'accessories', word: 'ACCESSORIES', bg: '#f2e6d2', ink: '#171815', ac: '#3556d9', font: "'Bricolage Grotesque',system-ui,sans-serif", line: 'The small details that do the talking.', hero: 'The Drawer' },
+  { id: 'perfumes', word: 'PERFUMES', bg: '#2b2037', ink: '#f6eff8', ac: '#e7a8d0', font: "'Bricolage Grotesque',system-ui,sans-serif", line: 'A scent that walks in before you do.', hero: 'The Scent Bar' },
 ]
 export const SHOP = {
   address: 'Shop No 17, HM Royal Society, opp. main gate, Kondhwa, Pune 411048',
