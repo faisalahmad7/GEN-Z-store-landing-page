@@ -1,10 +1,10 @@
 export type Cat = 'clothing' | 'footwear' | 'accessories' | 'perfumes'
 // Each category is its own theme: colours + display font (--f) so the four pages feel like four rooms.
 export const CATS: { id: Cat; word: string; bg: string; ink: string; ac: string; font: string; line: string; hero: string }[] = [
-  { id: 'clothing', word: 'CLOTHING', bg: '#143d33', ink: '#f6ecd6', ac: '#e3b341', font: "'Anton',Impact,sans-serif", line: 'Fits cut to make an entrance.', hero: 'The Rack' },
-  { id: 'footwear', word: 'FOOTWEAR', bg: '#18284d', ink: '#f6ecd6', ac: '#ff8f5a', font: "'Anton',Impact,sans-serif", line: 'Sneakers and loafers that earn the second glance.', hero: 'Sole Lab' },
-  { id: 'accessories', word: 'ACCESSORIES', bg: '#b8572f', ink: '#fff3dd', ac: '#f2d27a', font: "'Permanent Marker','Comic Sans MS',cursive", line: 'The small details that do the talking.', hero: 'The Drawer' },
-  { id: 'perfumes', word: 'PERFUMES', bg: '#2b1236', ink: '#f8e8f4', ac: '#f0b6d4', font: "'Instrument Serif',Georgia,serif", line: 'A scent that walks in before you do.', hero: 'The Scent Bar' },
+  { id: 'clothing', word: 'CLOTHING', bg: '#173b31', ink: '#f3f0e8', ac: '#d7ff45', font: "'Bricolage Grotesque',system-ui,sans-serif", line: 'Fits cut to make an entrance.', hero: 'The Rack' },
+  { id: 'footwear', word: 'FOOTWEAR', bg: '#1c2a43', ink: '#f3f0e8', ac: '#f15a3b', font: "'Anton',Impact,sans-serif", line: 'Sneakers and loafers that earn the second glance.', hero: 'Sole Lab' },
+  { id: 'accessories', word: 'ACCESSORIES', bg: '#984b32', ink: '#f8eee0', ac: '#d7ff45', font: "'Permanent Marker','Comic Sans MS',cursive", line: 'The small details that do the talking.', hero: 'The Drawer' },
+  { id: 'perfumes', word: 'PERFUMES', bg: '#2b203b', ink: '#f5edf4', ac: '#e8a8cb', font: "'Instrument Serif',Georgia,serif", line: 'A scent that walks in before you do.', hero: 'The Scent Bar' },
 ]
 export const SHOP = {
   address: 'Shop No 17, HM Royal Society, opp. main gate, Kondhwa, Pune 411048',
