@@ -9,9 +9,34 @@ import { openState, fmt, HOURS } from './hours.js'
 export function Header() {
   const path = usePath()
   const [open, setOpen] = useState(false)
+  const [headerHidden, setHeaderHidden] = useState(false)
   const bar = useRef<HTMLDivElement>(null)
   const room = CATS.find((c) => '/' + c.id === path)
   useEffect(() => { setOpen(false) }, [path])
+  useEffect(() => {
+    let previous = Math.max(0, window.scrollY)
+    let frame = 0
+    const onScroll = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const current = Math.max(0, window.scrollY)
+        if (open) {
+          setHeaderHidden(false)
+        } else {
+          const delta = current - previous
+          if (current < 48) setHeaderHidden(false)
+          else if (delta > 6) setHeaderHidden(true)
+          else if (delta < -6) setHeaderHidden(false)
+        }
+        previous = current
+      })
+    }
+    addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      cancelAnimationFrame(frame)
+      removeEventListener('scroll', onScroll)
+    }
+  }, [open])
   useEffect(() => {
     document.documentElement.style.overflow = open ? 'hidden' : ''
     const k = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
@@ -27,7 +52,7 @@ export function Header() {
   return (
     <>
       <div className="prog" ref={bar} style={{ '--pc': room?.ac ?? '#d9a62a' } as CSSProperties} aria-hidden="true" />
-      <header className="top">
+      <header className={'top' + (headerHidden && !open ? ' top-hidden' : '')}>
         <Link to="/" className="logo" aria-label="GEN-Z home"><img src="/logo-sm.webp" width="34" height="28" alt="" /><b>GEN-Z</b></Link>
         <div className="topr">
           <a className="topcta" href={buildWaLink()} target="_blank" rel="noopener noreferrer">WHATSAPP ↗</a>
