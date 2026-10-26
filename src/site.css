@@ -1741,3 +1741,337 @@ small,.swipe,.rm,.meta,.tag,.topcta,.btn,.dock b,.fbot,.foot address small,
   .loader-logo-frame,.loader-copy{opacity:1;transform:none;filter:none}
   .loader-track span{transform:scaleX(1)}
 }
+
+
+/* V17 · coordinated homepage accents + category editorial frames. */
+
+/* Hero wordmark: keep the site's ink/bone base, add one acid-lime dash and a warm coral-to-lime Z. */
+.hero.hub .mega .lw:nth-child(1) .li,
+.hero.hub .mega .lw:nth-child(2) .li,
+.hero.hub .mega .lw:nth-child(3) .li{
+  color:#f4efe6!important;
+  -webkit-text-fill-color:#f4efe6;
+  background:none!important;
+  text-shadow:0 2px 16px rgba(0,0,0,.24);
+}
+.hero.hub .mega .lw:nth-child(4) .li{
+  color:#d7ff48!important;
+  -webkit-text-fill-color:#d7ff48;
+  background:none!important;
+  text-shadow:0 0 18px rgba(215,255,72,.2);
+}
+.hero.hub .mega .lw:nth-child(5) .li{
+  background:linear-gradient(135deg,#ff8a58 6%,#f7d66b 48%,#d7ff48 92%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+  -webkit-text-fill-color:transparent!important;
+  text-shadow:none;
+  filter:drop-shadow(0 3px 0 rgba(8,8,9,.45));
+}
+
+/* Accessories title: preserve the existing letter-spacing grow interaction, but force
+   a single line and size it to fit the column instead of allowing word-break:anywhere. */
+.room.r-accessories .rw{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  white-space:nowrap!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  hyphens:none;
+  font-size:clamp(2.2rem,5vw,5.5rem);
+  letter-spacing:-.075em;
+  transform-origin:left center;
+  transition:letter-spacing .4s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1);
+}
+.room.r-accessories:hover .rw,
+.room.r-accessories:focus-within .rw{
+  letter-spacing:-.025em!important;
+  transform:scale(1.012);
+}
+@media (max-width:799px){
+  .room.r-accessories .rw{font-size:clamp(2.15rem,8.4vw,3.25rem)}
+}
+@media (max-width:360px){
+  .room.r-accessories .rw{font-size:clamp(2rem,7.9vw,2.5rem)}
+}
+
+/* Flavors is intentionally limited to small expressive accents, not long body copy. */
+.h-accessories .tag,
+.h-accessories .sticker{
+  font-family:'Flavors','Permanent Marker',cursive;
+  letter-spacing:0;
+}
+.t-perfumes .lab-k,
+.t-perfumes .scent h3{
+  font-family:'Flavors',cursive;
+  font-weight:400;
+  letter-spacing:0;
+}
+.t-perfumes .lab-k{font-size:clamp(1.25rem,3vw,1.7rem);line-height:1}
+
+/* Category hero collage: replace overlapping percentage margins with a deliberate
+   one-large/two-small editorial triptych. Each image retains its whole frame. */
+.themed .hero.cat .collage{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  grid-template-rows:minmax(0,1fr) minmax(0,1fr);
+  grid-template-areas:"lead detail-a" "lead detail-b";
+  gap:clamp(10px,1.4vw,18px);
+  align-items:stretch;
+  justify-self:center;
+  align-self:center;
+  width:100%;
+  max-width:640px;
+  min-width:0;
+  min-height:0;
+  aspect-ratio:1.04 / 1;
+  max-height:min(76svh,680px);
+  margin:clamp(8px,1.4vw,18px) 0;
+  padding:clamp(9px,1.5vw,17px);
+  border:1px solid color-mix(in srgb,var(--ac) 72%,var(--ink));
+  border-radius:26px;
+  background:
+    radial-gradient(100% 70% at 0% 0%,color-mix(in srgb,var(--ac) 18%,transparent),transparent 65%),
+    color-mix(in srgb,var(--bg) 91%,var(--ink));
+  box-shadow:inset 0 1px rgba(255,255,255,.12),0 22px 54px rgba(0,0,0,.22);
+  isolation:isolate;
+}
+.themed .hero.cat .collage::before{
+  content:"";
+  position:absolute;
+  inset:6px;
+  z-index:0;
+  border:1px solid color-mix(in srgb,var(--ac) 38%,transparent);
+  border-radius:19px;
+  pointer-events:none;
+  background:none;
+}
+.themed .hero.cat .collage figure{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  min-width:0;
+  min-height:0;
+  margin:0;
+  padding:clamp(6px,1vw,11px);
+  rotate:0deg;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--ink) 28%,var(--ac));
+  border-radius:16px;
+  background:color-mix(in srgb,var(--paper) 92%,var(--bg));
+  box-shadow:5px 5px 0 var(--ac),0 14px 30px rgba(0,0,0,.18);
+  transform:translateZ(0);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1);
+}
+.themed .hero.cat .collage .f0{grid-area:lead}
+.themed .hero.cat .collage .f1{grid-area:detail-a}
+.themed .hero.cat .collage .f2{grid-area:detail-b}
+.themed .hero.cat .collage figure::before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:5px;
+  border:1px solid rgba(23,24,21,.15);
+  border-radius:10px;
+  pointer-events:none;
+  background:none;
+  rotate:0deg;
+  translate:0 0;
+}
+.themed .hero.cat .collage figure::after{
+  content:"";
+  position:absolute;
+  z-index:3;
+  left:12px;
+  bottom:9px;
+  width:clamp(22px,3vw,42px);
+  height:3px;
+  border-radius:99px;
+  background:var(--ac);
+  opacity:.92;
+  pointer-events:none;
+}
+.themed .hero.cat .collage img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;
+  border-radius:10px;
+  background:transparent;
+  transform:none;
+  scale:1;
+}
+@media (hover:hover) and (pointer:fine){
+  .themed .hero.cat .collage figure:hover{
+    transform:translateY(-3px);
+    box-shadow:7px 8px 0 var(--ac),0 18px 34px rgba(0,0,0,.2);
+  }
+  .themed .hero.cat .collage figure:hover img{transform:none;scale:1}
+}
+.h-clothing .hero.cat .collage .f0{padding-bottom:clamp(12px,1.8vw,20px)}
+.h-clothing .hero.cat .collage figure::before{display:block}
+.h-clothing .hero.cat .collage .f0::before{display:none}
+.h-footwear .hero.cat .collage::before{
+  background:repeating-linear-gradient(135deg,transparent 0 18px,color-mix(in srgb,var(--ac) 16%,transparent) 18px 23px);
+  inset:4px;
+  opacity:.75;
+}
+.h-accessories .hero.cat .collage figure{background:color-mix(in srgb,var(--paper) 95%,var(--ac))}
+.h-accessories .hero.cat .collage figure::before{display:block}
+.h-perfumes .hero.cat .collage figure{
+  border-radius:18px 18px 10px 10px;
+  border-color:color-mix(in srgb,var(--ac) 65%,var(--ink));
+  background:color-mix(in srgb,var(--bg) 82%,var(--paper));
+  box-shadow:5px 5px 0 var(--ac),0 14px 30px rgba(0,0,0,.2);
+}
+.h-perfumes .hero.cat .collage img{aspect-ratio:auto;object-fit:contain;border-radius:10px}
+@media (max-width:799px){
+  .themed .hero.cat .collage{
+    width:min(100%,560px);
+    max-width:560px;
+    aspect-ratio:1.04 / 1;
+    max-height:none;
+    margin:clamp(8px,2vw,14px) auto;
+    gap:10px;
+    padding:10px;
+    border-radius:22px;
+  }
+  .themed .hero.cat .collage figure{border-radius:13px;padding:6px}
+  .themed .hero.cat .collage figure::before{inset:4px;border-radius:8px}
+  .themed .hero.cat .collage figure::after{left:8px;bottom:7px;height:2px}
+  .h-clothing .hero.cat .collage .f0{padding-bottom:14px}
+}
+@media (max-width:380px){
+  .themed .hero.cat .collage{gap:8px;padding:8px;border-radius:18px}
+  .themed .hero.cat .collage figure{padding:5px;border-radius:11px}
+}
+
+/* Category photo galleries: consistent mats, complete frames and richer accent borders. */
+.themed .gal{position:relative;isolation:isolate}
+.themed .bento{
+  grid-auto-rows:clamp(158px,34vw,260px);
+  gap:clamp(12px,1.6vw,20px);
+  padding:10px clamp(16px,4vw,48px) 38px;
+}
+.themed .bt{
+  padding:clamp(5px,1vw,10px);
+  border:1.5px solid color-mix(in srgb,var(--ink) 44%,transparent);
+  border-radius:18px;
+  background:color-mix(in srgb,var(--bg) 86%,var(--paper));
+  box-shadow:5px 5px 0 var(--ac),0 12px 28px rgba(0,0,0,.13);
+  transform:none;
+}
+.themed .bt::before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:5px;
+  border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);
+  border-radius:12px;
+  pointer-events:none;
+}
+.themed .bt img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  border-radius:10px;
+  background:transparent;
+  transform:none;
+  scale:1;
+}
+.themed .bt:nth-child(3n+2){box-shadow:5px 5px 0 color-mix(in srgb,var(--ac) 72%,var(--ink)),0 12px 28px rgba(0,0,0,.13)}
+.themed .bt:nth-child(3n){box-shadow:5px 5px 0 color-mix(in srgb,var(--ac) 55%,var(--paper)),0 12px 28px rgba(0,0,0,.13)}
+.themed .bt::after{z-index:3}
+@media (min-width:800px){
+  .themed .bento{grid-auto-rows:clamp(210px,19vw,290px);gap:clamp(14px,1.4vw,22px)}
+}
+@media (hover:hover) and (pointer:fine){
+  .themed .bt:hover{transform:translateY(-3px);box-shadow:7px 8px 0 var(--ac),0 18px 38px rgba(0,0,0,.19)}
+  .themed .bt:hover img{transform:none;scale:1}
+}
+
+/* The scent quiz lives only on the Perfumes page, with a colour break that feels intentional. */
+.t-perfumes .lab{
+  background:linear-gradient(145deg,#f7eff7 0%,#f0dce9 100%);
+  color:#2b2037;
+  border-top:1px solid rgba(43,32,55,.16);
+  border-bottom:1px solid rgba(43,32,55,.14);
+  margin:0;
+}
+.t-perfumes .lab .big{color:#2b2037;text-shadow:none}
+.t-perfumes .lab-k{
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  max-width:100%;
+  padding:10px 14px 9px;
+  border-radius:6px;
+  background:#2b2037;
+  color:#e7a8d0;
+}
+.t-perfumes .lab-g{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  width:100%;
+  max-width:700px;
+}
+.t-perfumes .lab-card.scent{
+  width:100%;
+  max-width:650px;
+  padding:clamp(22px,4vw,38px);
+  gap:20px;
+  border:1.5px solid #2b2037;
+  border-radius:18px;
+  background:#2b2037;
+  color:#f6eff8;
+  box-shadow:7px 7px 0 #e7a8d0,0 18px 36px rgba(43,32,55,.13);
+}
+.t-perfumes .scent h3{
+  color:#e7a8d0;
+  font-size:clamp(2rem,4.7vw,3.2rem);
+  line-height:.98;
+}
+.t-perfumes .scent p{color:#f6eff8;font:500 clamp(1rem,1.6vw,1.12rem)/1.6 var(--head)}
+.t-perfumes .scent .sq-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.t-perfumes .scent .chipb,
+.t-perfumes .scent .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 14px;
+  border:1px solid #e7a8d0;
+  border-radius:8px;
+  background:#e7a8d0;
+  color:#2b2037;
+  box-shadow:3px 3px 0 #d7ff48;
+  font:700 .74rem/1.35 var(--mono);
+  text-align:center;
+}
+.t-perfumes .scent .sq-r{gap:12px}
+.t-perfumes .scent .sq-r img{
+  width:min(100%,250px);
+  max-height:260px;
+  object-fit:contain;
+  object-position:left center;
+  border:1px solid rgba(231,168,208,.55);
+  border-radius:12px;
+  padding:8px;
+  background:rgba(255,255,255,.06);
+}
+@media (max-width:480px){
+  .t-perfumes .scent .sq-o{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Keep font additions scoped and lightweight; fallback is a generic cursive face. */
