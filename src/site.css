@@ -1969,7 +1969,7 @@ small,.swipe,.rm,.meta,.tag,.topcta,.btn,.dock b,.fbot,.foot address small,
   border-radius:18px;
   background:color-mix(in srgb,var(--bg) 86%,var(--paper));
   box-shadow:5px 5px 0 var(--ac),0 12px 28px rgba(0,0,0,.13);
-  transform:none;
+  transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
 }
 .themed .bt::before{
   content:"";
@@ -1997,7 +1997,7 @@ small,.swipe,.rm,.meta,.tag,.topcta,.btn,.dock b,.fbot,.foot address small,
   .themed .bento{grid-auto-rows:clamp(210px,19vw,290px);gap:clamp(14px,1.4vw,22px)}
 }
 @media (hover:hover) and (pointer:fine){
-  .themed .bt:hover{transform:translateY(-3px);box-shadow:7px 8px 0 var(--ac),0 18px 38px rgba(0,0,0,.19)}
+  .themed .bt:hover{translate:0 -3px;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:7px 8px 0 var(--ac),0 18px 38px rgba(0,0,0,.19)}
   .themed .bt:hover img{transform:none;scale:1}
 }
 
@@ -2043,6 +2043,7 @@ small,.swipe,.rm,.meta,.tag,.topcta,.btn,.dock b,.fbot,.foot address small,
   line-height:.98;
 }
 .t-perfumes .scent p{color:#f6eff8;font:500 clamp(1rem,1.6vw,1.12rem)/1.6 var(--head)}
+.t-perfumes .scent .sq-r b{font:400 clamp(2.8rem,7vw,5rem)/.95 'Flavors',cursive;letter-spacing:0;color:#d7ff48}
 .t-perfumes .scent .sq-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .t-perfumes .scent .chipb,
 .t-perfumes .scent .btn{
