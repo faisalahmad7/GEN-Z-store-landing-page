@@ -5,13 +5,13 @@ import { Photo, photosFor, picks } from '../Photo'
 import { ICONS } from '../Icons'
 import { buildWaLink } from '../wa.js'
 import Footer from '../Footer'
+import { Lab } from '../Extras'
 import Wiggle from '../Wiggle'
 import { vars } from '../css'
 import { gsap, useFit, useMotion } from '../motion'
 
 type C = (typeof CATS)[number]
 const STICKERS = ['NEW', 'DROP', 'HOT', 'GEN-Z']
-const NOTES = ['WOODY', 'FRESH', 'SWEET', 'SPICY', 'AQUATIC', 'MUSK']
 const SIG: Record<C['id'], string> = {
   clothing: 'FITS ✶ LAYERS ✶ BASICS ✶ STATEMENTS ✶ ',
   footwear: 'SNEAKERS ✶ LOAFERS ✶ SLIDES ✶ SANDALS ✶ ',
@@ -53,7 +53,6 @@ export default function Category({ cat: c }: { cat: C }) {
   const lead = picks(c.id, 3)
   const next = CATS[(CATS.findIndex((x) => x.id === c.id) + 1) % CATS.length]
   const I = ICONS[c.id]
-  const [note, setNote] = useState<string | null>(null)
 
   useFit(root, '.mega.word, .nw')
   useMotion(root, () => {
@@ -87,19 +86,12 @@ export default function Category({ cat: c }: { cat: C }) {
           <h1 className="mega word" aria-label={c.word}><Wiggle text={c.word} /></h1>
           {SIG[c.id] && <div className="rail" aria-hidden="true"><div>{Array(6).fill(SIG[c.id]).join('')}</div></div>}
           <p className="sub">{c.line}</p>
-          {lead.length > 0 && <div className="collage">{lead.map((p, i) => <figure key={p.src} className={'f' + i}><Photo p={p} alt={`${c.word.toLowerCase()} at GEN-Z`} eager={i === 0} sizes="(min-width:800px) 28vw, 60vw" gallery={all} /></figure>)}</div>}
+          {lead.length > 0 && <div className="collage">{lead.map((p, i) => <figure key={p.src} className={'f' + i + ' photo-' + (p.o ?? 's')}><Photo p={p} alt={`${c.word.toLowerCase()} at GEN-Z`} eager={i === 0} sizes={i === 0 ? '(min-width:800px) 34vw, 68vw' : '(min-width:800px) 19vw, 42vw'} gallery={all} /></figure>)}</div>}
           {c.id === 'accessories' && <Stickers />}
           <div className="row"><a className="btn" href={buildWaLink([c.word.toLowerCase()])} target="_blank" rel="noopener noreferrer">ASK ABOUT {c.word} ↗</a></div>
         </section>
 
-        {c.id === 'perfumes' && (
-          <section className="notes">
-            <h2 className="big">PICK A VIBE</h2>
-            <p>Tell us the mood and we'll show you what we have. Tap one to start a WhatsApp message.</p>
-            <div className="chips">{NOTES.map((n) => <button type="button" key={n} className={note === n ? 'on' : ''} aria-pressed={note === n} onClick={() => setNote(note === n ? null : n)}>{n}</button>)}</div>
-            {note && <a className="btn" href={buildWaLink(['Perfume: ' + note.toLowerCase()])} target="_blank" rel="noopener noreferrer">ASK ABOUT {note} ↗</a>}
-          </section>
-        )}
+        {c.id === 'perfumes' && <Lab />}
 
         <div className="tick" aria-hidden="true"><div>{Array(8).fill(TICK[c.id]).join('')}</div></div>
 
