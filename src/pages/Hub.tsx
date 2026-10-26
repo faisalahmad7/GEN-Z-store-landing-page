@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { CATS, FACTS, REVIEWS, SHOP, SIGN_PHOTO } from '../data'
 import { Link } from '../router'
 import { buildWaLink } from '../wa.js'
-import { Lab, OpenNow, Shelf } from '../Extras'
+import { OpenNow, Shelf } from '../Extras'
 import { BrandMark, Reel, RoomFx } from '../Brand'
 import { ICONS } from '../Icons'
 import { Photo, byId, mixed, photosFor, picks } from '../Photo'
@@ -168,8 +168,6 @@ export default function Hub() {
           {TRUST.map((t) => <li key={t.n} className="tc"><b>{t.n}</b><div><h3>{t.h}</h3><p>{t.p}</p></div></li>)}
         </ol>
       </section>
-
-      <Lab />
 
       <section className="strip" aria-label="Photos from the shop">
         <h2 className="big">THE FLOOR, UP CLOSE.</h2>
