@@ -35,7 +35,7 @@ function Stickers() {
     // An empty inline translate value must start at 0,0 (parseFloat('') is NaN).
     const current = el.style.translate.trim()
     const values = current && current !== 'none'
-      ? current.split(/\\s+/).map((value) => Number.parseFloat(value) || 0)
+      ? current.split(/\s+/).map((value) => Number.parseFloat(value) || 0)
       : []
     const x = Number.isFinite(values[0]) ? values[0] : 0
     const y = Number.isFinite(values[1]) ? values[1] : 0
