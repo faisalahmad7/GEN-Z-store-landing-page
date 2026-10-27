@@ -44,8 +44,11 @@ export default function Footer() {
         {CATS.map((c) => <Link key={c.id} to={'/' + c.id}>{c.word}</Link>)}
       </nav>
       <div className="fseal"><Seal id="seal-foot" /><p>Authentic, branded and genuine: the shop's promise.</p></div>
-      <div className="fw" role="img" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
-      <div className="fbot"><span className="fmk"><img src="/logo-sm.webp" width="38" height="32" alt="" loading="lazy" /></span><p>© GEN-Z men's boutique · Kondhwa, Pune</p><button type="button" onClick={() => toTop(false)}>BACK TO TOP ↑</button></div>
+      <div className="fw-row">
+        <div className="fw" role="img" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
+        <button type="button" className="fback" aria-label="Back to top" title="Back to top" onClick={() => toTop(false)}><span aria-hidden="true">↑</span></button>
+      </div>
+      <div className="fbot"><span className="fmk"><img src="/logo-sm.webp" width="38" height="32" alt="" loading="lazy" /></span><p>© GEN-Z men's boutique · Kondhwa, Pune</p></div>
     </footer>
   )
 }
