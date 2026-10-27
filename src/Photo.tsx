@@ -33,7 +33,16 @@ export function Photo({ p, alt, eager, sizes = '(min-width: 800px) 33vw, 50vw', 
   const open = () => openLightbox(gallery!, Math.max(0, gallery!.indexOf(p)))
   const zoom = gallery ? { onClick: open, onKeyDown: (e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open() } }, role: 'button', tabIndex: 0, className: 'zoomable' } : {}
   return (
-    <img src={p.src} srcSet={p.srcset || undefined} sizes={p.srcset ? sizes : undefined} width={p.w} height={p.h} alt={alt} style={p.c ? { backgroundColor: p.c } : undefined}
-      loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'auto'} decoding="async" {...zoom} />
+    <img
+      src={p.src}
+      width={p.w}
+      height={p.h}
+      alt={alt}
+      style={p.c ? { backgroundColor: p.c } : undefined}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchPriority={eager ? 'high' : 'auto'}
+      decoding="async"
+      {...zoom}
+    />
   )
 }
