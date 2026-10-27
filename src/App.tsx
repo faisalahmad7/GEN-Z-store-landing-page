@@ -16,7 +16,7 @@ export default function App() {
   const cat = CATS.find((c) => path === '/' + c.id)
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const id = window.setTimeout(() => setShowLoader(false), reduced ? 250 : 1850)
+    const id = window.setTimeout(() => setShowLoader(false), reduced ? 250 : 1500)
     return () => window.clearTimeout(id)
   }, [])
   useEffect(() => {

@@ -6851,7 +6851,7 @@ small,
   transform-origin: left center;
   background: linear-gradient(90deg, var(--loader-gold), var(--brass), #f4efe6);
   box-shadow: 0 0 14px rgba(217, 166, 42, .35);
-  animation: loader-fill 1.72s cubic-bezier(.22, 1, .36, 1) forwards;
+  animation: loader-fill 1.37s cubic-bezier(.22, 1, .36, 1) forwards;
 }
 
 .loader-track span::after {
