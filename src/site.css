@@ -7984,7 +7984,7 @@ small,
 }
 
 .lvbg img {
-  object-position: 50% 23%
+  object-position: 50% 25%
 }
 
 /* FOOTWEAR room: larger photo */
@@ -8050,8 +8050,83 @@ small,
   font-size:1rem;
   line-height:1.3;
 }
+
+
+/* Fix category hero photos: fill each frame without empty bands */
+.themed .hero.cat .collage figure {
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.themed .hero.cat .collage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: transparent;
+}
+
+/* Keep the perfume photos consistent with the other categories */
+.h-perfumes .hero.cat .collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: auto;
+}
+/* Example: shift the visible area upward */
+.h-clothing .hero.cat .collage .f0 img {
+  object-position: center 40%;
+}
+
+/* Keep ACCESSORIES on one line */
+.h-accessories .mega.word {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: nowrap;
+  max-width: 100%;
+}
+
+
+
+
+/* Contact section: resize only the shop photo */
+.foot .fcta > figure.shopfig {
+  width: 100%;
+  max-width: 620px;
+  min-width: 0;
+  margin: 0;
+  justify-self: start;
+  align-self: start;
+}
+
+.foot .fcta > figure.shopfig img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Give the photo more room on desktop */
+@media (min-width: 800px) {
+  .foot .fcta {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  }
+}
 /* COME IN. SAY HELLO.: larger shop photo */
-.shopfig{width:100%;max-width:none}
-@media (min-width:800px){
-  .fcta{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.shopfig {
+  width: 100%;
+  max-width: none;
+}
+
+@media (min-width: 800px) {
+  .fcta {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
 }
