@@ -8178,3 +8178,88 @@ small,
     font-size: 9px;
   }
 }
+
+/* V19 · concise phone footer only. Keep the existing shop photo asset, width, crop and frame unchanged. */
+@media (max-width: 799px) {
+  .foot {
+    padding-top: 34px;
+    padding-bottom: calc(var(--dock) + env(safe-area-inset-bottom) + 16px);
+    gap: 18px;
+  }
+
+  .foot .fcta {
+    gap: 14px;
+  }
+
+  .foot .fcta > .big {
+    font-size: clamp(2.35rem, 9.5vw, 3.2rem);
+    line-height: .9;
+  }
+
+  .foot address {
+    font-size: .94rem;
+    line-height: 1.44;
+  }
+
+  .foot address small {
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+
+  .foot .hrs {
+    gap: 2px 12px;
+    margin: 8px 0;
+    font-size: .72rem;
+    line-height: 1.35;
+  }
+
+  .foot .fcta .row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .foot .fcta .row .btn {
+    min-width: 0;
+    min-height: 42px;
+    padding-inline: 8px;
+    font-size: .61rem;
+    letter-spacing: .01em;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0 var(--rust);
+  }
+
+  .foot .fnav {
+    gap: 4px 14px;
+  }
+
+  .foot .fnav a {
+    min-height: 40px;
+  }
+
+  .foot .fseal {
+    gap: 10px;
+    font-size: .83rem;
+    line-height: 1.4;
+  }
+
+  .foot .fseal .seal {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+  }
+
+  .foot .fw {
+    font-size: clamp(4rem, 19vw, 6.5rem);
+  }
+
+  .foot .fbot {
+    gap: 8px;
+    font-size: .58rem;
+  }
+
+  .foot .fbot button {
+    min-height: 40px;
+    padding-inline: 10px;
+  }
+}
