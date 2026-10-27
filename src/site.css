@@ -8314,3 +8314,26 @@ small,
     box-shadow: 2px 2px 0 var(--rust);
   }
 }
+
+
+/* V21 · desktop only: keep the circular arrow beside the end of the GEN-Z wordmark, not at the far edge. */
+@media (min-width: 800px) {
+  .foot .fw-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: clamp(14px, 1.8vw, 28px);
+    width: max-content;
+    max-width: 100%;
+  }
+
+  .foot .fw-row .fw {
+    flex: 0 1 auto;
+    width: max-content;
+    max-width: 100%;
+  }
+
+  .foot .fw-row .fback {
+    flex: 0 0 48px;
+  }
+}
