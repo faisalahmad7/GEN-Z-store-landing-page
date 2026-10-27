@@ -264,11 +264,13 @@ button {
 }
 
 .htags {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 6px;
+  gap: clamp(5px, 1.2vw, 16px);
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0 0 auto;
   padding-top: 0;
-  margin-bottom: auto
 }
 
 .ht {
@@ -8128,5 +8130,51 @@ small,
 @media (min-width: 800px) {
   .fcta {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+/* Desktop homepage: move hanging category tags to the right */
+@media (min-width: 800px) {
+  .hero.hub .htags {
+    display: flex;
+    width: 100%;
+    align-self: stretch;
+    justify-content: flex-end;
+    gap: clamp(5px, 1.2vw, 16px);
+  }
+}
+/* Phone-only category label alignment */
+@media (max-width: 799px) {
+  .hero.hub .htags {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-self: stretch;
+    flex-wrap: wrap;
+    gap: clamp(6px, 2vw, 10px);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero.hub .htags .ht {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    font-size: clamp(9px, 2.6vw, 12px);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+  .hero.hub .htags {
+    gap: 6px;
+  }
+
+  .hero.hub .htags .ht {
+    font-size: 9px;
   }
 }
