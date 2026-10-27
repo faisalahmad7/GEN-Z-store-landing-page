@@ -8178,3 +8178,139 @@ small,
     font-size: 9px;
   }
 }
+
+/* V19 · concise phone footer only. Keep the existing shop photo asset, width, crop and frame unchanged. */
+@media (max-width: 799px) {
+  .foot {
+    padding-top: 34px;
+    padding-bottom: calc(var(--dock) + env(safe-area-inset-bottom) + 16px);
+    gap: 18px;
+  }
+
+  .foot .fcta {
+    gap: 14px;
+  }
+
+  .foot .fcta > .big {
+    font-size: clamp(2.35rem, 9.5vw, 3.2rem);
+    line-height: .9;
+  }
+
+  .foot address {
+    font-size: .94rem;
+    line-height: 1.44;
+  }
+
+  .foot address small {
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+
+  .foot .hrs {
+    gap: 2px 12px;
+    margin: 8px 0;
+    font-size: .72rem;
+    line-height: 1.35;
+  }
+
+  .foot .fcta .row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .foot .fcta .row .btn {
+    min-width: 0;
+    min-height: 42px;
+    padding-inline: 8px;
+    font-size: .61rem;
+    letter-spacing: .01em;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0 var(--rust);
+  }
+
+  .foot .fnav {
+    gap: 4px 14px;
+  }
+
+  .foot .fnav a {
+    min-height: 40px;
+  }
+
+  .foot .fseal {
+    gap: 10px;
+    font-size: .83rem;
+    line-height: 1.4;
+  }
+
+  .foot .fseal .seal {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+  }
+
+  .foot .fw {
+    font-size: clamp(4rem, 19vw, 6.5rem);
+  }
+
+  .foot .fbot {
+    gap: 8px;
+    font-size: .58rem;
+  }
+
+  .foot .fbot button {
+    min-height: 40px;
+    padding-inline: 10px;
+  }
+}
+
+
+/* V20 · place a circular back-to-top control beside the existing footer wordmark. */
+.foot .fw-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.foot .fw-row .fw {
+  min-width: 0;
+  width: 100%;
+}
+.foot .fback {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1.5px solid var(--brass);
+  border-radius: 50%;
+  background: var(--brass);
+  color: #080809;
+  box-shadow: 3px 3px 0 var(--rust);
+  font: 700 1.7rem/1 var(--head);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.foot .fback span {
+  display: block;
+  translate: 0 -1px;
+}
+@media (hover:hover) and (pointer:fine) {
+  .foot .fback:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 5px 0 var(--rust);
+  }
+}
+@media (max-width:799px) {
+  .foot .fw-row {
+    grid-template-columns: minmax(0, 1fr) 40px;
+    gap: 8px;
+  }
+  .foot .fback {
+    width: 40px;
+    height: 40px;
+    font-size: 1.45rem;
+    box-shadow: 2px 2px 0 var(--rust);
+  }
+}
