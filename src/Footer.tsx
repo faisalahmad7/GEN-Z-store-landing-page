@@ -26,26 +26,41 @@ export default function Footer() {
   return (
     <footer className="foot" ref={root}>
       <div className="fcta">
-        {door && <figure className="shopfig"><Photo p={door} alt="Inside the GEN-Z men's boutique, Kondhwa" sizes="(min-width:800px) 40vw, 80vw" gallery={s6 ? shop.map((x) => (x === s6 ? door : x)) : shop} /></figure>}
-        <h2 className="big">COME IN.<br />SAY HELLO.</h2>
-        <address>
-          Shop No 17, HM Royal Society,<br />opposite the main gate,<br />Kondhwa, Pune 411048<small>Kondhwa Road, near Talab Masjid.</small>
-          <dl className="hrs"><dt>MON–FRI</dt><dd>{fmt(HOURS.week[0])} – {fmt(HOURS.week[1])}</dd><dt>SAT–SUN</dt><dd>{fmt(HOURS.end[0])} – {fmt(HOURS.end[1])}</dd></dl>
-          <OpenNow />
-        </address>
-        <div className="row">
-          <a className="btn" href={SHOP.tel}>CALL {SHOP.phone}</a>
-          <a className="btn alt" href={SHOP.maps} target="_blank" rel="noopener noreferrer">DIRECTIONS ↗</a>
-          <a className="btn alt" href={buildWaLink()} target="_blank" rel="noopener noreferrer">WHATSAPP</a>
-          <a className="btn alt" href={SHOP.insta} target="_blank" rel="noopener noreferrer">@genz.formens ↗</a>
+        <div className="fvisual">
+          {door && <figure className="shopfig"><Photo p={door} alt="Inside the GEN-Z men's boutique, Kondhwa" sizes="(min-width:800px) 40vw, 80vw" gallery={s6 ? shop.map((x) => (x === s6 ? door : x)) : shop} /></figure>}
+          <div className="fw" role="img" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
+        </div>
+        <div className="fcontent">
+          <h2 className="big">COME IN.<br />SAY HELLO.</h2>
+          <address className="visit-card">
+            <div className="visit-card-top">
+              <div>
+                <span className="visit-kicker">FIND THE STORE</span>
+                <span className="visit-area">KONDHWA · PUNE</span>
+              </div>
+              <OpenNow />
+            </div>
+            <p className="visit-address">Shop No 17, HM Royal Society,<br />opposite the main gate,<br />Kondhwa, Pune 411048</p>
+            <p className="visit-landmark">Kondhwa Road, near Talab Masjid.</p>
+            <div className="visit-hours-title">STORE HOURS</div>
+            <dl className="hrs">
+              <dt>MON–FRI</dt><dd>{fmt(HOURS.week[0])} – {fmt(HOURS.week[1])}</dd>
+              <dt>SAT–SUN</dt><dd>{fmt(HOURS.end[0])} – {fmt(HOURS.end[1])}</dd>
+            </dl>
+          </address>
+          <div className="row">
+            <a className="btn" href={SHOP.tel}>CALL {SHOP.phone}</a>
+            <a className="btn alt" href={SHOP.maps} target="_blank" rel="noopener noreferrer">DIRECTIONS ↗</a>
+            <a className="btn alt" href={buildWaLink()} target="_blank" rel="noopener noreferrer">WHATSAPP</a>
+            <a className="btn alt" href={SHOP.insta} target="_blank" rel="noopener noreferrer">@genz.formens ↗</a>
+          </div>
         </div>
       </div>
       <nav className="fnav" aria-label="Footer rooms">
         {CATS.map((c) => <Link key={c.id} to={'/' + c.id}>{c.word}</Link>)}
       </nav>
       <div className="fseal"><Seal id="seal-foot" /><p>Authentic, branded and genuine: the shop's promise.</p></div>
-      <div className="fw-row">
-        <div className="fw" role="img" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
+      <div className="fback-row">
         <button type="button" className="fback" aria-label="Back to top" title="Back to top" onClick={() => toTop(false)}><span aria-hidden="true">↑</span></button>
       </div>
       <div className="fbot"><span className="fmk"><img src="/logo-sm.webp" width="38" height="32" alt="" loading="lazy" /></span><p>© GEN-Z men's boutique · Kondhwa, Pune</p></div>

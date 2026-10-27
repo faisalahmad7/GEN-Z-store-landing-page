@@ -30,19 +30,35 @@ function Stickers() {
   const [n, setN] = useState(0)
   const drag = useRef<{ el: HTMLElement; x: number; y: number; sx: number; sy: number } | null>(null)
   const down = (e: PointerEvent<HTMLElement>) => {
-    const el = e.currentTarget, [x = 0, y = 0] = el.style.translate.split(' ').map(parseFloat)
+    const el = e.currentTarget
+    e.preventDefault()
+    // An empty inline translate value must start at 0,0 (parseFloat('') is NaN).
+    const current = el.style.translate.trim()
+    const values = current && current !== 'none'
+      ? current.split(/\s+/).map((value) => Number.parseFloat(value) || 0)
+      : []
+    const x = Number.isFinite(values[0]) ? values[0] : 0
+    const y = Number.isFinite(values[1]) ? values[1] : 0
     drag.current = { el, x, y, sx: e.clientX, sy: e.clientY }
     el.setPointerCapture(e.pointerId)
   }
   const move = (e: PointerEvent<HTMLElement>) => {
     const d = drag.current
-    if (d) d.el.style.translate = `${d.x + e.clientX - d.sx}px ${d.y + e.clientY - d.sy}px`
+    if (!d) return
+    e.preventDefault()
+    const x = Math.round(d.x + e.clientX - d.sx)
+    const y = Math.round(d.y + e.clientY - d.sy)
+    d.el.style.translate = `${x}px ${y}px`
   }
-  const up = () => { drag.current = null }
+  const up = (e?: PointerEvent<HTMLElement>) => {
+    const active = drag.current
+    if (e && active?.el.hasPointerCapture(e.pointerId)) active.el.releasePointerCapture(e.pointerId)
+    drag.current = null
+  }
   return (
-    <div className="tray" aria-hidden="true" key={n}>
+    <div className="tray" aria-label="Decorative stickers — click and drag them to arrange the tray" key={n}>
       {STICKERS.map((s, i) => <span key={s} className={'sticker s' + i} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}>{s}</span>)}
-      <button type="button" className="treset" tabIndex={-1} onClick={() => setN(n + 1)}>reset</button>
+      <button type="button" className="treset" onClick={() => setN(n + 1)}>RESET ↺</button>
     </div>
   )
 }

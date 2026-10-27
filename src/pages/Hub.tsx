@@ -22,6 +22,25 @@ const TRUST = [
 ]
 const STRING = [18, 52, 30, 62] // how far each tag hangs (px)
 
+const ROOM_DETAILS: Record<string, { intro: string; items: string[] }> = {
+  clothing: {
+    intro: 'Easy layers, co-ord sets and everyday pieces worth trying on in person.',
+    items: ['LINEN & DENIM', 'CO-ORD SETS', 'CARGOS', 'HOODIES'],
+  },
+  footwear: {
+    intro: 'Build your rotation with everyday pairs and sharper options for going out.',
+    items: ['SNEAKERS', 'SLIDES', 'LOAFERS', 'DRESS SHOES'],
+  },
+  accessories: {
+    intro: 'The finishing touches that pull a look together without trying too hard.',
+    items: ['SUNGLASSES', 'STREET SOCKS', 'PRAYER CAPS'],
+  },
+  perfumes: {
+    intro: 'Browse attars and masculine fragrances, then ask the team for help finding your scent.',
+    items: ['ATTARS', 'MASCULINE SCENTS', 'LONG-LASTING FRAGRANCES'],
+  },
+}
+
 // The shop's own wall sign says "IT'S TIME TO LEVEL UP"; it is sharp in one of the accessories photos.
 function LevelUp() {
   const sign = byId(SIGN_PHOTO)
@@ -152,6 +171,11 @@ export default function Hub() {
               <small className="rm"><b>0{i + 1}</b> / 04 · {c.hero.toUpperCase()}</small>
               <h2 className="rw" aria-label={c.word}><Wiggle text={c.word} /></h2>
               <p className="rl">{c.line}</p>
+              <div className="room-details" aria-label={`Highlights in ${c.word}`}>
+                <span className="rd-kicker">THE LINEUP <i aria-hidden="true">/</i> 0{i + 1}</span>
+                <p>{ROOM_DETAILS[c.id].intro}</p>
+                <ul>{ROOM_DETAILS[c.id].items.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
               <figure className={'rp' + (ph ? '' : ' nop')} data-tilt>{ph ? <Photo p={ph} alt={c.word.toLowerCase() + ' at GEN-Z'} sizes="(min-width:800px) 40vw, 80vw" gallery={c.id === 'footwear' && f6 ? list.map((x) => (x === f6 ? ph : x)) : list} /> : <I />}</figure>
               <Link to={'/' + c.id} className="btn rb">ENTER {c.word} →</Link>
             </article>
