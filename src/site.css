@@ -8263,3 +8263,54 @@ small,
     padding-inline: 10px;
   }
 }
+
+
+/* V20 · place a circular back-to-top control beside the existing footer wordmark. */
+.foot .fw-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.foot .fw-row .fw {
+  min-width: 0;
+  width: 100%;
+}
+.foot .fback {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1.5px solid var(--brass);
+  border-radius: 50%;
+  background: var(--brass);
+  color: #080809;
+  box-shadow: 3px 3px 0 var(--rust);
+  font: 700 1.7rem/1 var(--head);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.foot .fback span {
+  display: block;
+  translate: 0 -1px;
+}
+@media (hover:hover) and (pointer:fine) {
+  .foot .fback:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 5px 0 var(--rust);
+  }
+}
+@media (max-width:799px) {
+  .foot .fw-row {
+    grid-template-columns: minmax(0, 1fr) 40px;
+    gap: 8px;
+  }
+  .foot .fback {
+    width: 40px;
+    height: 40px;
+    font-size: 1.45rem;
+    box-shadow: 2px 2px 0 var(--rust);
+  }
+}
