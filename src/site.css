@@ -9011,3 +9011,135 @@ small,
     margin-bottom: var(--dwell)
   }
 }
+
+/* GEN-Z finishing touches — deliberately scoped to the requested footer and phone fixes. */
+@media (max-width: 799px) {
+  /* Keep decorative motion static on phones; interactive GSAP reveals and the logo letter wiggle remain intact. */
+  .marquee > div,
+  .hero .tag,
+  .hero .sub,
+  .hero .row,
+  .hero .meta,
+  .shelf-c,
+  .tc,
+  .rc,
+  .srow figure,
+  .shopfig,
+  .lab-card,
+  .masonry figure,
+  .bt,
+  .ask > *,
+  .fx-m > div,
+  .fx-badge,
+  .fx-bub i,
+  .fx-trail,
+  .r-perfumes .rp,
+  .tick > div,
+  .mani::after,
+  .shelf::after,
+  .brand-l.shine::after,
+  .opn.yes i,
+  .page,
+  .site-loader,
+  .site-loader::before,
+  .loader-orbit,
+  .loader-orbit-dot,
+  .loader-star,
+  .loader-track span {
+    animation: none !important;
+  }
+
+  /* A little more breathing room between the two overlapping room cards on phones. */
+  .rooms {
+    --dwell: 52svh;
+  }
+
+  /* Make the existing visit card easier to read without moving any footer elements or photos. */
+  .foot .visit-card {
+    padding: 20px;
+  }
+
+  .foot .visit-kicker,
+  .foot .visit-area {
+    font-size: .78rem;
+  }
+
+  .foot .visit-card .opn {
+    font-size: .64rem;
+  }
+
+  .foot .visit-address {
+    font-size: 1.16rem;
+    line-height: 1.52;
+  }
+
+  .foot .visit-landmark {
+    font-size: .78rem;
+  }
+
+  .foot .visit-hours-title {
+    font-size: .78rem;
+  }
+
+  .foot .visit-card .hrs {
+    font-size: .82rem;
+    gap: 8px 12px;
+  }
+
+  .foot .fbot {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .foot .fbot p {
+    margin: 0 auto 0 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 800px) {
+  /* Keep the footer's existing grid and photo alignment; only improve type inside the visit card. */
+  .foot .visit-card {
+    padding: 20px 22px;
+  }
+
+  .foot .visit-kicker,
+  .foot .visit-area {
+    font-size: .68rem;
+  }
+
+  .foot .visit-card .opn {
+    font-size: .64rem;
+  }
+
+  .foot .visit-address {
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+
+  .foot .visit-landmark {
+    font-size: .74rem;
+  }
+
+  .foot .visit-hours-title {
+    font-size: .68rem;
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+
+  .foot .visit-card .hrs {
+    font-size: .8rem;
+    gap: 7px 14px;
+  }
+
+  /* Copyright starts at the left edge, away from the back-to-top arrow. */
+  .foot .fbot {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .foot .fbot p {
+    margin: 0 auto 0 0;
+    text-align: left;
+  }
+}

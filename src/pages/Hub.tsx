@@ -33,7 +33,7 @@ const ROOM_DETAILS: Record<string, { intro: string; items: string[] }> = {
   },
   accessories: {
     intro: 'The finishing touches that pull a look together without trying too hard.',
-    items: ['SUNGLASSES', 'STREET SOCKS', 'PRAYER CAPS'],
+    items: ['SUNGLASSES', 'STREET SOCKS', 'BRACELETS', 'RINGS', 'CHAINS', 'WATCHES'],
   },
   perfumes: {
     intro: 'Browse attars and masculine fragrances, then ask the team for help finding your scent.',
