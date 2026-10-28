@@ -8,6 +8,7 @@ import '@fontsource/bricolage-grotesque/latin-800.css'
 import '@fontsource/instrument-serif/latin-400.css'
 import '@fontsource/instrument-serif/latin-400-italic.css'
 import './site.css'
+import './phone-fix.css'
 import App from './App'
 import { initFx } from './fx'
 
