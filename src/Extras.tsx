@@ -15,56 +15,28 @@ export function Header() {
   useEffect(() => { setOpen(false) }, [path])
   useEffect(() => {
     let previous = Math.max(0, window.scrollY)
-    let lastT = performance.now()
     let frame = 0
-    let revealed = false
-    let hideTimer = 0
-    const phone = window.matchMedia('(max-width: 799px)')
-    const SHOW_SPEED = 2.2   // px per ms of upward scroll needed to bring the nav back (lower = easier)
-    const SHOW_FOR = 2200    // ms the nav stays visible after that
     const onScroll = () => {
       cancelAnimationFrame(frame)
       frame = requestAnimationFrame(() => {
-        const now = performance.now()
         const current = Math.max(0, window.scrollY)
-        const delta = current - previous
-        const speed = delta / Math.max(now - lastT, 1)
-        previous = current
-        lastT = now
-        if (open) { setHeaderHidden(false); return }
-
-        // Home page, phone, while the 4 room cards are on screen: nav stays hidden
-        // unless the person flicks hard upward.
-        const rooms = path === '/' && phone.matches ? document.querySelector('.rooms') : null
-        const r = rooms?.getBoundingClientRect()
-        const inRooms = !!r && r.top < innerHeight * 0.35 && r.bottom > innerHeight * 0.6
-        if (inRooms) {
-          if (speed < -SHOW_SPEED) {
-            revealed = true
-            setHeaderHidden(false)
-            clearTimeout(hideTimer)
-            hideTimer = window.setTimeout(() => { revealed = false; setHeaderHidden(true) }, SHOW_FOR)
-          } else if (!revealed) {
-            setHeaderHidden(true)
-          }
-          return
+        if (open) {
+          setHeaderHidden(false)
+        } else {
+          const delta = current - previous
+          if (current < 48) setHeaderHidden(false)
+          else if (delta > 6) setHeaderHidden(true)
+          else if (delta < -6) setHeaderHidden(false)
         }
-        revealed = false
-        clearTimeout(hideTimer)
-
-        // Everywhere else: normal behaviour (hide on scroll down, show on scroll up)
-        if (current < 48) setHeaderHidden(false)
-        else if (delta > 6) setHeaderHidden(true)
-        else if (delta < -6) setHeaderHidden(false)
+        previous = current
       })
     }
     addEventListener('scroll', onScroll, { passive: true })
     return () => {
       cancelAnimationFrame(frame)
-      clearTimeout(hideTimer)
       removeEventListener('scroll', onScroll)
     }
-  }, [open, path])
+  }, [open])
   useEffect(() => {
     document.documentElement.style.overflow = open ? 'hidden' : ''
     const k = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
