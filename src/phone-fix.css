@@ -1,14 +1,35 @@
-/* Phone-only fix for the stacked room cards (CLOTHING over FOOTWEAR). */
+/* Phone-only: stacked room cards on the home page */
 @media (max-width: 799px) {
   .rooms {
-    --dwell: 62svh; /* was 52svh: next card arrives a bit later */
+    --dwell: 62svh;                 /* gap before the next card arrives (was 52svh) */
+    --rp-h: max(200px, calc(100svh - 410px - env(safe-area-inset-top) - env(safe-area-inset-bottom)));
   }
 
-  /* footwear card paints its own background downward, so the clothing card's bottom can't peek out below it */
+  /* less space on top (the nav is hidden here now), a bit more at the bottom */
+  .rooms .room {
+    padding-top: max(calc(env(safe-area-inset-top) + 18px), 28px);
+    padding-bottom: calc(var(--dock) + env(safe-area-inset-bottom) + 40px);
+  }
+
+  /* photo can never be taller than the space left on the card; it is letterboxed, not cropped */
+  .rooms .room .rp {
+    width: min(84vw, 100%);
+    max-width: 100%;
+  }
+  .rooms .room.r-footwear .rp {
+    width: 100%;
+  }
+  .rooms .room .rp img {
+    width: 100%;
+    height: auto;
+    max-height: var(--rp-h);
+    object-fit: contain;
+  }
+
+  /* footwear card paints its background downward so the clothing card can't peek out underneath */
   .rooms .room:nth-child(2) {
     box-shadow: 0 100svh 0 0 var(--bg);
   }
-
   .rooms .room:nth-child(1),
   .rooms .room:nth-child(2) {
     min-height: 100svh;
