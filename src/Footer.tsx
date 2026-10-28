@@ -13,9 +13,9 @@ import { gsap, toTop, useFit, useMotion } from './motion'
 export default function Footer() {
   const root = useRef<HTMLElement>(null)
   const shop = photosFor('shop')
-  // "Come in" photo: shop-006 (uses the 480px file that is already in the folder)
-  const s6 = shop.find((p) => p.src.includes('shop-006'))
-  const door = s6 ? { ...s6, srcset: '' } : (shop.find((p) => p.o === 'p') ?? shop[0])
+  // "Come in" photo: shop-002 (480px and 960px sizes, so it stays sharp)
+  const s2 = shop.find((p) => p.src.includes('shop-002'))
+  const door = s2 ? { ...s2, srcset: s2.srcset.split(',').slice(0, 2).join(',') } : (shop.find((p) => p.o === 'p') ?? shop[0])
   useFit(root, '.fw')
   useMotion(root, () => {
     const q = gsap.utils.selector(root.current!)
@@ -27,7 +27,7 @@ export default function Footer() {
     <footer className="foot" ref={root}>
       <div className="fcta">
         <div className="fvisual">
-          {door && <figure className="shopfig"><Photo p={door} alt="Inside the GEN-Z men's boutique, Kondhwa" sizes="(min-width:800px) 40vw, 80vw" gallery={s6 ? shop.map((x) => (x === s6 ? door : x)) : shop} /></figure>}
+          {door && <figure className="shopfig"><Photo p={door} alt="Inside the GEN-Z men's boutique, Kondhwa" sizes="(min-width:800px) 40vw, 80vw" gallery={s2 ? shop.map((x) => (x === s2 ? door : x)) : shop} /></figure>}
           <div className="fw" role="img" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></div>
         </div>
         <div className="fcontent">
