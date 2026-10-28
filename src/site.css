@@ -9153,7 +9153,6 @@ small,
 @media (max-width:799px) {
   .rooms .room {
     height: 100svh;
-    height: 100dvh;
     min-height: 0;
     padding-bottom: calc(var(--dock) + env(safe-area-inset-bottom) + 16px);
     gap: 10px
@@ -9161,7 +9160,7 @@ small,
 
   /* the last card keeps holding the screen before the next section slides in */
   .rooms .room:last-child {
-    margin-bottom: 24svh
+    margin-bottom: 0
   }
 
   .rooms .room:is(.r-clothing, .r-footwear, .r-accessories, .r-perfumes) .rp {
