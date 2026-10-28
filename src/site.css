@@ -9014,41 +9014,6 @@ small,
 
 /* GEN-Z finishing touches — deliberately scoped to the requested footer and phone fixes. */
 @media (max-width: 799px) {
-  /* Keep decorative motion static on phones; interactive GSAP reveals and the logo letter wiggle remain intact. */
-  .marquee > div,
-  .hero .tag,
-  .hero .sub,
-  .hero .row,
-  .hero .meta,
-  .shelf-c,
-  .tc,
-  .rc,
-  .srow figure,
-  .shopfig,
-  .lab-card,
-  .masonry figure,
-  .bt,
-  .ask > *,
-  .fx-m > div,
-  .fx-badge,
-  .fx-bub i,
-  .fx-trail,
-  .r-perfumes .rp,
-  .tick > div,
-  .mani::after,
-  .shelf::after,
-  .brand-l.shine::after,
-  .opn.yes i,
-  .page,
-  .site-loader,
-  .site-loader::before,
-  .loader-orbit,
-  .loader-orbit-dot,
-  .loader-star,
-  .loader-track span {
-    animation: none !important;
-  }
-
   /* A little more breathing room between the two overlapping room cards on phones. */
   .rooms {
     --dwell: 52svh;
