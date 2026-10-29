@@ -9014,8 +9014,8 @@ small,
 
 /* GEN-Z finishing touches — deliberately scoped to the requested footer and phone fixes. */
 @media (max-width: 799px) {
+
   /* Keep decorative motion static on phones; interactive GSAP reveals and the logo letter wiggle remain intact. */
-  .marquee > div,
   .hero .tag,
   .hero .sub,
   .hero .row,
@@ -9028,13 +9028,9 @@ small,
   .lab-card,
   .masonry figure,
   .bt,
-  .ask > *,
-  .fx-m > div,
-  .fx-badge,
-  .fx-bub i,
-  .fx-trail,
+  .ask>*,
   .r-perfumes .rp,
-  .tick > div,
+  .tick>div,
   .mani::after,
   .shelf::after,
   .brand-l.shine::after,
@@ -9098,6 +9094,7 @@ small,
 }
 
 @media (min-width: 800px) {
+
   /* Keep the footer's existing grid and photo alignment; only improve type inside the visit card. */
   .foot .visit-card {
     padding: 20px 22px;
@@ -9183,10 +9180,22 @@ small,
     margin-right: 10px
   }
 
-  .rooms .room.r-clothing .rp { --ar: .72; margin-top: 26px }
-  .rooms .room.r-footwear .rp { --ar: 1.3 }
-  .rooms .room.r-accessories .rp { --ar: .74 }
-  .rooms .room.r-perfumes .rp { --ar: .8 }
+  .rooms .room.r-clothing .rp {
+    --ar: .72;
+    margin-top: 26px
+  }
+
+  .rooms .room.r-footwear .rp {
+    --ar: 1.3
+  }
+
+  .rooms .room.r-accessories .rp {
+    --ar: .74
+  }
+
+  .rooms .room.r-perfumes .rp {
+    --ar: .8
+  }
 
   .rooms .room:is(.r-clothing, .r-footwear, .r-accessories, .r-perfumes) .rp img {
     display: block;
@@ -9195,5 +9204,32 @@ small,
     max-height: none;
     aspect-ratio: auto;
     object-fit: cover
+  }
+}
+
+/* Small phones (360px wide): keep the section tags compact and grouped to the right, same as on bigger phones */
+@media (max-width:360px){
+  .htags .ht{
+    flex:0 1 clamp(45px,13.7vw,58px);
+    width:clamp(45px,13.7vw,58px);
+  }
+}
+/* Phones: top bar and bottom dock slide away while the four room cards are on screen */
+@media (max-width:799px){
+  .top,
+  .dock{
+    transition:translate .35s ease,opacity .35s ease,visibility .35s;
+  }
+  .in-rooms .top{
+    translate:0 -130%;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+  .in-rooms .dock{
+    translate:0 130%;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
   }
 }

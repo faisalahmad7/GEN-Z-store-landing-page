@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { CATS, FACTS, REVIEWS, SHOP, SIGN_PHOTO } from '../data'
 import { Link } from '../router'
 import { buildWaLink } from '../wa.js'
@@ -77,6 +77,18 @@ export default function Hub() {
   const shop = photosFor('shop')
   const pool = mixed().slice(0, 18)
   useFit(root, '.hub .mega, .rw, .lvl-l')
+  // Hide the top bar and bottom dock while the four rooms (clothing to perfumes) are on screen
+  useEffect(() => {
+    const rooms = document.querySelector('.rooms')
+    if (!rooms || !('IntersectionObserver' in window)) return
+    const html = document.documentElement
+    const io = new IntersectionObserver(
+      ([e]) => html.classList.toggle('in-rooms', e.isIntersecting),
+      { rootMargin: '-45% 0px -45% 0px' }
+    )
+    io.observe(rooms)
+    return () => { io.disconnect(); html.classList.remove('in-rooms') }
+  }, [])
 
   useMotion(root, () => {
     const q = gsap.utils.selector(root.current!)
