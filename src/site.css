@@ -9233,3 +9233,10 @@ small,
     pointer-events:none;
   }
 }
+/* Phones: the top bar and dock are hidden while the room cards are on screen, so give that space back to the photo */
+@media (max-width:799px){
+  .rooms .room{
+    padding-top:40px;
+    padding-bottom:calc(env(safe-area-inset-bottom) + 20px);
+  }
+}
