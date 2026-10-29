@@ -9240,3 +9240,18 @@ small,
     padding-bottom:calc(env(safe-area-inset-bottom) + 20px);
   }
 }
+/* Phones: GEN-Z wordmark sits below the "Authentic, branded and genuine" line instead of below the photo */
+@media (max-width:799px){
+  .foot .fcta,
+  .foot .fvisual,
+  .foot .fcontent{display:contents}
+  .foot .shopfig{order:1}
+  .foot .fcontent > .big{order:2}
+  .foot .visit-card{order:3}
+  .foot .fcontent > .row{order:4}
+  .foot .fnav{order:5}
+  .foot .fseal{order:6}
+  .foot .fw{order:7}
+  .foot .fback-row{order:8}
+  .foot .fbot{order:9}
+}
