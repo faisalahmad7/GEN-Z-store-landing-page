@@ -9382,3 +9382,9 @@ small,
 @media (prefers-reduced-motion:reduce) {
   .ht { transition: none; }
 }
+
+.shelf-scent-line {
+  max-width: 30ch;
+  font: italic 1rem/1.35 var(--serif);
+  opacity: .92;
+}
