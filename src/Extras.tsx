@@ -126,8 +126,8 @@ export function OpenNow() {
 const SHELF: Record<Cat, string[]> = {
   clothing: ['Linen shirts', 'Denim shirts', 'Corduroy shirts', 'Boxy-fit shirts', 'Polos', 'Round-necks', 'Co-ord sets', 'Zipper hoodies', 'Dry-fit jackets', 'Windbreakers', 'Track pants', 'Beanies', 'Eid & Ramzan edits'],
   footwear: ['Sneakers', 'Slippers', 'Slides', 'Clogs', 'Rainy-season slippers', 'Loafers', 'Formal shoes', 'Boots', 'Peshawari'],
-  accessories: ['Sunglasses', 'Street socks', 'Prayer caps'],
-  perfumes: ['Attars', 'Bakhoor', 'Deodorants', 'Custom perfumes', '250+ brands', 'Long-lasting masculine fragrances'],
+  accessories: ['Sunglasses', 'Street socks', 'Bracelets', 'Rings', 'Chains', 'Watches', 'Belts'],
+  perfumes: ['Attars', 'Bakhoor', 'Deodorants', 'Custom perfumes', 'Long-lasting masculine fragrances'],
 }
 export function Shelf() {
   return (
@@ -137,7 +137,7 @@ export function Shelf() {
       <div className="shelf-g">
         {CATS.map((c, i) => (
           <article key={c.id} className="shelf-c" style={{ '--mb': c.bg, '--mk': c.ink, '--ma': c.ac } as CSSProperties}>
-            <small>0{i + 1} · {c.word}</small>
+            <h3 className="shelf-title"><span>0{i + 1}</span>{c.word}</h3>
             {c.id === 'perfumes' && <p className="shelf-scent-line">Fragrance that defines you, wherever you go.</p>}
             <ul>{SHELF[c.id].map((x) => <li key={x}>{x}</li>)}</ul>
             <Link to={'/' + c.id} className="btn">SEE {c.word} →</Link>
