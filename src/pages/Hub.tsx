@@ -25,19 +25,19 @@ const STRING = [18, 52, 30, 62] // how far each tag hangs (px)
 const ROOM_DETAILS: Record<string, { intro: string; items: string[] }> = {
   clothing: {
     intro: 'Easy layers, co-ord sets and everyday pieces worth trying on in person.',
-    items: ['LINEN & DENIM', 'CO-ORD SETS', 'CARGOS', 'HOODIES'],
+    items: ['LINEN & DENIM', 'CO-ORD SETS', 'HOODIES', 'BEANIES'],
   },
   footwear: {
     intro: 'Build your rotation with everyday pairs and sharper options for going out.',
-    items: ['SNEAKERS', 'SLIDES', 'LOAFERS', 'DRESS SHOES'],
+    items: ['SNEAKERS', 'SLIPPERS', 'FORMAL SHOES', 'BOOTS', 'PESHAWARI'],
   },
   accessories: {
     intro: 'The finishing touches that pull a look together without trying too hard.',
     items: ['SUNGLASSES', 'STREET SOCKS', 'BRACELETS', 'RINGS', 'CHAINS', 'WATCHES'],
   },
   perfumes: {
-    intro: 'Browse attars and masculine fragrances, then ask the team for help finding your scent.',
-    items: ['ATTARS', 'MASCULINE SCENTS', 'LONG-LASTING FRAGRANCES'],
+    intro: 'Fragrance that defines you, wherever you go. Explore customisable scents across 250+ brands.',
+    items: ['250+ BRANDS', 'CUSTOM PERFUMES', 'AT TARS', 'BAKHOOR', 'DEODORANTS'],
   },
 }
 
