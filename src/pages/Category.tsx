@@ -108,7 +108,12 @@ export default function Category({ cat: c }: { cat: C }) {
               <span className="scent-ribbon-cell scent-ribbon-last"><b>FRAGRANCE</b><small>THAT DEFINES YOU</small></span>
             </div>
           ) : SIG[c.id] ? <div className="rail" aria-hidden="true"><div>{Array(6).fill(SIG[c.id]).join('')}</div></div> : null}
-          <p className="sub">{c.line}</p>
+          {c.id === 'perfumes' ? (
+            <div className="sub perfume-intro">
+              <p>{c.line}</p>
+              <p className="perfume-story">The team blends selected fragrances from 250+ brands into a custom perfume, made to order. Share your preferred notes—fresh, woody, sweet or bold—and they’ll shape the blend around your taste.</p>
+            </div>
+          ) : <p className="sub">{c.line}</p>}
           {lead.length > 0 && <div className="collage">{lead.map((p, i) => <figure key={p.src} className={'f' + i + ' photo-' + (p.o ?? 's')}><Photo p={p} alt={`${c.word.toLowerCase()} at GEN-Z`} eager={i === 0} sizes={i === 0 ? '(min-width:800px) 34vw, 68vw' : '(min-width:800px) 19vw, 42vw'} gallery={all} /></figure>)}</div>}
           {c.id === 'accessories' && <Stickers />}
           <div className="row"><a className="btn" href={buildWaLink([c.word.toLowerCase()])} target="_blank" rel="noopener noreferrer">ASK ABOUT {c.word} ↗</a></div>
