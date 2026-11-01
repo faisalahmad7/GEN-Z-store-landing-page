@@ -33,7 +33,7 @@ const ROOM_DETAILS: Record<string, { intro: string; items: string[] }> = {
   },
   accessories: {
     intro: 'The finishing touches that pull a look together without trying too hard.',
-    items: ['SUNGLASSES', 'STREET SOCKS', 'BRACELETS', 'RINGS', 'CHAINS', 'WATCHES'],
+    items: ['SUNGLASSES', 'STREET SOCKS', 'BRACELETS', 'RINGS', 'CHAINS', 'WATCHES', 'BELTS'],
   },
   perfumes: {
     intro: 'Choose from 250+ branded fragrances, then ask the team to create a custom blend to order.',
@@ -186,7 +186,7 @@ export default function Hub() {
               <small className="rm"><b>0{i + 1}</b> / 04 · {c.hero.toUpperCase()}</small>
               <h2 className="rw" aria-label={c.word}><Wiggle text={c.word} /></h2>
               <p className="rl">{c.line}</p>
-              {c.id === 'perfumes' && <p className="perfume-story">Choose from 250+ branded fragrances, then ask the team to create a custom blend to order. Selected scents are combined around your preference, from fresh and light to warm, woody or bold.</p>}
+              {c.id === 'perfumes' && <p className="perfume-story">The team blends selected fragrances from 250+ brands into a custom perfume, made to order. Share your preferred notes—fresh, woody, sweet or bold—and they’ll shape the blend around your taste.</p>}
               <div className="room-details" aria-label={`Highlights in ${c.word}`}>
                 <span className="rd-kicker">THE LINEUP <i aria-hidden="true">/</i> 0{i + 1}</span>
                 <p>{ROOM_DETAILS[c.id].intro}</p>
