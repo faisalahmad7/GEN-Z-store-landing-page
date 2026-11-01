@@ -15,7 +15,7 @@ const STICKERS = ['NEW', 'DROP', 'HOT', 'GEN-Z']
 const SIG: Record<C['id'], string> = {
   clothing: 'FITS ✶ LAYERS ✶ BASICS ✶ STATEMENTS ✶ ',
   footwear: 'SNEAKERS ✶ LOAFERS ✶ SLIDES ✶ SANDALS ✶ ',
-  accessories: '', perfumes: '',
+  accessories: '', perfumes: '250+ BRANDS ✶ CUSTOM PERFUMES ✶ MAKE IT YOURS ✶ ',
 }
 const TICK: Record<C['id'], string> = {
   clothing: 'FITS ✶ LAYERS ✶ BASICS ✶ STATEMENTS ✶ ',
@@ -100,7 +100,14 @@ export default function Category({ cat: c }: { cat: C }) {
           )}
           <p className="tag rot-r"><I />{c.hero.toUpperCase()}</p>
           <h1 className="mega word" aria-label={c.word}><Wiggle text={c.word} /></h1>
-          {SIG[c.id] && <div className="rail" aria-hidden="true"><div>{Array(6).fill(SIG[c.id]).join('')}</div></div>}
+          {c.id === 'perfumes' ? (
+            <div className="rail scent-ribbon" aria-label="250 plus perfume brands and customisable fragrances">
+              <span className="scent-ribbon-cell scent-ribbon-feature"><b>250+</b><small>BRANDS</small></span>
+              <span className="scent-ribbon-cell"><b>CUSTOM</b><small>PERFUMES</small></span>
+              <span className="scent-ribbon-cell"><b>MAKE IT</b><small>YOUR SCENT</small></span>
+              <span className="scent-ribbon-cell scent-ribbon-last"><b>FRAGRANCE</b><small>THAT DEFINES YOU</small></span>
+            </div>
+          ) : SIG[c.id] ? <div className="rail" aria-hidden="true"><div>{Array(6).fill(SIG[c.id]).join('')}</div></div> : null}
           <p className="sub">{c.line}</p>
           {lead.length > 0 && <div className="collage">{lead.map((p, i) => <figure key={p.src} className={'f' + i + ' photo-' + (p.o ?? 's')}><Photo p={p} alt={`${c.word.toLowerCase()} at GEN-Z`} eager={i === 0} sizes={i === 0 ? '(min-width:800px) 34vw, 68vw' : '(min-width:800px) 19vw, 42vw'} gallery={all} /></figure>)}</div>}
           {c.id === 'accessories' && <Stickers />}
