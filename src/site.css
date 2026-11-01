@@ -9852,3 +9852,75 @@ small,
     font-size: clamp(.48rem,2.2vw,.52rem);
   }
 }
+
+
+/* Footer visit card: enlarge only the store-details box and its own typography. */
+.foot .visit-card {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 24px;
+}
+
+.foot .visit-kicker,
+.foot .visit-area {
+  font-size: .76rem;
+}
+
+.foot .visit-card .opn {
+  padding: 7px 10px;
+  font-size: .7rem;
+}
+
+.foot .visit-address {
+  font-size: clamp(1.18rem, 1.45vw, 1.38rem);
+}
+
+.foot .visit-landmark {
+  font-size: clamp(.8rem, .95vw, .9rem);
+}
+
+.foot .visit-hours-title {
+  font-size: .76rem;
+}
+
+.foot .visit-card .hrs {
+  font-size: clamp(.86rem, 1vw, .96rem);
+}
+
+@media (min-width: 800px) {
+  .foot .visit-card {
+    max-width: 520px;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 799px) {
+  .foot .visit-card {
+    padding: 24px;
+  }
+
+  .foot .visit-kicker,
+  .foot .visit-area {
+    font-size: .82rem;
+  }
+
+  .foot .visit-card .opn {
+    font-size: .68rem;
+  }
+
+  .foot .visit-address {
+    font-size: 1.22rem;
+  }
+
+  .foot .visit-landmark {
+    font-size: .84rem;
+  }
+
+  .foot .visit-hours-title {
+    font-size: .82rem;
+  }
+
+  .foot .visit-card .hrs {
+    font-size: .88rem;
+  }
+}
