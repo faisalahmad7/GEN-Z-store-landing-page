@@ -9682,3 +9682,78 @@ small,
   .hero.hub .ht-arrow,
   .hero.hub .ht-object { transition: none; }
 }
+
+
+/* Material finish for the four hanging products: glass, fabric and metal read with real depth. */
+.hero.hub .ht {
+  filter: drop-shadow(0 12px 9px rgba(0,0,0,.42));
+}
+.hero.hub .ht-cord {
+  width: 3px;
+  background: linear-gradient(90deg,#5f5e5b 0%,#f7f0dd 42%,#88857e 72%,#26252a 100%);
+  box-shadow: 1px 0 2px rgba(0,0,0,.65);
+}
+.hero.hub .ht-cord::after {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #d3c6a8;
+  background: radial-gradient(circle at 32% 25%,#fff7db 0 12%,#b69a65 28%,#37302a 75%);
+  box-shadow: 0 2px 3px rgba(0,0,0,.65);
+}
+.hero.hub .ht-object {
+  filter: drop-shadow(0 8px 6px rgba(0,0,0,.34));
+  transform-style: preserve-3d;
+}
+.hero.hub .ht-object svg {
+  filter:
+    drop-shadow(1px 2px 1px rgba(255,255,255,.22))
+    drop-shadow(3px 7px 4px rgba(0,0,0,.48));
+  transform: perspective(520px) rotateY(-5deg) rotateX(2deg);
+  transform-origin: 50% 50%;
+}
+.hero.hub .ht-clothing .ht-object svg {
+  filter:
+    drop-shadow(-2px 0 1px rgba(255,255,255,.22))
+    drop-shadow(3px 7px 4px rgba(0,0,0,.5));
+}
+.hero.hub .ht-footwear .ht-object svg {
+  transform: perspective(520px) rotateY(-8deg) rotateX(4deg) rotateZ(-2deg);
+}
+.hero.hub .ht-perfumes .ht-object svg {
+  transform: perspective(520px) rotateY(-7deg) rotateX(1deg);
+  filter:
+    drop-shadow(-2px 0 2px rgba(255,255,255,.34))
+    drop-shadow(4px 9px 6px rgba(0,0,0,.58));
+}
+.hero.hub .ht-accessories .ht-object svg {
+  transform: perspective(520px) rotateY(-7deg) rotateX(3deg) rotateZ(2deg);
+  filter:
+    drop-shadow(-2px 0 2px rgba(255,255,255,.25))
+    drop-shadow(4px 8px 5px rgba(0,0,0,.58));
+}
+.hero.hub .ht-label {
+  border-color: rgba(255,255,255,.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.52),
+    inset 0 -3px 0 rgba(0,0,0,.13),
+    0 4px 0 rgba(0,0,0,.66);
+  background-image: linear-gradient(145deg,rgba(255,255,255,.28),transparent 48%,rgba(0,0,0,.13));
+}
+.hero.hub .ht-arrow {
+  background: radial-gradient(circle at 30% 25%,rgba(255,255,255,.24),transparent 55%);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.25),0 3px 5px rgba(0,0,0,.35);
+}
+@media (max-width:799px) {
+  .hero.hub .ht-object svg {
+    transform: perspective(420px) rotateY(-3deg) rotateX(1deg);
+  }
+  .hero.hub .ht-footwear .ht-object svg {
+    transform: perspective(420px) rotateY(-5deg) rotateX(3deg) rotateZ(-2deg);
+  }
+  .hero.hub .ht-perfumes .ht-object svg {
+    transform: perspective(420px) rotateY(-4deg);
+  }
+  .hero.hub .ht-accessories .ht-object svg {
+    transform: perspective(420px) rotateY(-4deg) rotateX(2deg);
+  }
+}
