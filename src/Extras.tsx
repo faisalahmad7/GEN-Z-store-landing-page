@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { CATS, type Cat } from './data'
+import { ICONS } from './Icons'
 import { Link, usePath } from './router'
 import { picks } from './Photo'
 import { buildWaLink } from './wa.js'
 import { openState, fmt, HOURS } from './hours.js'
 
 // Top bar + full-screen menu + scroll progress. Everything is CSS-driven; no extra libraries.
+function Ico({ cat }: { cat: Cat }) { const I = ICONS[cat]; return <I /> }
 export function Header() {
   const path = usePath()
   const [open, setOpen] = useState(false)
@@ -62,7 +64,7 @@ export function Header() {
       <nav id="menu" className={'menu' + (open ? ' on' : '')} aria-label="Menu" aria-hidden={!open} inert={!open}>
         {CATS.map((c, i) => (
           <Link key={c.id} to={'/' + c.id} className="mi" style={{ '--mb': c.bg, '--mk': c.ink, '--ma': c.ac, '--d': i } as CSSProperties}>
-            <small>0{i + 1}</small><b>{c.word}</b><span>{c.line}</span>
+            <span className="mi-icon" aria-hidden="true"><Ico cat={c.id} /></span><small>0{i + 1}</small><b>{c.word}</b><span>{c.line}</span>
           </Link>
         ))}
         <a className="mi mw" href={buildWaLink()} target="_blank" rel="noopener noreferrer"><small>→</small><b>SAY HI ON WHATSAPP</b></a>
@@ -122,10 +124,10 @@ export function OpenNow() {
 
 // What the shop really stocks, as plain facts from the owner (no prices, no brand claims).
 const SHELF: Record<Cat, string[]> = {
-  clothing: ['Linen shirts', 'Denim shirts', 'Corduroy shirts', 'Boxy-fit shirts', 'Polos', 'Round-necks', 'Co-ord sets', 'Zipper hoodies', 'Dry-fit jackets', 'Windbreakers', 'Cargos', 'Track pants', 'Joggers', 'Eid & Ramzan edits'],
-  footwear: ['Sneakers', 'Skate shoes', 'Slides', 'Clogs', 'Rainy-season slippers', 'Loafers', 'Dress shoes', 'Pathani chappals', "Kids' shoes"],
+  clothing: ['Linen shirts', 'Denim shirts', 'Corduroy shirts', 'Boxy-fit shirts', 'Polos', 'Round-necks', 'Co-ord sets', 'Zipper hoodies', 'Dry-fit jackets', 'Windbreakers', 'Track pants', 'Beanies', 'Eid & Ramzan edits'],
+  footwear: ['Sneakers', 'Slippers', 'Slides', 'Clogs', 'Rainy-season slippers', 'Loafers', 'Formal shoes', 'Boots', 'Peshawari'],
   accessories: ['Sunglasses', 'Street socks', 'Prayer caps'],
-  perfumes: ['Attars', 'Long-lasting masculine fragrances'],
+  perfumes: ['Attars', 'Bakhoor', 'Deodorants', 'Custom perfumes', '250+ brands', 'Long-lasting masculine fragrances'],
 }
 export function Shelf() {
   return (
