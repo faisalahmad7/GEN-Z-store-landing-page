@@ -111,7 +111,7 @@ export default function Category({ cat: c }: { cat: C }) {
           {c.id === 'perfumes' ? (
             <div className="sub perfume-intro">
               <p>{c.line}</p>
-              <p className="perfume-story">Choose from 250+ branded fragrances, then ask the team to create a custom blend to order. Selected scents are combined around your preference, from fresh and light to warm, woody or bold.</p>
+              <p className="perfume-story">The team blends selected fragrances from 250+ brands into a custom perfume, made to order. Share your preferred notes—fresh, woody, sweet or bold—and they’ll shape the blend around your taste.</p>
             </div>
           ) : <p className="sub">{c.line}</p>}
           {lead.length > 0 && <div className="collage">{lead.map((p, i) => <figure key={p.src} className={'f' + i + ' photo-' + (p.o ?? 's')}><Photo p={p} alt={`${c.word.toLowerCase()} at GEN-Z`} eager={i === 0} sizes={i === 0 ? '(min-width:800px) 34vw, 68vw' : '(min-width:800px) 19vw, 42vw'} gallery={all} /></figure>)}</div>}
