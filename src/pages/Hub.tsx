@@ -4,7 +4,7 @@ import { Link } from '../router'
 import { buildWaLink } from '../wa.js'
 import { OpenNow, Shelf } from '../Extras'
 import { BrandMark, Reel, RoomFx } from '../Brand'
-import { ICONS } from '../Icons'
+import { HERO_ICONS, ICONS } from '../Icons'
 import { Photo, byId, mixed, photosFor, picks } from '../Photo'
 import { openLightbox } from '../Lightbox'
 import Footer from '../Footer'
@@ -36,8 +36,8 @@ const ROOM_DETAILS: Record<string, { intro: string; items: string[] }> = {
     items: ['SUNGLASSES', 'STREET SOCKS', 'BRACELETS', 'RINGS', 'CHAINS', 'WATCHES'],
   },
   perfumes: {
-    intro: 'Fragrance that defines you, wherever you go. Explore customisable scents across 250+ brands.',
-    items: ['250+ BRANDS', 'CUSTOM PERFUMES', 'AT TARS', 'BAKHOOR', 'DEODORANTS'],
+    intro: 'Choose from 250+ branded fragrances, then ask the team to create a custom blend to order.',
+    items: ['CUSTOM BLENDS', 'ATTARS', 'BAKHOOR', 'DEODORANTS'],
   },
 }
 
@@ -142,10 +142,13 @@ export default function Hub() {
         <HeroBg />
         <nav className="htags" aria-label="Rooms">
           {CATS.map((c, i) => {
-            const I = ICONS[c.id]
+            const I = HERO_ICONS[c.id]
             return (
-              <Link key={c.id} to={'/' + c.id} className="ht" style={vars({ '--i': i, '--tc': c.ac, '--sl': STRING[i] })}>
-                <i /><b><span className="ico"><I /></span><small>0{i + 1}</small><span className="wd">{c.word}</span></b>
+              <Link key={c.id} to={'/' + c.id} className={'ht ht-' + c.id} style={vars({ '--i': i, '--tc': c.ac, '--sl': STRING[i], '--swing-delay': String(i * -0.65) + 's' })}>
+                <i className="ht-cord" aria-hidden="true" />
+                <span className="ht-object"><I /></span>
+                <span className="ht-label">{c.word}</span>
+                <span className="ht-arrow" aria-hidden="true">↗</span>
               </Link>
             )
           })}
@@ -183,6 +186,7 @@ export default function Hub() {
               <small className="rm"><b>0{i + 1}</b> / 04 · {c.hero.toUpperCase()}</small>
               <h2 className="rw" aria-label={c.word}><Wiggle text={c.word} /></h2>
               <p className="rl">{c.line}</p>
+              {c.id === 'perfumes' && <p className="perfume-story">Choose from 250+ branded fragrances, then ask the team to create a custom blend to order. Selected scents are combined around your preference, from fresh and light to warm, woody or bold.</p>}
               <div className="room-details" aria-label={`Highlights in ${c.word}`}>
                 <span className="rd-kicker">THE LINEUP <i aria-hidden="true">/</i> 0{i + 1}</span>
                 <p>{ROOM_DETAILS[c.id].intro}</p>
