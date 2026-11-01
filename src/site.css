@@ -9861,3 +9861,98 @@ small,
     letter-spacing: -.02em;
   }
 }
+
+
+/* Phone-only: keep all four hanging product tags in one compact, right-aligned row. */
+@media (max-width: 799px) {
+  .hero.hub .htags {
+    display: flex;
+    flex-wrap: nowrap !important;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    gap: 3px;
+    overflow: visible;
+  }
+
+  .hero.hub .htags .ht {
+    box-sizing: border-box;
+    flex: 0 0 calc((100% - 9px) / 4);
+    width: calc((100% - 9px) / 4);
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  /* Alternate the drop length: tags one and three sit higher than two and four. */
+  .hero.hub .htags .ht:nth-child(even) {
+    margin-top: 10px;
+  }
+
+  .hero.hub .htags .ht-cord {
+    height: 16px;
+  }
+
+  .hero.hub .htags .ht-object {
+    width: 100%;
+    min-height: 62px;
+    max-height: 70px;
+    margin-top: 1px;
+  }
+
+  .hero.hub .htags .ht-object svg {
+    width: 100%;
+    max-height: 70px;
+  }
+
+  .hero.hub .htags .ht-clothing .ht-object { max-width: 62px; }
+  .hero.hub .htags .ht-footwear .ht-object { max-width: 76px; min-height: 58px; }
+  .hero.hub .htags .ht-perfumes .ht-object { max-width: 48px; }
+  .hero.hub .htags .ht-accessories .ht-object { max-width: 56px; }
+
+  .hero.hub .htags .ht-label {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 4px 2px 3px;
+    font-size: clamp(.45rem, 2.1vw, .58rem);
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    white-space: nowrap;
+  }
+
+  .hero.hub .htags .ht-arrow {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    margin-top: 5px;
+    font-size: .68rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero.hub .htags {
+    gap: 2px;
+  }
+
+  .hero.hub .htags .ht {
+    flex-basis: calc((100% - 6px) / 4);
+    width: calc((100% - 6px) / 4);
+  }
+
+  .hero.hub .htags .ht-label {
+    padding-inline: 1px;
+    font-size: .44rem;
+  }
+
+  .hero.hub .htags .ht-object {
+    min-height: 56px;
+    max-height: 64px;
+  }
+
+  .hero.hub .htags .ht-object svg {
+    max-height: 64px;
+  }
+}
