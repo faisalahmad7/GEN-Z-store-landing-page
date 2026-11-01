@@ -9388,3 +9388,297 @@ small,
   font: italic 1rem/1.35 var(--serif);
   opacity: .92;
 }
+
+
+/* Product-shaped homepage hangings: no rectangular ticket panels. */
+.hero.hub .htags {
+  align-items: flex-start;
+  gap: clamp(12px, 2.2vw, 34px);
+  perspective: 900px;
+}
+.hero.hub .ht {
+  position: relative;
+  display: flex;
+  flex: 0 1 clamp(92px, 10vw, 142px);
+  width: clamp(92px, 10vw, 142px);
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  color: var(--paper);
+  text-decoration: none;
+  transform-origin: 50% 0;
+  rotate: 0deg;
+  filter: drop-shadow(0 9px 8px rgba(0,0,0,.32));
+  animation: genzHangSwing 4.8s ease-in-out infinite;
+  animation-delay: var(--swing-delay,0s);
+  will-change: transform;
+}
+.hero.hub .ht-cord {
+  display: block;
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 2px;
+  height: clamp(22px, 4vh, 42px);
+  flex: 0 0 auto;
+  background: linear-gradient(180deg,rgba(246,239,224,.45),var(--tc),rgba(246,239,224,.85));
+  border: 0;
+  translate: 0 0;
+}
+.hero.hub .ht-cord::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--tc);
+  border-radius: 50%;
+  background: #111;
+  transform: translateX(-50%);
+}
+.hero.hub .ht-object {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 108px;
+  margin-top: 2px;
+  transform-origin: 50% 8%;
+  animation: genzProductBob 3.2s ease-in-out infinite;
+  animation-delay: calc(var(--i,0) * -.42s);
+  transition: filter .2s ease, transform .25s ease;
+}
+.hero.hub .ht-object::before {
+  content: "";
+  position: absolute;
+  inset: 16% 12%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, color-mix(in srgb,var(--tc) 45%,transparent), transparent 68%);
+  filter: blur(8px);
+}
+.hero.hub .ht-object svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 138px;
+  overflow: visible;
+  filter: drop-shadow(2px 4px 0 rgba(0,0,0,.55));
+}
+.hero.hub .ht-clothing .ht-object { max-width: 116px; }
+.hero.hub .ht-footwear .ht-object { max-width: 145px; min-height: 96px; }
+.hero.hub .ht-perfumes .ht-object { max-width: 88px; }
+.hero.hub .ht-accessories .ht-object { max-width: 100px; }
+.hero.hub .ht-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  padding: 5px 9px 4px;
+  color: #111;
+  background: var(--tc);
+  border: 1.5px solid #111;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 #111;
+  font: 800 clamp(.57rem,.85vw,.72rem)/1.1 var(--mono);
+  letter-spacing: .025em;
+  white-space: nowrap;
+  transform: rotate(-2deg);
+}
+.hero.hub .ht-arrow {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 8px;
+  border: 1px solid var(--paper);
+  border-radius: 50%;
+  color: var(--paper);
+  font: 700 .8rem/1 var(--mono);
+  transition: background .2s ease,color .2s ease,transform .2s ease;
+}
+@keyframes genzHangSwing {
+  0%,100% { transform: rotate(-4deg); }
+  24% { transform: rotate(3deg); }
+  48% { transform: rotate(6deg); }
+  72% { transform: rotate(-2deg); }
+}
+@keyframes genzProductBob {
+  0%,100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(5px) rotate(2deg); }
+}
+@media (hover:hover) and (pointer:fine) {
+  .hero.hub .ht:hover,
+  .hero.hub .ht:focus-visible {
+    animation-play-state: paused;
+    transform: translateY(-5px) rotate(0deg) scale(1.06);
+  }
+  .hero.hub .ht:hover .ht-object,
+  .hero.hub .ht:focus-visible .ht-object {
+    animation-play-state: paused;
+    transform: translateY(-3px) rotate(4deg) scale(1.04);
+    filter: drop-shadow(0 0 12px color-mix(in srgb,var(--tc) 70%,transparent));
+  }
+  .hero.hub .ht:hover .ht-arrow,
+  .hero.hub .ht:focus-visible .ht-arrow {
+    color: #111;
+    background: var(--tc);
+    transform: rotate(45deg);
+  }
+}
+@media (max-width:799px) {
+  .hero.hub .htags {
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2px;
+    overflow: visible;
+  }
+  .hero.hub .ht {
+    flex: 0 1 calc((100vw - 44px)/4);
+    width: calc((100vw - 44px)/4);
+    max-width: 100px;
+  }
+  .hero.hub .ht-cord { height: 20px; }
+  .hero.hub .ht-object {
+    min-height: 70px;
+    max-height: 78px;
+    margin-top: 2px;
+  }
+  .hero.hub .ht-object svg { max-height: 78px; }
+  .hero.hub .ht-clothing .ht-object { max-width: 74px; }
+  .hero.hub .ht-footwear .ht-object { max-width: 92px; min-height: 64px; }
+  .hero.hub .ht-perfumes .ht-object { max-width: 54px; }
+  .hero.hub .ht-accessories .ht-object { max-width: 66px; }
+  .hero.hub .ht-label {
+    padding: 4px 5px 3px;
+    font-size: clamp(.48rem,2vw,.62rem);
+    letter-spacing: 0;
+  }
+  .hero.hub .ht-arrow { width: 18px; height: 18px; margin-top: 5px; font-size: .65rem; }
+}
+@media (max-width:360px) {
+  .hero.hub .ht-label { font-size: .45rem; padding-inline: 3px; }
+  .hero.hub .ht-object { min-height: 62px; }
+}
+
+/* Larger, higher-contrast social-proof row in the homepage hero. */
+.hero.hub .meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px 12px;
+  font: 800 clamp(.78rem,1.3vw,.98rem)/1.25 var(--mono);
+  letter-spacing: .015em;
+}
+.hero.hub .meta > span,
+.hero.hub .meta .opn,
+.hero.hub .meta button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1.5px solid rgba(244,239,230,.72);
+  border-radius: 6px;
+  background: rgba(8,8,9,.72);
+  color: var(--paper);
+  box-shadow: 3px 3px 0 rgba(0,0,0,.45);
+}
+.hero.hub .meta button {
+  min-height: 40px;
+  margin: 0;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Shelf category titles are proper display headings, not tiny metadata. */
+.shelf .shelf-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  color: var(--mk);
+  font: 900 clamp(1.45rem,3vw,2.25rem)/.95 var(--display);
+  letter-spacing: -.025em;
+  text-shadow: 2px 2px 0 var(--ma);
+}
+.shelf .shelf-title span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border: 1.5px solid currentColor;
+  border-radius: 4px;
+  background: var(--ma);
+  color: var(--mb);
+  font: 800 .7rem/1 var(--mono);
+  letter-spacing: .04em;
+  text-shadow: none;
+}
+.shelf .shelf-scent-line {
+  max-width: 34ch;
+  color: var(--mk);
+  font: 800 clamp(1.05rem,2vw,1.35rem)/1.2 var(--head);
+  letter-spacing: -.02em;
+}
+
+/* A concise, practical explanation of the made-to-order perfume service. */
+.perfume-story {
+  max-width: 44ch;
+  margin: 0;
+  color: inherit;
+  font: 500 clamp(.78rem,1vw,.92rem)/1.45 var(--head);
+  letter-spacing: -.01em;
+}
+.r-perfumes .perfume-story {
+  padding-left: 10px;
+  border-left: 3px solid var(--ac);
+  color: var(--ink);
+}
+.perfume-intro {
+  display: grid;
+  gap: 8px;
+  max-width: 46ch;
+}
+.perfume-intro > p:first-child {
+  font: italic 400 1.15rem/1.35 var(--serif);
+  max-width: 30ch;
+}
+.perfume-intro .perfume-story { font-size: clamp(.82rem,1vw,.96rem); }
+.shelf .shelf-scent-line { text-wrap: pretty; }
+@media (max-width:799px) {
+  .hero.hub .meta {
+    gap: 7px;
+    font-size: .76rem;
+  }
+  .hero.hub .meta > span,
+  .hero.hub .meta .opn,
+  .hero.hub .meta button {
+    min-height: 36px;
+    padding: 7px 9px;
+  }
+  .r-perfumes .perfume-story {
+    font-size: .72rem;
+    line-height: 1.32;
+    max-width: 42ch;
+  }
+  .r-perfumes .rl { margin-bottom: 0; }
+  .r-perfumes .rp { max-height: calc((100vw - 48px) / .8); }
+  .perfume-intro { gap: 6px; }
+  .perfume-intro .perfume-story { font-size: .82rem; line-height: 1.38; }
+  .shelf .shelf-title { font-size: clamp(1.65rem,7vw,2.15rem); }
+  .shelf .shelf-scent-line { font-size: 1.12rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero.hub .ht,
+  .hero.hub .ht-object {
+    animation: none;
+    will-change: auto;
+  }
+  .hero.hub .ht-arrow,
+  .hero.hub .ht-object { transition: none; }
+}
