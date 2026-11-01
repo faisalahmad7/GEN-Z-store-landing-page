@@ -10,131 +10,185 @@ export const ICONS = { clothing: Shirt, footwear: Boot, accessories: Cap, perfum
 
 // Four product silhouettes used only by the clickable homepage hangings.
 export const HeroTee = () => (
-  <svg viewBox="0 0 180 166" aria-hidden="true">
+  <svg viewBox="0 0 184 172" aria-hidden="true">
     <defs>
-      <linearGradient id="tee-fabric" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="color-mix(in srgb,var(--tc) 72%,white)" />
-        <stop offset=".46" stopColor="var(--tc)" />
-        <stop offset="1" stopColor="color-mix(in srgb,var(--tc) 62%,#202027)" />
+      <linearGradient id="tee-cloth" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#fff" stopOpacity=".88" />
+        <stop offset=".12" stopColor="color-mix(in srgb,var(--tc) 58%,white)" />
+        <stop offset=".48" stopColor="var(--tc)" />
+        <stop offset=".82" stopColor="color-mix(in srgb,var(--tc) 66%,#25242a)" />
+        <stop offset="1" stopColor="#17171b" />
       </linearGradient>
-      <linearGradient id="tee-sheen" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stopColor="#fff" stopOpacity=".38" />
-        <stop offset=".42" stopColor="#fff" stopOpacity=".03" />
-        <stop offset="1" stopColor="#111" stopOpacity=".18" />
+      <linearGradient id="tee-edge" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stopColor="#fff" stopOpacity=".68" />
+        <stop offset=".45" stopColor="#fff" stopOpacity=".12" />
+        <stop offset="1" stopColor="#09090b" stopOpacity=".48" />
       </linearGradient>
+      <clipPath id="tee-clip">
+        <path d="M58 24 35 33 12 53l18 27 20-13v88q42 9 84 0V67l20 13 18-27-23-20-25-9c-7 13-17 19-33 19S65 37 58 24Z" />
+      </clipPath>
     </defs>
-    <path d="M56 25 34 34 12 54l18 25 19-12v81h82V67l19 12 18-25-22-20-25-10c-6 12-16 18-32 18S62 37 56 25Z" fill="#050507" opacity=".42" transform="translate(3 6)" />
-    <path d="M56 25 34 34 12 54l18 25 19-12v81h82V67l19 12 18-25-22-20-25-10c-6 12-16 18-32 18S62 37 56 25Z" fill="url(#tee-fabric)" stroke="#171719" strokeWidth="4.5" strokeLinejoin="round" />
-    <path d="M56 25 34 34 12 54l18 25 19-12v81h82V67l19 12 18-25-22-20-25-10c-6 12-16 18-32 18S62 37 56 25Z" fill="url(#tee-sheen)" />
-    <path d="M56 25c6 12 16 18 32 18s26-6 32-18" fill="none" stroke="#171719" strokeWidth="5" strokeLinecap="round" />
-    <path d="M63 28c5 7 13 11 25 11s20-4 25-11" fill="none" stroke="#fff" strokeOpacity=".7" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M49 68v74M131 68v74M60 147h56" fill="none" stroke="#fff" strokeOpacity=".42" strokeWidth="1.8" strokeDasharray="3 4" />
-    <path d="M30 77 44 89M150 77l-14 12" fill="none" stroke="#171719" strokeOpacity=".55" strokeWidth="3" strokeLinecap="round" />
-    <path d="M75 81h27" stroke="#fff" strokeOpacity=".72" strokeWidth="3" strokeLinecap="round" />
-    <path d="M82 92h13" stroke="#171719" strokeOpacity=".7" strokeWidth="2" strokeLinecap="round" />
+    <path d="M58 24 35 33 12 53l18 27 20-13v88q42 9 84 0V67l20 13 18-27-23-20-25-9c-7 13-17 19-33 19S65 37 58 24Z" fill="#08080b" opacity=".52" transform="translate(4 7)" />
+    <path d="M58 24 35 33 12 53l18 27 20-13v88q42 9 84 0V67l20 13 18-27-23-20-25-9c-7 13-17 19-33 19S65 37 58 24Z" fill="url(#tee-cloth)" stroke="#101014" strokeWidth="5.5" strokeLinejoin="round" />
+    <g clipPath="url(#tee-clip)">
+      <path d="M28 49 49 67l-2 84M156 49l-21 18 3 83" fill="none" stroke="#fff" strokeOpacity=".18" strokeWidth="8" />
+      <path d="M54 72c7 14 8 28 5 45M129 73c-7 13-8 26-5 43" fill="none" stroke="#17171b" strokeOpacity=".38" strokeWidth="5" strokeLinecap="round" />
+      <path d="M66 45c-1 13-4 22-10 30M118 45c1 13 4 22 10 30" fill="none" stroke="#fff" strokeOpacity=".36" strokeWidth="3" strokeLinecap="round" />
+      <path d="M50 151q42 10 84 0" fill="none" stroke="#101014" strokeOpacity=".7" strokeWidth="4" />
+      <path d="M51 155q41 8 82 0" fill="none" stroke="#fff" strokeOpacity=".56" strokeWidth="1.8" strokeDasharray="2.5 4" />
+      <path d="M16 65 33 82M168 65l-17 17" fill="none" stroke="#fff" strokeOpacity=".38" strokeWidth="2.2" />
+      <path d="M63 82q8 7 14 20M118 82q-8 7-14 20" fill="none" stroke="#fff" strokeOpacity=".3" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M74 95h36v24H74z" fill="#111" fillOpacity=".12" stroke="#fff" strokeOpacity=".48" strokeWidth="1.5" />
+      <path d="M82 103h20M86 110h12" stroke="#fff" strokeOpacity=".7" strokeWidth="2" strokeLinecap="round" />
+    </g>
+    <path d="M58 24c7 13 17 19 33 19s26-6 33-19" fill="none" stroke="#101014" strokeWidth="5.5" strokeLinecap="round" />
+    <path d="M64 28c6 8 14 12 27 12s21-4 27-12" fill="none" stroke="#fff" strokeOpacity=".86" strokeWidth="2.4" strokeLinecap="round" />
+    <path d="M35 35 17 53l14 21 15-10M149 35l18 18-14 21-15-10" fill="none" stroke="#101014" strokeOpacity=".65" strokeWidth="2.2" strokeLinejoin="round" />
+    <path d="M43 39 23 55M141 39l20 16" fill="none" stroke="url(#tee-edge)" strokeWidth="2.2" strokeLinecap="round" />
+    <path d="M12 53 30 80l20-13M172 53l-18 27-20-13" fill="none" stroke="#0c0c10" strokeWidth="3.4" strokeLinejoin="round" />
+    <path d="M61 46q9 4 14 4M121 46q-9 4-14 4" fill="none" stroke="#fff" strokeOpacity=".52" strokeWidth="1.8" />
   </svg>
 )
 export const HeroSneaker = () => (
-  <svg viewBox="0 0 200 140" aria-hidden="true">
+  <svg viewBox="0 0 208 150" aria-hidden="true">
     <defs>
-      <linearGradient id="sneaker-upper" x1="0" y1="0" x2=".9" y2="1">
+      <linearGradient id="sneaker-mesh" x1="0" y1="0" x2=".9" y2="1">
         <stop offset="0" stopColor="#fff" />
-        <stop offset=".42" stopColor="#e5e4e0" />
-        <stop offset="1" stopColor="#85858a" />
+        <stop offset=".38" stopColor="#e9e8e4" />
+        <stop offset=".76" stopColor="#b6b5b4" />
+        <stop offset="1" stopColor="#77777e" />
       </linearGradient>
-      <linearGradient id="sneaker-sole" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="sneaker-leather" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stopColor="#fff" />
-        <stop offset="1" stopColor="#a9a9a9" />
+        <stop offset=".38" stopColor="color-mix(in srgb,var(--tc) 25%,white)" />
+        <stop offset="1" stopColor="color-mix(in srgb,var(--tc) 58%,#202027)" />
       </linearGradient>
-      <linearGradient id="sneaker-accent" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="color-mix(in srgb,var(--tc) 70%,white)" />
+      <linearGradient id="sneaker-rubber" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor="#fff" />
+        <stop offset=".22" stopColor="#e1dfda" />
+        <stop offset="1" stopColor="#77777d" />
+      </linearGradient>
+      <linearGradient id="sneaker-mark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="color-mix(in srgb,var(--tc) 75%,white)" />
         <stop offset="1" stopColor="var(--tc)" />
       </linearGradient>
     </defs>
-    <ellipse cx="103" cy="119" rx="85" ry="9" fill="#000" opacity=".38" />
-    <path d="M16 82 31 55l19-3 15-27 22 8 19 28 29 11 34 9c15 4 22 13 20 23-1 7-7 10-19 10H32c-16 0-24-8-20-19Z" fill="#111" opacity=".45" transform="translate(2 6)" />
-    <path d="M13 86 31 58l19-3 15-27 22 8 19 28 29 11 34 9c15 4 22 13 20 23-1 7-7 10-19 10H29c-15 0-23-8-16-19Z" fill="url(#sneaker-sole)" stroke="#171719" strokeWidth="4" strokeLinejoin="round" />
-    <path d="M17 92c24 6 54 8 91 6 37-2 61-6 80-1" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
-    <path d="M17 83 34 59l16-4 15-27 22 8 19 28 29 11 31 8c-13 9-31 14-54 15-38 2-69-2-95-10Z" fill="url(#sneaker-upper)" stroke="#171719" strokeWidth="4" strokeLinejoin="round" />
-    <path d="M34 59 50 55l15-27 22 8 19 28-17 17-34-5Z" fill="url(#sneaker-accent)" stroke="#171719" strokeWidth="3" strokeLinejoin="round" />
-    <path d="m70 41 17 8-10 14-19-5Z" fill="#fff" opacity=".8" />
-    <path d="M83 37 97 51 87 64 70 56Z" fill="#303039" opacity=".9" />
-    <path d="M96 57 116 66l-12 18-20-8Z" fill="#f5f3ed" stroke="#777" strokeWidth="2" />
-    <path d="m72 38 17 8M68 45l18 8M64 52l17 8" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
-    <path d="M90 39 99 52M86 47l9 12" stroke="#171719" strokeOpacity=".65" strokeWidth="2" strokeLinecap="round" />
-    <path d="M112 66c15 7 28 12 46 14" fill="none" stroke="#fff" strokeOpacity=".8" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M30 83c31 9 75 12 119 3" fill="none" stroke="#171719" strokeOpacity=".35" strokeWidth="2" strokeDasharray="4 4" />
-    <path d="M19 90c4 6 13 9 25 9" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+    <ellipse cx="107" cy="129" rx="91" ry="10" fill="#000" opacity=".42" />
+    <path d="M15 91 31 62l19-6 18-29 21 7 19 30 30 13 36 10c17 5 24 14 21 24-2 8-9 12-23 12H34c-18 0-26-9-19-22Z" fill="#050508" opacity=".62" transform="translate(3 7)" />
+    <path d="M14 94 31 64l19-6 18-29 21 7 19 30 30 13 36 10c17 5 24 14 21 24-2 8-9 12-23 12H32c-17 0-25-9-18-22Z" fill="url(#sneaker-rubber)" stroke="#111116" strokeWidth="5" strokeLinejoin="round" />
+    <path d="M20 97q48 11 100 5 42-5 70-1" fill="none" stroke="#fff" strokeOpacity=".94" strokeWidth="3.2" strokeLinecap="round" />
+    <path d="M26 105q62 9 131 0" fill="none" stroke="#77777d" strokeOpacity=".7" strokeWidth="2" strokeDasharray="5 4" />
+    <path d="M17 83 33 62l17-4 18-29 21 7 19 30 30 13 31 8c-13 12-33 18-60 19-37 1-70-5-92-15Z" fill="url(#sneaker-mesh)" stroke="#111116" strokeWidth="4.5" strokeLinejoin="round" />
+    <path d="M35 62 50 58l18-29 21 7 16 25-17 21-34-5Z" fill="url(#sneaker-mark)" stroke="#17171c" strokeWidth="3.5" strokeLinejoin="round" />
+    <path d="M101 61q23 11 48 16l-15 17q-22-2-42-13Z" fill="url(#sneaker-leather)" stroke="#17171c" strokeWidth="3" strokeLinejoin="round" />
+    <path d="M68 33 88 37 102 61 84 77 66 70 59 55Z" fill="#2a2b32" fillOpacity=".88" stroke="#111116" strokeWidth="2.8" />
+    <path d="M76 37 89 42l10 16-11 13-17-6Z" fill="#f4f2ed" stroke="#a6a5a2" strokeWidth="1.8" />
+    <path d="M51 59 67 34l10 2-14 29Z" fill="#fff" opacity=".78" />
+    <path d="M31 75q18 10 39 8M128 91q25 1 39-7" fill="none" stroke="#111116" strokeOpacity=".58" strokeWidth="2.4" />
+    <path d="M23 82q20 10 40 9" fill="none" stroke="#fff" strokeOpacity=".78" strokeWidth="2" />
+    <path d="M72 42 92 48M68 48 89 56M64 54 85 64M60 60 81 72" stroke="#17171c" strokeWidth="2.6" strokeLinecap="round" />
+    <path d="M72 40 91 46M68 46 88 54M64 52 84 62M60 58 80 70" stroke="#fff" strokeOpacity=".92" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M69 40 64 47M91 47l-7 7M85 57l-7 7" fill="none" stroke="#777" strokeWidth="1.6" />
+    <path d="M48 70q-4 10-6 21M53 72q-3 11-3 17M58 74q-1 8 0 15" fill="none" stroke="#8b8b90" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M113 70q14 8 29 12M119 65q13 8 28 12" fill="none" stroke="#fff" strokeOpacity=".7" strokeWidth="2" strokeLinecap="round" />
+    <path d="M18 88q7 8 18 9M186 94q-7 7-19 8" fill="none" stroke="#111116" strokeWidth="3" strokeLinecap="round" />
+    <path d="M28 62 34 52l10-2M166 82l15 5" fill="none" stroke="#fff" strokeOpacity=".7" strokeWidth="2" strokeLinecap="round" />
   </svg>
 )
 export const HeroPerfume = () => (
-  <svg viewBox="0 0 132 190" aria-hidden="true">
+  <svg viewBox="0 0 138 194" aria-hidden="true">
     <defs>
-      <linearGradient id="scent-glass" x1="0" y1="0" x2="1" y2=".2">
-        <stop offset="0" stopColor="#fff" stopOpacity=".85" />
-        <stop offset=".18" stopColor="color-mix(in srgb,var(--tc) 55%,white)" stopOpacity=".82" />
-        <stop offset=".52" stopColor="var(--tc)" stopOpacity=".72" />
-        <stop offset=".82" stopColor="#25202b" stopOpacity=".84" />
-        <stop offset="1" stopColor="#fff" stopOpacity=".5" />
+      <linearGradient id="perfume-cap-metal" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stopColor="#4a341a" />
+        <stop offset=".16" stopColor="#f6e4ad" />
+        <stop offset=".34" stopColor="#a77927" />
+        <stop offset=".52" stopColor="#fff1bf" />
+        <stop offset=".76" stopColor="#76501d" />
+        <stop offset="1" stopColor="#e7c779" />
       </linearGradient>
-      <linearGradient id="scent-cap" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#fff1bb" />
-        <stop offset=".35" stopColor="#c99a37" />
-        <stop offset=".68" stopColor="#6c4718" />
-        <stop offset="1" stopColor="#f7d77d" />
+      <linearGradient id="perfume-glass" x1="0" y1="0" x2="1" y2=".25">
+        <stop offset="0" stopColor="#fff" stopOpacity=".93" />
+        <stop offset=".12" stopColor="color-mix(in srgb,var(--tc) 35%,white)" stopOpacity=".88" />
+        <stop offset=".4" stopColor="var(--tc)" stopOpacity=".76" />
+        <stop offset=".72" stopColor="#4b3152" stopOpacity=".88" />
+        <stop offset="1" stopColor="#fff" stopOpacity=".54" />
       </linearGradient>
+      <linearGradient id="perfume-liquid" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor="#f4d78b" stopOpacity=".8" />
+        <stop offset="1" stopColor="#9a6325" stopOpacity=".95" />
+      </linearGradient>
+      <clipPath id="perfume-body">
+        <path d="M39 49h60l11 18v104q0 12-12 12H40q-12 0-12-12V67Z" />
+      </clipPath>
     </defs>
-    <ellipse cx="66" cy="177" rx="43" ry="7" fill="#000" opacity=".36" />
-    <path d="M47 13h38v22H47z" fill="url(#scent-cap)" stroke="#2b2117" strokeWidth="3" />
-    <path d="M42 35h48v15H42z" fill="url(#scent-cap)" stroke="#2b2117" strokeWidth="3" />
-    <path d="M52 13V5h28v8" fill="none" stroke="#f9e8b7" strokeWidth="3" strokeLinecap="round" />
-    <path d="M33 49h66l9 17v100c0 7-5 11-12 11H36c-7 0-12-4-12-11V66Z" fill="#050507" opacity=".38" transform="translate(3 5)" />
-    <path d="M33 49h66l9 17v100c0 7-5 11-12 11H36c-7 0-12-4-12-11V66Z" fill="url(#scent-glass)" stroke="#171719" strokeWidth="4" />
-    <path d="M32 80h68v72H32z" fill="#1b1820" fillOpacity=".28" stroke="#e8d9bd" strokeOpacity=".58" strokeWidth="2" />
-    <path d="M37 84h58v64H37z" fill="none" stroke="#fff" strokeOpacity=".3" strokeWidth="1.5" />
-    <path d="M31 68h8v91h-8zM96 68h7v91h-7z" fill="#fff" opacity=".16" />
-    <path d="M39 76v74" stroke="#fff" strokeOpacity=".72" strokeWidth="3" strokeLinecap="round" />
-    <path d="M48 89h37" stroke="#fff" strokeOpacity=".52" strokeWidth="2" strokeLinecap="round" />
-    <path d="M54 108h25M58 117h17" stroke="#f4e7cb" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M41 160h50" stroke="#fff" strokeOpacity=".55" strokeWidth="2" />
-    <path d="M28 63h7M97 63h7" stroke="#f7edda" strokeWidth="3" strokeLinecap="round" />
+    <ellipse cx="69" cy="184" rx="48" ry="7" fill="#000" opacity=".4" />
+    <path d="M49 12h40v22H49z" fill="url(#perfume-cap-metal)" stroke="#302316" strokeWidth="3.8" />
+    <path d="M43 34h52v15H43z" fill="url(#perfume-cap-metal)" stroke="#302316" strokeWidth="3.8" />
+    <path d="M53 11V5h32v6M56 18h26" fill="none" stroke="#fff0c4" strokeWidth="2.3" strokeLinecap="round" />
+    <path d="M39 49h60l11 18v104q0 12-12 12H40q-12 0-12-12V67Z" fill="#06060a" opacity=".56" transform="translate(4 6)" />
+    <path d="M39 49h60l11 18v104q0 12-12 12H40q-12 0-12-12V67Z" fill="url(#perfume-glass)" stroke="#15141b" strokeWidth="5" strokeLinejoin="round" />
+    <g clipPath="url(#perfume-body)">
+      <path d="M24 112q44-5 92 0v72H24Z" fill="url(#perfume-liquid)" opacity=".72" />
+      <path d="M25 111q43-6 90 0" fill="none" stroke="#fff1c5" strokeOpacity=".82" strokeWidth="2.4" />
+      <path d="M33 70h9v91h-9zM94 68h9v93h-9z" fill="#fff" opacity=".19" />
+      <path d="M43 72q8 38 3 90" fill="none" stroke="#fff" strokeOpacity=".84" strokeWidth="3.2" strokeLinecap="round" />
+      <path d="M98 78q-5 22-3 50" fill="none" stroke="#fff" strokeOpacity=".36" strokeWidth="2" strokeLinecap="round" />
+      <path d="M44 163h48" fill="none" stroke="#fff" strokeOpacity=".5" strokeWidth="1.7" />
+    </g>
+    <path d="M35 71h68v91H35z" fill="#201927" fillOpacity=".2" stroke="#f4e6c8" strokeOpacity=".7" strokeWidth="2" />
+    <path d="M42 77h54v79H42z" fill="none" stroke="#fff" strokeOpacity=".26" strokeWidth="1.3" />
+    <path d="M46 94h46v44H46z" fill="#211b2a" fillOpacity=".26" stroke="#f4e6c8" strokeWidth="1.6" />
+    <path d="M51 104h36M55 113h28M58 122h22" stroke="#fff1d6" strokeOpacity=".85" strokeWidth="2" strokeLinecap="round" />
+    <path d="M31 68h6M101 68h6" stroke="#fff" strokeWidth="2.3" strokeLinecap="round" />
+    <path d="M46 50h47" stroke="#fff" strokeOpacity=".55" strokeWidth="1.5" />
+    <path d="M28 160v10q0 10 10 10M110 160v10q0 10-10 10" fill="none" stroke="#101014" strokeOpacity=".7" strokeWidth="3" />
   </svg>
 )
 export const HeroAccessory = () => (
-  <svg viewBox="0 0 150 178" aria-hidden="true">
+  <svg viewBox="0 0 156 184" aria-hidden="true">
     <defs>
-      <linearGradient id="watch-strap" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stopColor="#14151a" />
-        <stop offset=".48" stopColor="#57545a" />
-        <stop offset="1" stopColor="#17171c" />
+      <linearGradient id="watch-leather" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stopColor="#111218" />
+        <stop offset=".2" stopColor="#4a4850" />
+        <stop offset=".46" stopColor="#201f26" />
+        <stop offset=".7" stopColor="#5a5654" />
+        <stop offset="1" stopColor="#101116" />
       </linearGradient>
-      <linearGradient id="watch-case" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#fff0bc" />
-        <stop offset=".25" stopColor="#b78b32" />
-        <stop offset=".52" stopColor="#513917" />
-        <stop offset=".78" stopColor="#e7c36d" />
-        <stop offset="1" stopColor="#6d4c20" />
+      <linearGradient id="watch-steel" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#fff7da" />
+        <stop offset=".2" stopColor="#b6b4ae" />
+        <stop offset=".42" stopColor="#f4e6bb" />
+        <stop offset=".68" stopColor="#6c6253" />
+        <stop offset=".86" stopColor="#e1ce9c" />
+        <stop offset="1" stopColor="#66533a" />
       </linearGradient>
-      <radialGradient id="watch-face" cx=".28" cy=".18" r=".9">
-        <stop offset="0" stopColor="#44434a" />
-        <stop offset=".5" stopColor="#15151a" />
-        <stop offset="1" stopColor="#050507" />
+      <radialGradient id="watch-dial" cx=".27" cy=".2" r=".95">
+        <stop offset="0" stopColor="#55535e" />
+        <stop offset=".42" stopColor="#1c1c24" />
+        <stop offset="1" stopColor="#050609" />
       </radialGradient>
     </defs>
-    <ellipse cx="75" cy="91" rx="42" ry="79" fill="#000" opacity=".28" />
-    <path d="M57 5h36l10 43-7 4H54l-7-4Z" fill="url(#watch-strap)" stroke="#0a0a0d" strokeWidth="4" />
-    <path d="M54 126h42l7 4-10 43H57l-10-43Z" fill="url(#watch-strap)" stroke="#0a0a0d" strokeWidth="4" />
-    <path d="M58 8h34M60 165h30" stroke="#a7a5a3" strokeOpacity=".65" strokeWidth="1.7" strokeDasharray="3 4" />
-    <path d="M63 17h24M63 30h24M63 143h24M63 156h24" stroke="#fff" strokeOpacity=".16" strokeWidth="2" strokeLinecap="round" />
-    <rect x="30" y="43" width="90" height="88" rx="23" fill="url(#watch-case)" stroke="#171719" strokeWidth="4" />
-    <rect x="38" y="51" width="74" height="72" rx="18" fill="url(#watch-face)" stroke="#f3d88e" strokeWidth="2.5" />
-    <circle cx="75" cy="87" r="30" fill="none" stroke="#f5e0aa" strokeOpacity=".85" strokeWidth="1.5" />
-    <circle cx="75" cy="87" r="23" fill="none" stroke="#fff" strokeOpacity=".18" strokeWidth="1" />
-    <path d="M75 61v5M75 108v5M49 87h5M96 87h5M57 69l4 4M89 101l4 4M93 69l-4 4M61 101l-4 4" stroke="#e7c878" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M75 87V69M75 87l15 10" stroke="#f7e9c8" strokeWidth="3" strokeLinecap="round" />
-    <circle cx="75" cy="87" r="3.5" fill="#f7e9c8" />
-    <path d="M48 62c13-10 31-12 48-5" fill="none" stroke="#fff" strokeOpacity=".42" strokeWidth="4" strokeLinecap="round" />
-    <path d="M120 72h7v26h-7" fill="url(#watch-case)" stroke="#171719" strokeWidth="2" />
+    <ellipse cx="78" cy="94" rx="45" ry="83" fill="#000" opacity=".38" />
+    <path d="M58 5h40l10 45-9 9H57l-9-9Z" fill="#08090e" opacity=".5" transform="translate(3 4)" />
+    <path d="M58 5h40l10 45-9 9H57l-9-9Z" fill="url(#watch-leather)" stroke="#111116" strokeWidth="4.5" strokeLinejoin="round" />
+    <path d="M57 126h42l9 8-10 45H58l-10-45Z" fill="#08090e" opacity=".5" transform="translate(3 3)" />
+    <path d="M57 126h42l9 8-10 45H58l-10-45Z" fill="url(#watch-leather)" stroke="#111116" strokeWidth="4.5" strokeLinejoin="round" />
+    <path d="M63 10h30M63 19h30M63 28h30M63 143h30M63 153h30M63 164h30" stroke="#fff" strokeOpacity=".16" strokeWidth="2.2" strokeLinecap="round" />
+    <path d="M58 7h40M58 177h40" stroke="#d2c5a8" strokeOpacity=".62" strokeWidth="1.4" strokeDasharray="2 4" />
+    <path d="M57 48h42M56 132h44" stroke="#08090e" strokeWidth="4" />
+    <rect x="25" y="43" width="106" height="91" rx="25" fill="#050609" opacity=".54" transform="translate(3 5)" />
+    <rect x="25" y="43" width="106" height="91" rx="25" fill="url(#watch-steel)" stroke="#15151a" strokeWidth="5" />
+    <rect x="33" y="51" width="90" height="75" rx="19" fill="url(#watch-dial)" stroke="#f2dda9" strokeWidth="2.8" />
+    <rect x="40" y="58" width="76" height="61" rx="14" fill="none" stroke="#fff" strokeOpacity=".18" strokeWidth="1.3" />
+    <circle cx="78" cy="88" r="31" fill="none" stroke="#e9d6a7" strokeOpacity=".84" strokeWidth="1.7" />
+    <circle cx="78" cy="88" r="25" fill="none" stroke="#fff" strokeOpacity=".18" strokeWidth="1.1" />
+    <path d="M78 60v6M78 110v6M50 88h6M100 88h6M58 68l5 5M93 103l5 5M98 68l-5 5M63 103l-5 5" stroke="#e6cd8d" strokeWidth="2.6" strokeLinecap="round" />
+    <path d="M78 88V68M78 88l17 11" stroke="#fff2cf" strokeWidth="3.4" strokeLinecap="round" />
+    <circle cx="78" cy="88" r="3.7" fill="#fff2cf" />
+    <path d="M45 63q25-17 61-4" fill="none" stroke="#fff" strokeOpacity=".48" strokeWidth="4" strokeLinecap="round" />
+    <path d="M131 78h8v24h-8" fill="url(#watch-steel)" stroke="#15151a" strokeWidth="2.5" />
+    <path d="M139 82v16M143 83v14" stroke="#fff2cf" strokeOpacity=".7" strokeWidth="1.5" />
+    <path d="M31 57q8-6 15-5M111 121q7-3 9-10" fill="none" stroke="#fff" strokeOpacity=".38" strokeWidth="2" />
   </svg>
 )
 export const HERO_ICONS = { clothing: HeroTee, footwear: HeroSneaker, accessories: HeroAccessory, perfumes: HeroPerfume }
