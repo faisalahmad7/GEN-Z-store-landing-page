@@ -138,6 +138,7 @@ export function Shelf() {
         {CATS.map((c, i) => (
           <article key={c.id} className="shelf-c" style={{ '--mb': c.bg, '--mk': c.ink, '--ma': c.ac } as CSSProperties}>
             <small>0{i + 1} · {c.word}</small>
+            {c.id === 'perfumes' && <p className="shelf-scent-line">Fragrance that defines you, wherever you go.</p>}
             <ul>{SHELF[c.id].map((x) => <li key={x}>{x}</li>)}</ul>
             <Link to={'/' + c.id} className="btn">SEE {c.word} →</Link>
             {c.id === 'perfumes' && <a className="shelf-l" href="https://www.instagram.com/genperfume.in/" target="_blank" rel="noopener noreferrer">Fragrance drops: @genperfume.in ↗</a>}
