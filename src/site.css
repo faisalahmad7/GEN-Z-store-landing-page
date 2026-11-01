@@ -9757,3 +9757,46 @@ small,
     transform: perspective(420px) rotateY(-4deg) rotateX(2deg);
   }
 }
+
+
+/* Crisp, consistent product contours: keep every edge clean at desktop and phone sizes. */
+.hero.hub .ht-object svg {
+  shape-rendering: geometricPrecision;
+  overflow: visible;
+}
+.hero.hub .ht-object svg path,
+.hero.hub .ht-object svg rect,
+.hero.hub .ht-object svg circle,
+.hero.hub .ht-object svg ellipse {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hero.hub .ht-object svg {
+  filter:
+    drop-shadow(0 0 1px rgba(8,8,12,.9))
+    drop-shadow(2px 4px 2px rgba(0,0,0,.34));
+}
+.hero.hub .ht-clothing .ht-object svg {
+  filter:
+    drop-shadow(0 0 1.1px rgba(8,8,12,.95))
+    drop-shadow(-1px 0 1px rgba(255,255,255,.28))
+    drop-shadow(3px 6px 4px rgba(0,0,0,.48));
+}
+.hero.hub .ht-footwear .ht-object svg {
+  filter:
+    drop-shadow(0 0 1.2px rgba(8,8,12,.98))
+    drop-shadow(2px 3px 1px rgba(255,255,255,.26))
+    drop-shadow(4px 8px 5px rgba(0,0,0,.5));
+}
+.hero.hub .ht-perfumes .ht-object svg {
+  filter:
+    drop-shadow(0 0 1.2px rgba(8,8,12,.98))
+    drop-shadow(-2px 0 2px rgba(255,255,255,.38))
+    drop-shadow(4px 9px 6px rgba(0,0,0,.58));
+}
+.hero.hub .ht-accessories .ht-object svg {
+  filter:
+    drop-shadow(0 0 1.2px rgba(8,8,12,.98))
+    drop-shadow(-2px 0 2px rgba(255,255,255,.28))
+    drop-shadow(4px 8px 5px rgba(0,0,0,.58));
+}
