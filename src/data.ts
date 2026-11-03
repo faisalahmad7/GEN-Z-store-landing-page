@@ -22,10 +22,10 @@ export const REVIEWS = [
 // Hand-picked lead photos per room, by file id (first = lead). If `npm run images` renames files, the helper falls back to the best portraits; re-pin here.
 // shortcut: ids come from the current photos.json, re-pin after a re-run of the image script.
 export const PICKS: Record<Cat, string[]> = {
-  clothing: ['clothing-010', 'clothing-011', 'clothing-004'],
-  footwear: ['footwear-003', 'footwear-008', 'footwear-004'],
-  accessories: ['accessories-004', 'accessories-005', 'accessories-010'],
-  perfumes: ['perfumes-019', 'perfumes-004', 'perfumes-001'],
+  clothing: ['clothing-010', 'IMG_6913.JPG.webp', 'IMG_6915.JPG.webp'],
+  footwear: ['IMG_6904.JPG.webp', 'footwear-008', 'IMG_6892.JPG.webp'],
+  accessories: ['accessories-004', 'clothing-013', 'IMG_6847.JPG.webp'],
+  perfumes: ['IMG_6873.JPG.webp', 'perfumes-001', 'IMG_6859.JPG.webp'],
 }
 // The shop's own wall sign ("IT'S TIME TO LEVEL UP") is sharp in this photo.
 export const SIGN_PHOTO = 'accessories-004'
