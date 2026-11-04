@@ -176,9 +176,9 @@ export default function Hub() {
       <section className="rooms" aria-label="The four rooms">
         {CATS.map((c, i) => {
           const list = photosFor(c.id)
-          // FOOTWEAR card uses footwear-006 directly (the 480px file that is already in the folder)
-          const f6 = photosFor('footwear').find((p) => p.src.includes('footwear-006'))
-          const ph = c.id === 'footwear' && f6 ? { ...f6, srcset: '' } : picks(c.id, 1)[0]
+          // Use the same in-store footwear shelf photo from the footwear gallery for the homepage intro card.
+          const footwearIntro = photosFor('footwear').find((p) => p.src.includes('IMG_6904.JPG.webp'))
+          const ph = c.id === 'footwear' && footwearIntro ? { ...footwearIntro, srcset: '' } : picks(c.id, 1)[0]
           const I = ICONS[c.id]
           return (
             <article key={c.id} className={'room r-' + c.id} style={vars({ '--bg': c.bg, '--ink': c.ink, '--ac': c.ac, '--f': c.font, '--k': i })}>
@@ -191,7 +191,7 @@ export default function Hub() {
                 <p>{ROOM_DETAILS[c.id].intro}</p>
                 <ul>{ROOM_DETAILS[c.id].items.map((item) => <li key={item}>{item}</li>)}</ul>
               </div>
-              <figure className={'rp' + (ph ? '' : ' nop')} data-tilt>{ph ? <Photo p={ph} alt={c.word.toLowerCase() + ' at GEN-Z'} sizes="(min-width:800px) 40vw, 80vw" gallery={c.id === 'footwear' && f6 ? list.map((x) => (x === f6 ? ph : x)) : list} /> : <I />}</figure>
+              <figure className={'rp' + (ph ? '' : ' nop')} data-tilt>{ph ? <Photo p={ph} alt={c.word.toLowerCase() + ' at GEN-Z'} sizes="(min-width:800px) 40vw, 80vw" gallery={list} /> : <I />}</figure>
               <Link to={'/' + c.id} className="btn rb">ENTER {c.word} →</Link>
             </article>
           )
