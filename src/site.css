@@ -346,8 +346,9 @@ button {
 }
 .hub .mega .hero-lockup {
   display: block;
-  width: 100%;
+  width: min(78%, 900px);
   height: auto;
+  margin-inline: auto;
   object-fit: contain;
   filter:
     drop-shadow(0 0 2px rgba(255, 247, 222, .42))
