@@ -348,8 +348,8 @@ button {
   display: block;
   width: min(60%, 700px);
   height: auto;
-  margin-left: auto;
-  margin-right: 0;
+  margin-left: 0;
+  margin-right: auto;
   object-fit: contain;
   filter:
     drop-shadow(0 0 2px rgba(255, 247, 222, .42))
