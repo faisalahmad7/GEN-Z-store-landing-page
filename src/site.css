@@ -336,10 +336,19 @@ button {
 
 .hub .mega {
   width: 100%;
-  font: 400 clamp(5rem, 44vw, 18rem)/.84 var(--display);
-  white-space: nowrap;
-  color: var(--paper);
-  text-shadow: .04em .04em 0 #000
+  max-width: 1280px;
+  margin-block: clamp(8px, 1.5vw, 22px);
+  font-size: 0;
+  line-height: 0;
+  white-space: normal;
+  color: transparent;
+  text-shadow: none
+}
+.hub .mega .hero-lockup {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .hub .mega .lw:nth-child(2) {
