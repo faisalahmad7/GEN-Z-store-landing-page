@@ -154,7 +154,7 @@ export default function Hub() {
           })}
         </nav>
         <p className="tag rot-l">MEN'S BOUTIQUE · KONDHWA, PUNE</p>
-        <h1 className="mega" aria-label="GEN-Z"><img className="hero-lockup" src="/genz-hero-lockup.webp" width={1600} height={533} alt="GEN-Z collage logo featuring sneakers, watches, clothing, caps and fragrance" fetchPriority="high" decoding="async" /></h1>
+        <h1 className="mega" aria-label="GEN-Z"><img className="hero-lockup" src="/genz-hero-lockup123.webp" width={1600} height={533} alt="GEN-Z logo" fetchPriority="high" decoding="async" /></h1>
         <p className="sub">Branded menswear, footwear, accessories and perfumes. One shop in Kondhwa, four rooms to walk through.</p>
         <div className="row">
           <a className="btn" href={SHOP.maps} target="_blank" rel="noopener noreferrer">DIRECTIONS ↗</a>
