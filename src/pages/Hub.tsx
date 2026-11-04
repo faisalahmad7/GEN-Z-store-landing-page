@@ -97,7 +97,7 @@ export default function Hub() {
 
     // Hero: ONE timeline. Letters rise, the four tags drop on their strings and settle, then the actions arrive.
     gsap.timeline({ defaults: { ease: 'expo.out' } })
-      .from(q('.hub .mega .lw'), { yPercent: 70, opacity: 0, rotation: () => gsap.utils.random(-4, 4), duration: 0.9, stagger: 0.06 }, 0)
+      .from(q('.hub .mega .hero-lockup'), { y: 34, opacity: 0, scale: 0.96, duration: 0.9 }, 0)
       .from(q('.ht'), { y: -300, duration: 1.4, stagger: 0.1 }, 0.1)
       .from(q('.hub .tag, .hub .sub, .hub .row, .hub .meta'), { y: 22, opacity: 0, duration: 0.6, stagger: 0.08, ease: 'power3.out' }, 0.5)
 
@@ -154,7 +154,7 @@ export default function Hub() {
           })}
         </nav>
         <p className="tag rot-l">MEN'S BOUTIQUE · KONDHWA, PUNE</p>
-        <h1 className="mega" aria-label="GEN-Z"><Wiggle text="GEN-Z" /></h1>
+        <h1 className="mega" aria-label="GEN-Z"><img className="hero-lockup" src="/genz-hero-lockup.webp" width={1600} height={533} alt="GEN-Z collage logo featuring sneakers, watches, clothing, caps and fragrance" fetchPriority="high" decoding="async" /></h1>
         <p className="sub">Branded menswear, footwear, accessories and perfumes. One shop in Kondhwa, four rooms to walk through.</p>
         <div className="row">
           <a className="btn" href={SHOP.maps} target="_blank" rel="noopener noreferrer">DIRECTIONS ↗</a>
@@ -176,9 +176,9 @@ export default function Hub() {
       <section className="rooms" aria-label="The four rooms">
         {CATS.map((c, i) => {
           const list = photosFor(c.id)
-          // Use the same in-store footwear shelf photo from the footwear gallery for the homepage intro card.
-          const footwearIntro = photosFor('footwear').find((p) => p.src.includes('IMG_6904.JPG.webp'))
-          const ph = c.id === 'footwear' && footwearIntro ? { ...footwearIntro, srcset: '' } : picks(c.id, 1)[0]
+          // Use the exact existing gallery entry so the homepage card and its lightbox share the same photo.
+          const footwearIntro = photosFor('footwear').find((p) => p.src === '/photos/footwear/IMG_6904.JPG.webp')
+          const ph = c.id === 'footwear' ? (footwearIntro ?? picks(c.id, 1)[0]) : picks(c.id, 1)[0]
           const I = ICONS[c.id]
           return (
             <article key={c.id} className={'room r-' + c.id} style={vars({ '--bg': c.bg, '--ink': c.ink, '--ac': c.ac, '--f': c.font, '--k': i })}>
